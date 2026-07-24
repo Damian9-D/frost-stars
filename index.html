@@ -49,7 +49,85 @@ function calculate(){var paid=0,direct=0;document.querySelectorAll('.pack-count'
 function renderLevels(amount,next){var h='';for(var i=0;i<LEVELS.length;i++){var l=LEVELS[i],reached=amount+.0001>=l.usd,isNext=next&&Math.abs(next.usd-l.usd)<.001;h+='<tr class="'+(reached?'reached':isNext?'nextrow':'')+'"><td>'+l.usd.toFixed(2)+'$</td><td>'+fmt(l.bonus)+'</td><td>'+l.extra+'</td><td class="status">'+(reached?'✅':isNext?'➡️':'🔒')+'</td></tr>'}id('levelsBody').innerHTML=h}
 function resultText(){return '❄️ حاسبة نجوم الصقيع\n\n💰 قيمة الباقات الموحدة: '+fmt(state.paid)+'$\n⭐ نجوم الشحن المباشر: '+fmt(state.direct)+'\n🎁 النجوم المجانية التراكمية (تقديري): '+fmt(state.bonus)+'\n🌟 الإجمالي: '+fmt(state.direct+state.bonus)+(state.next?'\n\n🎯 المستوى القادم: '+state.next.usd.toFixed(2)+'$\n💵 المتبقي: '+Math.max(0,state.next.usd-state.paid).toFixed(2)+'$':'')}
 function shareResult(){var text=resultText();if(navigator.share)navigator.share({title:'حاسبة نجوم الصقيع',text:text}).catch(function(){});else{navigator.clipboard&&navigator.clipboard.writeText(text);alert('تم نسخ النتيجة.')}}
-function downloadImage(){var c=document.createElement('canvas');c.width=1080;c.height=1080;var x=c.getContext('2d'),g=x.createLinearGradient(0,0,1080,1080);g.addColorStop(0,'#07182a');g.addColorStop(1,'#0d3b60');x.fillStyle=g;x.fillRect(0,0,1080,1080);x.textAlign='center';x.fillStyle='#eef8ff';x.font='bold 56px Tahoma';x.fillText('حاسبة نجوم الصقيع',540,120);var rows=[['قيمة الباقات',fmt(state.paid)+'$'],['نجوم الشحن المباشر',fmt(state.direct)],['النجوم التراكمية (تقديري)',fmt(state.bonus)],['إجمالي النجوم',fmt(state.direct+state.bonus)]],y=285;for(var i=0;i<rows.length;i++){x.fillStyle='rgba(255,255,255,.07)';x.fillRect(120,y-60,840,112);x.fillStyle='#9fc0d8';x.font='28px Tahoma';x.fillText(rows[i][0],540,y-12);x.fillStyle='#fff';x.font='bold 42px Tahoma';x.fillText(rows[i][1],540,y+35);y+=150}var a=document.createElement('a');a.download='frost-stars-result.png';a.href=c.toDataURL('image/png');a.click()}
+function downloadImage(){
+  var c=document.createElement('canvas');
+  c.width=1080;c.height=1500;
+  var x=c.getContext('2d');
+  var bannerUrl=document.querySelector('.hero img').src;
+
+  function roundedRect(ctx,px,py,pw,ph,r){
+    ctx.beginPath();ctx.moveTo(px+r,py);ctx.arcTo(px+pw,py,px+pw,py+ph,r);ctx.arcTo(px+pw,py+ph,px,py+ph,r);ctx.arcTo(px,py+ph,px,py,r);ctx.arcTo(px,py,px+pw,py,r);ctx.closePath();
+  }
+  function panel(px,py,pw,ph,fill,stroke){
+    roundedRect(x,px,py,pw,ph,24);x.fillStyle=fill;x.fill();x.strokeStyle=stroke||'rgba(123,202,255,.26)';x.lineWidth=2;x.stroke();
+  }
+  function text(t,px,py,size,color,weight,align){
+    x.direction='rtl';x.textAlign=align||'center';x.textBaseline='middle';x.fillStyle=color;x.font=(weight||'normal')+' '+size+'px Tahoma, Arial, sans-serif';x.fillText(t,px,py);
+  }
+  function build(img){
+    var g=x.createLinearGradient(0,0,1080,1500);g.addColorStop(0,'#06111f');g.addColorStop(.55,'#0b2c49');g.addColorStop(1,'#071827');x.fillStyle=g;x.fillRect(0,0,1080,1500);
+
+    if(img){
+      var targetH=290,scale=Math.max(1080/img.width,targetH/img.height),dw=img.width*scale,dh=img.height*scale;
+      x.save();roundedRect(x,36,34,1008,targetH,28);x.clip();x.drawImage(img,(1080-dw)/2,34+(targetH-dh)/2,dw,dh);var ov=x.createLinearGradient(0,34,0,324);ov.addColorStop(0,'rgba(4,14,25,.05)');ov.addColorStop(1,'rgba(4,14,25,.78)');x.fillStyle=ov;x.fillRect(36,34,1008,targetH);x.restore();
+    }
+
+    text('❄ حاسبة نجوم الصقيع',540,270,52,'#ffffff','bold');
+    text('نتيجة حساب نجوم الشحن والمكافآت التراكمية',540,326,25,'#b8d9ef','normal');
+
+    var cards=[
+      {label:'إجمالي قيمة الباقات الموحدة',value:fmt(state.paid)+'$',color:'#7af0c2'},
+      {label:'نجوم الشحن المباشر',value:fmt(state.direct),color:'#66d9ff'},
+      {label:'النجوم المجانية التراكمية (تقديري)',value:fmt(state.bonus),color:'#d2a8ff'},
+      {label:'إجمالي نجوم الصقيع',value:fmt(state.direct+state.bonus),color:'#ffd36a'}
+    ];
+    var cw=474,ch=164,gap=24,startX=54,startY=375;
+    for(var i=0;i<cards.length;i++){
+      var col=i%2,row=Math.floor(i/2),px=startX+col*(cw+gap),py=startY+row*(ch+gap);
+      panel(px,py,cw,ch,'rgba(17,48,79,.94)','rgba(106,184,235,.28)');
+      text(cards[i].label,px+cw/2,py+48,24,'#a9c9df','bold');
+      text(cards[i].value,px+cw/2,py+108,44,cards[i].color,'bold');
+    }
+
+    var ev=eventState(state.paid),last=ev.last,next=ev.next;
+    panel(54,735,972,230,'rgba(14,39,66,.97)','rgba(122,240,194,.32)');
+    text('آخر مستوى وصلت إليه',540,782,29,'#7af0c2','bold');
+    if(last){
+      text(last.usd.toFixed(2)+'$',540,845,48,'#ffffff','bold');
+      text('آخر مكافأة: '+fmt(last.bonus)+' نجمة',540,908,28,'#cfeaff','bold');
+    }else{
+      text('لم تصل لأول مستوى',540,860,38,'#ffffff','bold');
+    }
+
+    panel(54,993,972,332,'rgba(14,39,66,.97)','rgba(255,211,106,.34)');
+    text('➡ المستوى القادم حسب القيمة الموحدة',540,1043,30,'#ffd36a','bold');
+    if(next){
+      var remain=Math.max(0,next.usd-state.paid).toFixed(2)+'$';
+      var cols=[
+        {label:'المستوى القادم تقديريًا',value:next.usd.toFixed(2)+'$'},
+        {label:'المتبقي',value:remain},
+        {label:'الجائزة',value:fmt(next.bonus)+' نجمة'}
+      ];
+      for(var j=0;j<3;j++){
+        var px=78+j*316;
+        if(j>0){x.strokeStyle='rgba(159,192,216,.25)';x.lineWidth=2;x.beginPath();x.moveTo(px-18,1090);x.lineTo(px-18,1280);x.stroke();}
+        text(cols[j].label,px+140,1118,22,'#a9c9df','bold');
+        text(cols[j].value,px+140,1190,34,'#ffffff','bold');
+      }
+      if(next.extra!=='—')text('هدية إضافية: '+next.extra,540,1277,23,'#7af0c2','bold');
+    }else{
+      text('وصلت إلى أعلى مستوى في الجدول',540,1160,38,'#ffffff','bold');
+    }
+
+    panel(54,1353,972,94,'rgba(5,22,38,.94)','rgba(106,184,235,.22)');
+    text('Damian | State #9',150,1400,22,'#b8d9ef','bold','left');
+    text('جميع الحقوق محفوظة ©',930,1400,21,'#8fb2ca','normal','right');
+
+    var a=document.createElement('a');a.download='frost-stars-result.png';a.href=c.toDataURL('image/png');a.click();
+  }
+
+  var img=new Image();img.crossOrigin='anonymous';img.onload=function(){build(img)};img.onerror=function(){build(null)};img.src=bannerUrl+(bannerUrl.indexOf('?')>-1?'&':'?')+'canvas=1';
+}
 function resetAll(){document.querySelectorAll('.pack-count').forEach(function(el){el.value=0});calculate()}
 window.addEventListener('DOMContentLoaded',function(){renderPacks();id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;calculate()});
 </script>
