@@ -10,7 +10,7 @@
 .app{max-width:1100px;margin:auto;padding:14px}.hero{padding:18px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,rgba(17,58,94,.96),rgba(8,27,47,.96));box-shadow:0 18px 50px rgba(0,0,0,.28);margin-bottom:14px;text-align:center}.hero img{display:block;width:100%;height:auto;object-fit:contain;border-radius:18px;margin:0 auto 14px;background:#0a2742}.hero h1{margin:0 0 8px;font-size:30px}.hero p{margin:0;color:var(--muted);line-height:1.8}.badge{display:inline-block;margin-top:12px;padding:7px 11px;border-radius:999px;background:rgba(122,240,194,.12);border:1px solid rgba(122,240,194,.35);color:var(--mint);font-size:13px}
 .layout{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:start}.card{background:rgba(11,32,55,.96);border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:0 12px 35px rgba(0,0,0,.2);margin-bottom:14px}.card h2{margin:0 0 13px;font-size:20px}
 .notice-danger{padding:13px 14px;border:1px solid rgba(255,95,109,.65);background:rgba(255,95,109,.12);border-radius:13px;color:#ffd7da;line-height:1.8;font-size:13px;margin-bottom:14px;font-weight:700}
-.amount-help{padding:13px 14px;border:1px solid rgba(102,217,255,.34);background:rgba(102,217,255,.08);border-radius:13px;color:#cfeeff;line-height:1.8;font-size:14px;margin-bottom:14px}.amount-entry{display:block;background:linear-gradient(135deg,rgba(16,43,72,.98),rgba(7,25,43,.98));border:1px solid var(--line);border-radius:18px;padding:18px}.amount-entry>span{display:block;color:var(--cyan);font-weight:800;margin-bottom:10px}.amount-input-wrap{display:flex;align-items:center;direction:ltr;border:1px solid rgba(122,240,194,.45);background:#061827;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}.amount-input-wrap input{width:100%;border:0;outline:0;background:transparent;color:#fff;padding:16px;font-size:30px;font-weight:900;text-align:center}.amount-input-wrap b{padding:0 18px;color:var(--gold);font-size:28px;border-left:1px solid var(--line)}
+.amount-help{padding:13px 14px;border:1px solid rgba(102,217,255,.34);background:rgba(102,217,255,.08);border-radius:13px;color:#cfeeff;line-height:1.8;font-size:14px;margin-bottom:14px}.amount-entry{display:block;margin-bottom:12px;background:linear-gradient(135deg,rgba(16,43,72,.98),rgba(7,25,43,.98));border:1px solid var(--line);border-radius:18px;padding:18px}.amount-entry>span{display:block;color:var(--cyan);font-weight:800;margin-bottom:10px}.amount-input-wrap{display:flex;align-items:center;direction:ltr;border:1px solid rgba(122,240,194,.45);background:#061827;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}.amount-input-wrap input{width:100%;border:0;outline:0;background:transparent;color:#fff;padding:16px;font-size:30px;font-weight:900;text-align:center}.amount-input-wrap b{padding:0 18px;color:var(--gold);font-size:28px;border-left:1px solid var(--line)}
 .pack-head,.pack-row{display:grid;grid-template-columns:1.2fr .9fr .75fr .85fr;gap:8px;align-items:center}.pack-head{color:var(--cyan);font-size:12px;padding:0 5px 8px}.pack-row{padding:9px 0;border-top:1px solid rgba(33,74,109,.7)}.pack-name{font-weight:900}.pack-name small{display:block;color:var(--muted);font-weight:400;margin-top:4px}.pack-row input{width:100%;padding:10px 6px;border-radius:11px;border:1px solid var(--line);background:#07192b;color:white;font-size:16px;text-align:center}.pack-value{text-align:center;color:var(--mint);font-size:13px}.pack-cost{text-align:center;color:var(--gold);font-size:13px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:15px;padding:13px}.stat .k{color:var(--muted);font-size:12px}.stat .v{font-size:20px;font-weight:900;margin-top:7px;line-height:1.5}.full{grid-column:1/-1}.nextbox{background:linear-gradient(135deg,rgba(122,240,194,.1),rgba(102,217,255,.08))}.nextbox .v{color:var(--mint)}
 .actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:12px}.btn{border:0;border-radius:13px;padding:13px 10px;font-size:14px;font-weight:800;cursor:pointer}.secondary{background:#173b5d;color:white;border:1px solid var(--line)}.danger{background:rgba(255,95,109,.15);color:#ffd7da;border:1px solid rgba(255,95,109,.45)}
@@ -32,23 +32,25 @@
 <div class="layout"><main>
 <section class="card"><h2>💳 كم المبلغ الذي شحنته بالدولار؟</h2>
 <div class="amount-help">أدخل <strong>إجمالي مبلغ الشحن الفعلي</strong> كما هو مسجّل في اللعبة، ويمكنك استخدام الكسور مثل: 103.50</div>
-<label class="amount-entry" for="paidAmount"><span>إجمالي المبلغ</span><div class="amount-input-wrap"><input id="paidAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" aria-label="إجمالي مبلغ الشحن بالدولار"><b>$</b></div></label>
+<label class="amount-entry" for="paidAmount"><span>إجمالي المبلغ الذي شحنته</span><div class="amount-input-wrap"><input id="paidAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" aria-label="إجمالي مبلغ الشحن الحالي بالدولار"><b>$</b></div></label>
+<label class="amount-entry" for="plannedAmount"><span>المبلغ الذي ستقوم بشحنه</span><div class="amount-input-wrap"><input id="plannedAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" aria-label="المبلغ الذي ستقوم بشحنه بالدولار"><b>$</b></div></label>
 <div class="actions"><button class="btn secondary" id="shareBtn">📤 مشاركة النتيجة</button><button class="btn secondary" id="imageBtn">🖼️ حفظ كصورة</button><button class="btn danger" id="resetBtn">🗑️ تصفير</button></div>
 </section></main><aside>
-<section class="card"><h2>📊 النتيجة</h2><div class="stats"><div class="stat full"><div class="k">إجمالي مبلغ الشحن الفعلي</div><div id="totalUsd" class="v">0.00$</div></div><div class="stat"><div class="k">عدد المستويات المحققة</div><div id="reachedCount" class="v">0</div></div><div class="stat"><div class="k">إجمالي النجوم المجانية التراكمية</div><div id="bonusStars" class="v">0</div></div><div class="stat full"><div class="k">آخر مستوى وصلت إليه</div><div id="currentLevel" class="v">لم تصل لأول مستوى</div></div><div class="stat full nextbox"><div class="k">➡️ المستوى القادم</div><div id="nextLevel" class="v">—</div></div></div></section>
+<section class="card"><h2>📊 النتيجة</h2><div class="stats"><div class="stat full"><div class="k">إجمالي مبلغ الشحن الفعلي</div><div id="totalUsd" class="v">0.00$</div></div><div class="stat"><div class="k">عدد المستويات المحققة</div><div id="reachedCount" class="v">0</div></div><div class="stat"><div class="k">إجمالي النجوم المجانية التراكمية</div><div id="bonusStars" class="v">0</div></div><div class="stat full"><div class="k">المستوى الحالي</div><div id="currentLevel" class="v">لم تصل لأول مستوى</div></div><div class="stat full nextbox"><div class="k">المستوى الذي ستصل إليه بعد الشحن</div><div id="futureLevel" class="v">—</div></div><div class="stat full nextbox"><div class="k">➡️ المستوى القادم بعد إجمالي الشحن الجديد</div><div id="nextLevel" class="v">—</div></div></div></section>
 <section class="card"><h2>🎁 مستويات المكافآت</h2><div class="levels"><table><thead><tr><th>المستوى $</th><th>نجوم</th><th>الهدية</th><th>الحالة</th></tr></thead><tbody id="levelsBody"></tbody></table></div></section>
 </aside></div>
 </div>
 <script>
 var LEVELS=[{usd:4.41,bonus:60000,extra:"—"},{usd:14.70,bonus:60000,extra:"—"},{usd:29.39,bonus:60000,extra:"—"},{usd:58.79,bonus:100000,extra:"—"},{usd:88,bonus:200000,extra:"—"},{usd:147,bonus:100000,extra:"—"},{usd:294,bonus:200000,extra:"—"},{usd:735,bonus:200000,extra:"—"},{usd:1470,bonus:200000,extra:"طاغية المعركة ×1"},{usd:2941,bonus:200000,extra:"طاغية المعركة ×1"},{usd:4411,bonus:200000,extra:"طاغية المعركة ×1"},{usd:5882,bonus:200000,extra:"طاغية المعركة ×1"},{usd:7353,bonus:200000,extra:"طاغية المعركة ×1"},{usd:8824,bonus:200000,extra:"عرين التنين السري ×1"},{usd:10294,bonus:200000,extra:"عرين التنين السري ×1"},{usd:11765,bonus:200000,extra:"عرين التنين السري ×1"},{usd:13235,bonus:200000,extra:"عرين التنين السري ×1"},{usd:14706,bonus:200000,extra:"عرين التنين السري ×1"}];
-var state={paid:0,bonus:0,next:null,reached:0};
+var state={paid:0,planned:0,totalAfter:0,bonus:0,next:null,reached:0,current:null,future:null};
 function id(x){return document.getElementById(x)}
 function fmt(n){return String(Math.round(Number(n)||0)).replace(/\B(?=(\d{3})+(?!\d))/g,",")}
 function money(n){return (Number(n)||0).toFixed(2)}
 function eventState(amount){var bonus=0,last=null,next=null,reached=0;for(var i=0;i<LEVELS.length;i++){if(amount+.0001>=LEVELS[i].usd){bonus+=LEVELS[i].bonus;last=LEVELS[i];reached++}else{next=LEVELS[i];break}}return{bonus:bonus,last:last,next:next,reached:reached}}
-function calculate(){var paid=parseFloat(id('paidAmount').value);if(!isFinite(paid)||paid<0)paid=0;var ev=eventState(paid);state={paid:paid,bonus:ev.bonus,next:ev.next,reached:ev.reached};id('totalUsd').textContent=money(paid)+'$';id('reachedCount').textContent=ev.reached;id('bonusStars').textContent=fmt(ev.bonus);id('currentLevel').textContent=ev.last?ev.last.usd.toFixed(2)+'$ — آخر مكافأة: '+fmt(ev.last.bonus)+' نجمة':'لم تصل لأول مستوى';id('nextLevel').innerHTML=ev.next?'المستوى القادم: <b>'+ev.next.usd.toFixed(2)+'$</b><br>المتبقي: <b>'+Math.max(0,ev.next.usd-paid).toFixed(2)+'$</b><br>الجائزة: '+fmt(ev.next.bonus)+' نجمة'+(ev.next.extra!=='—'?' + '+ev.next.extra:''):'وصلت إلى أعلى مستوى في الجدول';renderLevels(paid,ev.next)}
+function levelLabel(ev){return ev.last?'المستوى '+ev.reached+' — '+ev.last.usd.toFixed(2)+'$':'لم تصل لأول مستوى'}
+function calculate(){var paid=parseFloat(id('paidAmount').value),planned=parseFloat(id('plannedAmount').value);if(!isFinite(paid)||paid<0)paid=0;if(!isFinite(planned)||planned<0)planned=0;var totalAfter=paid+planned,current=eventState(paid),future=eventState(totalAfter);state={paid:paid,planned:planned,totalAfter:totalAfter,bonus:future.bonus,next:future.next,reached:future.reached,current:current,future:future};id('totalUsd').textContent=money(totalAfter)+'$';id('reachedCount').textContent=future.reached;id('bonusStars').textContent=fmt(future.bonus);id('currentLevel').textContent=levelLabel(current);id('futureLevel').innerHTML=levelLabel(future)+(planned>0?'<br><small>الإجمالي بعد الشحن: '+money(totalAfter)+'$</small>'+(future.last?'<br><small>الجائزة: '+fmt(future.last.bonus)+' نجمة'+(future.last.extra!=='—'?' + '+future.last.extra:'')+'</small>':''):'<br><small>أدخل مبلغ الشحنة المتوقعة للمقارنة</small>');id('nextLevel').innerHTML=future.next?'المستوى القادم: <b>'+future.next.usd.toFixed(2)+'$</b><br>المتبقي بعد الشحن: <b>'+Math.max(0,future.next.usd-totalAfter).toFixed(2)+'$</b><br>الجائزة: '+fmt(future.next.bonus)+' نجمة'+(future.next.extra!=='—'?' + '+future.next.extra:''):'وصلت إلى أعلى مستوى في الجدول';renderLevels(totalAfter,future.next)}
 function renderLevels(amount,next){var h='';for(var i=0;i<LEVELS.length;i++){var l=LEVELS[i],reached=amount+.0001>=l.usd,isNext=next&&Math.abs(next.usd-l.usd)<.001;h+='<tr class="'+(reached?'reached':isNext?'nextrow':'')+'"><td>'+l.usd.toFixed(2)+'$</td><td>'+fmt(l.bonus)+'</td><td>'+l.extra+'</td><td class="status">'+(reached?'✅':isNext?'➡️':'🔒')+'</td></tr>'}id('levelsBody').innerHTML=h}
-function resultText(){return '❄️ حاسبة نجوم الصقيع\n\n💰 إجمالي مبلغ الشحن الفعلي: '+money(state.paid)+'$\n🏆 عدد المستويات المحققة: '+state.reached+'\n🎁 إجمالي النجوم المجانية التراكمية: '+fmt(state.bonus)+(state.next?'\n\n🎯 المستوى القادم: '+state.next.usd.toFixed(2)+'$\n💵 المتبقي: '+Math.max(0,state.next.usd-state.paid).toFixed(2)+'$':'')}
+function resultText(){return '❄️ حاسبة نجوم الصقيع\n\n💰 إجمالي الشحن الحالي: '+money(state.paid)+'$\n➕ مبلغ الشحنة القادمة: '+money(state.planned)+'$\n🧾 الإجمالي بعد الشحن: '+money(state.totalAfter)+'$\n📍 المستوى الحالي: '+levelLabel(state.current)+'\n🎯 المستوى الذي ستصل إليه: '+levelLabel(state.future)+'\n🏆 عدد المستويات المحققة: '+state.reached+'\n🎁 إجمالي النجوم المجانية التراكمية: '+fmt(state.bonus)+(state.next?'\n\n➡️ المستوى القادم: '+state.next.usd.toFixed(2)+'$\n💵 المتبقي بعد الشحن: '+Math.max(0,state.next.usd-state.totalAfter).toFixed(2)+'$':'')}
 function shareResult(){var text=resultText();if(navigator.share)navigator.share({title:'حاسبة نجوم الصقيع',text:text}).catch(function(){});else{navigator.clipboard&&navigator.clipboard.writeText(text);alert('تم نسخ النتيجة.')}}
 function isMobileDevice(){return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)}
 function saveCanvasImage(canvas,previewWindow){
@@ -118,10 +120,10 @@ function downloadImage(){
     text('نتيجة حساب نجوم الشحن والمكافآت التراكمية',540,326,25,'#b8d9ef','normal');
 
     var cards=[
-      {label:'إجمالي مبلغ الشحن الفعلي',value:money(state.paid)+'$',color:'#7af0c2'},
-      {label:'عدد المستويات المحققة',value:String(state.reached),color:'#66d9ff'},
-      {label:'النجوم المجانية التراكمية',value:fmt(state.bonus),color:'#d2a8ff'},
-      {label:'المستوى الحالي',value:(eventState(state.paid).last?eventState(state.paid).last.usd.toFixed(2)+'$':'—'),color:'#ffd36a'}
+      {label:'إجمالي الشحن الحالي',value:money(state.paid)+'$',color:'#7af0c2'},
+      {label:'مبلغ الشحنة القادمة',value:money(state.planned)+'$',color:'#66d9ff'},
+      {label:'الإجمالي بعد الشحن',value:money(state.totalAfter)+'$',color:'#d2a8ff'},
+      {label:'المستوى الذي ستصل إليه',value:(state.future&&state.future.last?'المستوى '+state.future.reached:'—'),color:'#ffd36a'}
     ];
     var cw=474,ch=164,gap=24,startX=54,startY=375;
     for(var i=0;i<cards.length;i++){
@@ -131,7 +133,7 @@ function downloadImage(){
       text(cards[i].value,px+cw/2,py+108,44,cards[i].color,'bold');
     }
 
-    var ev=eventState(state.paid),last=ev.last,next=ev.next;
+    var ev=eventState(state.totalAfter),last=ev.last,next=ev.next;
     panel(54,735,972,230,'rgba(14,39,66,.97)','rgba(122,240,194,.32)');
     text('آخر مستوى وصلت إليه',540,782,29,'#7af0c2','bold');
     if(last){
@@ -144,7 +146,7 @@ function downloadImage(){
     panel(54,993,972,332,'rgba(14,39,66,.97)','rgba(255,211,106,.34)');
     text('➡ المستوى القادم',540,1043,30,'#ffd36a','bold');
     if(next){
-      var remain=Math.max(0,next.usd-state.paid).toFixed(2)+'$';
+      var remain=Math.max(0,next.usd-state.totalAfter).toFixed(2)+'$';
       var cols=[
         {label:'المستوى القادم',value:next.usd.toFixed(2)+'$'},
         {label:'المتبقي',value:remain},
@@ -170,10 +172,10 @@ function downloadImage(){
 
   var img=new Image();img.onload=function(){build(img)};img.onerror=function(){build(null)};img.src=bannerUrl;
 }
-function resetAll(){id('paidAmount').value='';calculate()}
-window.addEventListener('DOMContentLoaded',function(){id('paidAmount').addEventListener('input',calculate);id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;calculate()});
+function resetAll(){id('paidAmount').value='';id('plannedAmount').value='';calculate()}
+window.addEventListener('DOMContentLoaded',function(){id('paidAmount').addEventListener('input',calculate);id('plannedAmount').addEventListener('input',calculate);id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;calculate()});
 </script>
-<div class="footer"><span class="app-version" id="appVersion">v1.6.0</span><strong>جميع الحقوق محفوظة © Damian | مقاطعة #9</strong><br><span>© All Rights Reserved | Damian | State #9</span></div>
+<div class="footer"><span class="app-version" id="appVersion">v1.7.1</span><strong>جميع الحقوق محفوظة © Damian | مقاطعة #9</strong><br><span>© All Rights Reserved | Damian | State #9</span></div>
 
 <div class="wa-support" aria-label="دعم Whiteout Survival عبر واتساب">
   <div class="wa-note"><strong>دعم Whiteout Survival</strong>استفسارات اللعبة ومشاكل الشحن</div>
