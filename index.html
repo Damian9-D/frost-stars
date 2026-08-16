@@ -31,7 +31,7 @@
 /* CRYPTO brand & quick links */
 .brand-tools{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;margin:14px 0}.crypto-brand{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(16,43,72,.98),rgba(5,18,32,.98));border:1px solid var(--line);border-radius:20px;padding:12px;min-height:150px}.crypto-brand img{width:100%;max-width:145px;aspect-ratio:1/1;object-fit:cover;border-radius:18px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}.quick-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick-link{display:flex;align-items:center;justify-content:center;gap:9px;min-height:68px;border-radius:16px;text-decoration:none;font-weight:900;font-size:15px;border:1px solid var(--line);transition:.2s transform,.2s border-color}.quick-link:hover{transform:translateY(-2px)}.quick-link.youtube{background:linear-gradient(135deg,rgba(255,59,59,.18),rgba(92,13,19,.25));color:#fff;border-color:rgba(255,95,109,.45)}.quick-link.game{background:linear-gradient(135deg,rgba(102,217,255,.14),rgba(21,76,116,.28));color:#dff7ff;border-color:rgba(102,217,255,.42)}.quick-link .ico{font-size:24px}.quick-links-note{grid-column:1/-1;color:var(--muted);font-size:12px;text-align:center;line-height:1.7}@media(max-width:560px){.brand-tools{grid-template-columns:1fr}.crypto-brand{min-height:auto}.crypto-brand img{max-width:120px}.quick-links{grid-template-columns:1fr 1fr}.quick-link{font-size:13px;min-height:60px}}
 
-/* v2.1.2 — الصفحة الرئيسية وبوابة الخدمات */
+/* v2.2.0 — الصفحة الرئيسية وبوابة الخدمات */
 .portal-page{max-width:980px;margin:0 auto;padding:28px 16px 44px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 .portal-shell{background:linear-gradient(145deg,rgba(10,31,53,.98),rgba(5,18,32,.98));border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.32);overflow:hidden;position:relative}
 .portal-shell:before{content:"";position:absolute;inset:-120px auto auto -120px;width:340px;height:340px;background:radial-gradient(circle,rgba(102,217,255,.14),transparent 65%);pointer-events:none}
@@ -41,7 +41,7 @@
 @media(max-width:650px){.portal-page{padding:16px 12px 28px;justify-content:flex-start}.portal-shell{padding:20px 14px;border-radius:22px}.portal-logo{width:118px;height:118px;border-radius:22px}.portal-grid{grid-template-columns:1fr}.portal-item{min-height:112px;padding:16px;flex-direction:row;align-items:center;justify-content:flex-start}.portal-item .portal-icon{flex:0 0 50px}.portal-item .portal-copy{flex:1}.calc-topbar{padding-top:4px}}
 
 
-/* v2.1.2 — توحيد بطاقات الصفحة الرئيسية والشعارات */
+/* v2.2.0 — توحيد بطاقات الصفحة الرئيسية والشعارات */
 .portal-item{font-family:Tahoma,Arial,sans-serif;direction:rtl;text-align:right}
 .portal-item .portal-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;width:100%;min-width:0;direction:rtl;text-align:right;line-height:1.4}
 .portal-item .portal-title{display:block;width:100%;font-family:Tahoma,Arial,sans-serif;font-size:19px;font-weight:900;line-height:1.45;color:var(--text);white-space:normal}
@@ -53,33 +53,43 @@
 .portal-item.youtube .portal-icon{background:rgba(255,0,0,.12)}
 @media(max-width:650px){.portal-item .portal-copy{align-items:flex-start}.portal-item .portal-title{font-size:18px}.portal-item .portal-desc{font-size:13px}}
 
+
+/* v2.2.0 — تعدد اللغات */
+.language-switcher{position:fixed;top:14px;right:16px;z-index:12000;display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid rgba(102,217,255,.28);background:rgba(5,18,32,.88);backdrop-filter:blur(12px);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.24)}
+.language-switcher .lang-icon{font-size:18px;line-height:1}.language-switcher select{appearance:none;-webkit-appearance:none;border:0;outline:0;background:#0b2945;color:var(--text);border-radius:9px;padding:8px 28px 8px 10px;font:700 13px Tahoma,Arial,sans-serif;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,#9fc0d8 50%),linear-gradient(135deg,#9fc0d8 50%,transparent 50%);background-position:calc(100% - 13px) 50%,calc(100% - 8px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+html[dir="ltr"] body{text-align:left}html[dir="ltr"] .portal-item,html[dir="ltr"] .portal-item .portal-copy{direction:ltr;text-align:left;align-items:flex-start}html[dir="ltr"] th,html[dir="ltr"] td{text-align:left}html[dir="ltr"] .amount-entry>span{text-align:left}html[dir="ltr"] .notice-danger,html[dir="ltr"] .amount-help,html[dir="ltr"] .mode-note{text-align:left}html[dir="ltr"] .back-home{direction:ltr}html[dir="ltr"] .wa-support{direction:ltr}html[dir="ltr"] .wa-note{text-align:left}
+html[lang="zh-CN"] body{font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}html[lang="tr"] body,html[lang="pt"] body,html[lang="en"] body{font-family:Arial,Tahoma,sans-serif}
+@media(max-width:650px){.language-switcher{top:8px;right:8px;padding:5px 7px}.language-switcher select{max-width:145px;font-size:12px;padding-top:7px;padding-bottom:7px}.portal-page{padding-top:58px}.app{padding-top:58px}}
+
 </style>
 </head>
 <body>
+<div class="language-switcher" aria-label="Language"><span class="lang-icon">🌐</span><select id="languageSelect" aria-label="Language"><option value="ar">العربية</option><option value="en">English</option><option value="zh-CN">中文</option><option value="pt">Português</option><option value="tr">Türkçe</option></select></div>
+
 <div id="homePage" class="portal-page">
   <section class="portal-shell">
     <div class="portal-brand">
       <img class="portal-logo" src="https://files.catbox.moe/8ar014.png" alt="CRYPTO Gaming Logo">
       <h1>CRYPTO Gaming</h1>
-      <p>كل ما تحتاجه لـ Whiteout Survival في مكان واحد</p>
-      <span class="portal-version">v2.1.2</span>
+      <p data-i18n="portalSubtitle">كل ما تحتاجه لـ Whiteout Survival في مكان واحد</p>
+      <span class="portal-version">v2.2.0</span>
     </div>
-    <div class="portal-grid" aria-label="الخدمات الرئيسية">
+    <div class="portal-grid" data-i18n-aria="mainServices" aria-label="الخدمات الرئيسية">
       <button type="button" class="portal-item calc" id="openCalculatorBtn">
         <span class="portal-icon">❄️</span>
-        <span class="portal-copy"><span class="portal-title">حاسبة نجوم الصقيع</span><span class="portal-desc">احسب الشحن التراكمي والمستوى والمكافأة القادمة.</span></span>
+        <span class="portal-copy"><span class="portal-title" data-i18n="calcTitle">حاسبة نجوم الصقيع</span><span class="portal-desc" data-i18n="calcDesc">احسب الشحن التراكمي والمستوى والمكافأة القادمة.</span></span>
       </button>
       <a class="portal-item game" href="https://landing.cqxxzx3.com/?invite=94332H6s9MdnPGtgeL7" target="_blank" rel="noopener noreferrer">
         <span class="portal-icon">🎮</span>
-        <span class="portal-copy"><span class="portal-title">تحميل اللعبة</span><span class="portal-desc">فتح صفحة تحميل Whiteout Survival.</span></span>
+        <span class="portal-copy"><span class="portal-title" data-i18n="downloadGame">تحميل اللعبة</span><span class="portal-desc" data-i18n="downloadDesc">فتح صفحة تحميل Whiteout Survival.</span></span>
       </a>
       <a class="portal-item youtube" href="https://www.youtube.com/@imbadwi288" target="_blank" rel="noopener noreferrer">
         <span class="portal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.6 6.3-3.6-6.3-3.6v7.2Z"/></svg></span>
-        <span class="portal-copy"><span class="portal-title">قناة <span class="latin-brand">YouTube</span></span><span class="portal-desc">شروحات ومحتوى CRYPTO للعبة.</span></span>
+        <span class="portal-copy"><span class="portal-title"><span data-i18n="youtubeChannel">قناة</span> <span class="latin-brand">YouTube</span></span><span class="portal-desc" data-i18n="youtubeDesc">شروحات ومحتوى CRYPTO للعبة.</span></span>
       </a>
       <a class="portal-item whatsapp" href="https://chat.whatsapp.com/L3oFATcr5h0ArT3s58hJZQ?s=cl&amp;p=a&amp;mlu=4" target="_blank" rel="noopener noreferrer">
         <span class="portal-icon" aria-hidden="true"><svg viewBox="0 0 16 16" role="img" aria-label="WhatsApp"><path fill="#fff" d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607M7.998 14.526a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.63.775-.116.133-.232.15-.43.05a5.38 5.38 0 0 1-1.589-.98 5.99 5.99 0 0 1-1.1-1.371c-.116-.2-.013-.31.086-.408.09-.088.2-.23.3-.345.1-.116.13-.2.2-.33.066-.133.033-.25-.017-.35-.05-.1-.445-1.075-.61-1.47-.16-.39-.325-.34-.445-.347-.113-.006-.245-.006-.376-.006a.72.72 0 0 0-.513.24c-.18.2-.69.674-.69 1.645s.707 1.91.806 2.043c.1.13 1.39 2.126 3.37 2.983.47.2.84.323 1.126.416.473.15.904.129 1.244.078.38-.057 1.17-.48 1.335-.943.164-.462.164-.857.116-.943-.05-.086-.18-.13-.38-.23"/></svg></span>
-        <span class="portal-copy"><span class="portal-title">دعم <span class="latin-brand">WhatsApp</span></span><span class="portal-desc">استفسارات اللعبة ومشاكل الشحن.</span></span>
+        <span class="portal-copy"><span class="portal-title"><span data-i18n="support">دعم</span> <span class="latin-brand">WhatsApp</span></span><span class="portal-desc" data-i18n="whatsappDesc">استفسارات اللعبة ومشاكل الشحن.</span></span>
       </a>
     </div>
   </section>
@@ -87,52 +97,52 @@
 
 <div id="calculatorPage" class="app hidden-page">
 <div class="calc-topbar">
-  <button type="button" class="back-home" id="backHomeBtn">← الصفحة الرئيسية</button>
+  <button type="button" class="back-home" id="backHomeBtn"><span data-i18n="homeBack">← الصفحة الرئيسية</span></button>
   <span class="mini-brand"><img src="https://files.catbox.moe/8ar014.png" alt="CRYPTO"><b>CRYPTO</b></span>
 </div>
-<section class="hero"><img src="https://cdn.phototourl.com/free/2026-07-24-8c5a0a24-308c-4e8c-9e94-4f4551231a4b.jpg" alt="Whiteout Survival"><h1>❄️ حاسبة نجوم الصقيع</h1><p>أدخل إجمالي مبلغ الشحن التراكمي باليوان الصيني (CNY)، والحاسبة تحدد مستواك والمكافأة القادمة تلقائيًا.</p><span class="badge">الحساب الأساسي باليوان الصيني CNY — ويمكن تجميع الشحنات</span></section>
+<section class="hero"><img src="https://cdn.phototourl.com/free/2026-07-24-8c5a0a24-308c-4e8c-9e94-4f4551231a4b.jpg" alt="Whiteout Survival"><h1 data-i18n="heroTitle">❄️ حاسبة نجوم الصقيع</h1><p data-i18n="heroDesc">أدخل إجمالي مبلغ الشحن التراكمي باليوان الصيني (CNY)، والحاسبة تحدد مستواك والمكافأة القادمة تلقائيًا.</p><span class="badge" data-i18n="heroBadge">الحساب الأساسي باليوان الصيني CNY — ويمكن تجميع الشحنات</span></section>
 
 <div class="layout"><main>
-<section class="card"><h2>💳 كم إجمالي المبلغ الذي شحنته باليوان؟</h2>
-<div class="amount-help">اختر طريقة الإدخال. <strong>اليوان هو الأدق</strong>، أما الدولار فيتم تحويله إلى قيمة الباقة الرسمية باليوان حسب نطاقات الأسعار المرصودة، وليس حسب سعر الصرف.</div><div class="amount-help" style="margin-top:8px">📌 سياسة التراكمي: تجمع جميع الشحنات، والمكافأة تُفتح عند بلوغ عتبة اليوان المحددة.</div>
-<div class="calc-mode"><button type="button" class="mode-btn active" id="cnyModeBtn">¥ إدخال اليوان مباشرة</button><button type="button" class="mode-btn" id="usdModeBtn">$ باقات الدولار التقريبية</button></div>
+<section class="card"><h2 data-i18n="entryTitle">💳 كم إجمالي المبلغ الذي شحنته باليوان؟</h2>
+<div class="amount-help" data-i18n-html="inputHelp">اختر طريقة الإدخال. <strong>اليوان هو الأدق</strong>، أما الدولار فيتم تحويله إلى قيمة الباقة الرسمية باليوان حسب نطاقات الأسعار المرصودة، وليس حسب سعر الصرف.</div><div class="amount-help" style="margin-top:8px" data-i18n="cumulativePolicy">📌 سياسة التراكمي: تجمع جميع الشحنات، والمكافأة تُفتح عند بلوغ عتبة اليوان المحددة.</div>
+<div class="calc-mode"><button type="button" class="mode-btn active" id="cnyModeBtn" data-i18n="cnyMode">¥ إدخال اليوان مباشرة</button><button type="button" class="mode-btn" id="usdModeBtn" data-i18n="usdMode">$ باقات الدولار التقريبية</button></div>
 <div id="cnyInputs" class="cny-inputs">
-<label class="amount-entry" for="paidAmount"><span>إجمالي المبلغ الذي شحنته</span><div class="amount-input-wrap"><input id="paidAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" aria-label="إجمالي مبلغ الشحن الحالي باليوان الصيني"><b>¥</b></div></label>
-<label class="amount-entry" for="plannedAmount"><span>المبلغ الذي ستقوم بشحنه</span><div class="amount-input-wrap"><input id="plannedAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" aria-label="المبلغ الذي ستقوم بشحنه باليوان الصيني"><b>¥</b></div></label>
+<label class="amount-entry" for="paidAmount"><span data-i18n="paidAmount">إجمالي المبلغ الذي شحنته</span><div class="amount-input-wrap"><input id="paidAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" data-i18n-aria="paidAria" aria-label="إجمالي مبلغ الشحن الحالي باليوان الصيني"><b>¥</b></div></label>
+<label class="amount-entry" for="plannedAmount"><span data-i18n="plannedAmount">المبلغ الذي ستقوم بشحنه</span><div class="amount-input-wrap"><input id="plannedAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" data-i18n-aria="plannedAria" aria-label="المبلغ الذي ستقوم بشحنه باليوان الصيني"><b>¥</b></div></label>
 </div>
 <div id="usdInputs" class="usd-inputs">
-<div class="amount-help">اختر عدد مرات شراء كل باقة. السعر بالدولار <strong>تقريبي</strong> وقد يتغير يوميًا، بينما الحاسبة تعتمد قيمة اليوان الثابتة المقابلة للباقة.</div>
-<table class="usd-pack-table"><thead><tr><th>الباقة التقريبية</th><th>القيمة المعتمدة</th><th>اشتريتها</th><th>سأشتري</th></tr></thead><tbody id="usdPackagesBody"></tbody></table>
-<div id="usdPackSummary" class="convert-box">إجمالي الباقات الحالية: <strong>¥0</strong> — الشحنة القادمة: <strong>¥0</strong></div>
-<div class="mode-note">مثال: باقة ≈ <b>$97</b> تُحسب دائمًا <b>¥648</b>، حتى لو ظهر سعرها الفعلي يومًا $96.29 أو $97.30.</div>
+<div class="amount-help" data-i18n-html="usdHelp">اختر عدد مرات شراء كل باقة. السعر بالدولار <strong>تقريبي</strong> وقد يتغير يوميًا، بينما الحاسبة تعتمد قيمة اليوان الثابتة المقابلة للباقة.</div>
+<table class="usd-pack-table"><thead><tr><th data-i18n="packApprox">الباقة التقريبية</th><th data-i18n="acceptedValue">القيمة المعتمدة</th><th data-i18n="purchased">اشتريتها</th><th data-i18n="willBuy">سأشتري</th></tr></thead><tbody id="usdPackagesBody"></tbody></table>
+<div id="usdPackSummary" class="convert-box"></div>
+<div class="mode-note" data-i18n-html="usdExample">مثال: باقة ≈ <b>$97</b> تُحسب دائمًا <b>¥648</b>، حتى لو ظهر سعرها الفعلي يومًا $96.29 أو $97.30.</div>
 </div>
-<div class="actions"><button class="btn secondary" id="shareBtn">📤 مشاركة النتيجة</button><button class="btn secondary" id="imageBtn">🖼️ حفظ كصورة</button><button class="btn danger" id="resetBtn">🗑️ تصفير</button></div>
+<div class="actions"><button class="btn secondary" id="shareBtn" data-i18n="shareResult">📤 مشاركة النتيجة</button><button class="btn secondary" id="imageBtn" data-i18n="saveImage">🖼️ حفظ كصورة</button><button class="btn danger" id="resetBtn" data-i18n="reset">🗑️ تصفير</button></div>
 </section></main><aside>
-<section class="card"><h2>📊 النتيجة</h2><div class="stats"><div class="stat full"><div class="k">إجمالي مبلغ الشحن باليوان</div><div id="totalCny" class="v">¥0.00</div></div><div class="stat"><div class="k">عدد المستويات المحققة</div><div id="reachedCount" class="v">0</div></div><div class="stat"><div class="k">إجمالي النجوم المجانية التراكمية</div><div id="bonusStars" class="v">0</div></div><div class="stat full"><div class="k">المستوى الحالي</div><div id="currentLevel" class="v">لم تصل لأول مستوى</div></div><div class="stat full nextbox"><div class="k">المستوى الذي ستصل إليه بعد الشحن</div><div id="futureLevel" class="v">—</div></div><div class="stat full nextbox"><div class="k">➡️ المستوى القادم بعد إجمالي الشحن الجديد</div><div id="nextLevel" class="v">—</div></div></div></section>
-<section class="card"><h2>🎁 مستويات المكافآت</h2><div class="levels"><table><thead><tr><th>المستوى ¥</th><th>نجوم</th><th>الهدية</th><th>الحالة</th></tr></thead><tbody id="levelsBody"></tbody></table></div></section>
+<section class="card"><h2 data-i18n="resultTitle">📊 النتيجة</h2><div class="stats"><div class="stat full"><div class="k" id="totalLabel" data-i18n="totalCnyLabel">إجمالي مبلغ الشحن باليوان</div><div id="totalCny" class="v">¥0.00</div></div><div class="stat"><div class="k" data-i18n="reachedLevels">عدد المستويات المحققة</div><div id="reachedCount" class="v">0</div></div><div class="stat"><div class="k" data-i18n="totalBonusStars">إجمالي النجوم المجانية التراكمية</div><div id="bonusStars" class="v">0</div></div><div class="stat full"><div class="k" data-i18n="currentLevelLabel">المستوى الحالي</div><div id="currentLevel" class="v">لم تصل لأول مستوى</div></div><div class="stat full nextbox"><div class="k" data-i18n="futureLevelLabel">المستوى الذي ستصل إليه بعد الشحن</div><div id="futureLevel" class="v">—</div></div><div class="stat full nextbox"><div class="k" data-i18n="nextAfterNewTotal">➡️ المستوى القادم بعد إجمالي الشحن الجديد</div><div id="nextLevel" class="v">—</div></div></div></section>
+<section class="card"><h2 data-i18n="rewardLevels">🎁 مستويات المكافآت</h2><div class="levels"><table><thead><tr><th data-i18n="levelCny">المستوى ¥</th><th data-i18n="stars">نجوم</th><th data-i18n="gift">الهدية</th><th data-i18n="status">الحالة</th></tr></thead><tbody id="levelsBody"></tbody></table></div></section>
 </aside></div>
 </div>
 </div>
 <script>
 var LEVELS=[
-{cny:30,bonus:60000,extra:"—"},
-{cny:100,bonus:60000,extra:"—"},
-{cny:200,bonus:60000,extra:"—"},
-{cny:400,bonus:100000,extra:"—"},
-{cny:600,bonus:200000,extra:"—"},
-{cny:1000,bonus:100000,extra:"—"},
-{cny:2000,bonus:200000,extra:"—"},
-{cny:5000,bonus:200000,extra:"—"},
-{cny:10000,bonus:200000,extra:"طاغية المعركة (Battle Tyrant) ×1"},
-{cny:20000,bonus:200000,extra:"طاغية المعركة (Battle Tyrant) ×1"},
-{cny:30000,bonus:200000,extra:"طاغية المعركة (Battle Tyrant) ×1"},
-{cny:40000,bonus:200000,extra:"طاغية المعركة (Battle Tyrant) ×1"},
-{cny:50000,bonus:200000,extra:"طاغية المعركة (Battle Tyrant) ×1"},
-{cny:60000,bonus:200000,extra:"عرين التنين السري (Dragon's Slumber Realm) ×1"},
-{cny:70000,bonus:200000,extra:"عرين التنين السري (Dragon's Slumber Realm) ×1"},
-{cny:80000,bonus:200000,extra:"عرين التنين السري (Dragon's Slumber Realm) ×1"},
-{cny:90000,bonus:200000,extra:"عرين التنين السري (Dragon's Slumber Realm) ×1"},
-{cny:100000,bonus:200000,extra:"عرين التنين السري (Dragon's Slumber Realm) ×1"}
+{cny:30,bonus:60000,extra:null},
+{cny:100,bonus:60000,extra:null},
+{cny:200,bonus:60000,extra:null},
+{cny:400,bonus:100000,extra:null},
+{cny:600,bonus:200000,extra:null},
+{cny:1000,bonus:100000,extra:null},
+{cny:2000,bonus:200000,extra:null},
+{cny:5000,bonus:200000,extra:null},
+{cny:10000,bonus:200000,extra:"battle"},
+{cny:20000,bonus:200000,extra:"battle"},
+{cny:30000,bonus:200000,extra:"battle"},
+{cny:40000,bonus:200000,extra:"battle"},
+{cny:50000,bonus:200000,extra:"battle"},
+{cny:60000,bonus:200000,extra:"dragon"},
+{cny:70000,bonus:200000,extra:"dragon"},
+{cny:80000,bonus:200000,extra:"dragon"},
+{cny:90000,bonus:200000,extra:"dragon"},
+{cny:100000,bonus:200000,extra:"dragon"}
 ];
 var USD_PACKAGES=[
 {usd:.9,cny:6,label:'≈ $0.9 (0.75–1.10)'},
@@ -146,6 +156,18 @@ var USD_PACKAGES=[
 ];
 var inputMode='cny';
 var state={paid:0,planned:0,totalAfter:0,bonus:0,next:null,reached:0,current:null,future:null,mode:'cny',usdCounts:[],usdPlannedCounts:[],approxPaidUsd:0,approxPlannedUsd:0,approxTotalUsd:0};
+var currentLang=localStorage.getItem('crypto_lang')||'ar';
+var I18N={
+ ar:{portalSubtitle:'كل ما تحتاجه لـ Whiteout Survival في مكان واحد',mainServices:'الخدمات الرئيسية',calcTitle:'حاسبة نجوم الصقيع',calcDesc:'احسب الشحن التراكمي والمستوى والمكافأة القادمة.',downloadGame:'تحميل اللعبة',downloadDesc:'فتح صفحة تحميل Whiteout Survival.',youtubeChannel:'قناة',youtubeDesc:'شروحات ومحتوى CRYPTO للعبة.',support:'دعم',whatsappDesc:'استفسارات اللعبة ومشاكل الشحن.',homeBack:'← الصفحة الرئيسية',heroTitle:'❄️ حاسبة نجوم الصقيع',heroDesc:'أدخل إجمالي مبلغ الشحن التراكمي باليوان الصيني (CNY)، والحاسبة تحدد مستواك والمكافأة القادمة تلقائيًا.',heroBadge:'الحساب الأساسي باليوان الصيني CNY — ويمكن تجميع الشحنات',entryTitle:'💳 كم إجمالي المبلغ الذي شحنته باليوان؟',inputHelp:'اختر طريقة الإدخال. <strong>اليوان هو الأدق</strong>، أما الدولار فيتم تحويله إلى قيمة الباقة الرسمية باليوان حسب نطاقات الأسعار المرصودة، وليس حسب سعر الصرف.',cumulativePolicy:'📌 سياسة التراكمي: تجمع جميع الشحنات، والمكافأة تُفتح عند بلوغ عتبة اليوان المحددة.',cnyMode:'¥ إدخال اليوان مباشرة',usdMode:'$ باقات الدولار التقريبية',paidAmount:'إجمالي المبلغ الذي شحنته',plannedAmount:'المبلغ الذي ستقوم بشحنه',usdHelp:'اختر عدد مرات شراء كل باقة. السعر بالدولار <strong>تقريبي</strong> وقد يتغير يوميًا، بينما الحاسبة تعتمد قيمة اليوان الثابتة المقابلة للباقة.',packApprox:'الباقة التقريبية',acceptedValue:'القيمة المعتمدة',purchased:'اشتريتها',willBuy:'سأشتري',usdExample:'مثال: باقة ≈ <b>$97</b> تُحسب دائمًا <b>¥648</b>، حتى لو ظهر سعرها الفعلي يومًا $96.29 أو $97.30.',shareResult:'📤 مشاركة النتيجة',saveImage:'🖼️ حفظ كصورة',reset:'🗑️ تصفير',resultTitle:'📊 النتيجة',totalCnyLabel:'إجمالي مبلغ الشحن باليوان',totalUsdLabel:'إجمالي مبلغ الشحن التقريبي بالدولار',reachedLevels:'عدد المستويات المحققة',totalBonusStars:'إجمالي النجوم المجانية التراكمية',currentLevelLabel:'المستوى الحالي',futureLevelLabel:'المستوى الذي ستصل إليه بعد الشحن',nextAfterNewTotal:'➡️ المستوى القادم بعد إجمالي الشحن الجديد',rewardLevels:'🎁 مستويات المكافآت',levelCny:'المستوى ¥',stars:'نجوم',gift:'الهدية',status:'الحالة',rightsAr:'جميع الحقوق محفوظة © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'إجمالي مبلغ الشحن الحالي باليوان الصيني',plannedAria:'المبلغ الذي ستقوم بشحنه باليوان الصيني',firstNotReached:'لم تصل لأول مستوى',level:'المستوى',approx:'تقريبًا',totalAfter:'الإجمالي بعد الشحن',reward:'الجائزة',starUnit:'نجمة',enterPlanned:'أدخل مبلغ الشحنة المتوقعة للمقارنة',nextLevel:'المستوى القادم',remainingAfter:'المتبقي بعد الشحن',maxLevel:'وصلت إلى أعلى مستوى في الجدول',currentPackages:'إجمالي الباقات الحالية',nextCharge:'الشحنة القادمة',battle:'طاغية المعركة (Battle Tyrant) ×1',dragon:"عرين التنين السري (Dragon's Slumber Realm) ×1",noGift:'—',shareTitle:'حاسبة نجوم الصقيع',copied:'تم نسخ النتيجة.',imageError:'تعذر إنشاء الصورة. حاول مرة أخرى.',imageShareTitle:'نتيجة حاسبة نجوم الصقيع',imageShareText:'نتيجة حساب نجوم الصقيع',imageReady:'تم فتح الصورة. اضغط عليها مطولًا ثم اختر حفظ الصورة أو تنزيلها.',preparing:'جارٍ تجهيز الصورة...',calcCnySubtitle:'الحساب التراكمي باليوان الصيني CNY',currentCharge:'إجمالي الشحن الحالي',plannedCharge:'مبلغ الشحنة القادمة',futureLevel:'المستوى الذي ستصل إليه',lastLevel:'آخر مستوى وصلت إليه',lastReward:'آخر مكافأة',additionalGift:'هدية إضافية',remaining:'المتبقي',cumulativeUsdNotice:'🔄 تم احتساب باقات الدولار حسب قيمة اليوان الثابتة لكل باقة'},
+ en:{portalSubtitle:'Everything you need for Whiteout Survival in one place',mainServices:'Main services',calcTitle:'Frost Star Calculator',calcDesc:'Calculate cumulative top-up, your level, and the next reward.',downloadGame:'Download Game',downloadDesc:'Open the Whiteout Survival download page.',youtubeChannel:'YouTube Channel',youtubeDesc:'CRYPTO guides and game content.',support:'Support',whatsappDesc:'Game questions and top-up support.',homeBack:'← Home',heroTitle:'❄️ Frost Star Calculator',heroDesc:'Enter your cumulative top-up amount in Chinese yuan (CNY), and the calculator will automatically determine your level and next reward.',heroBadge:'Base calculation in Chinese yuan CNY — top-ups can be accumulated',entryTitle:'💳 What is your total top-up amount in yuan?',inputHelp:'Choose an input method. <strong>Yuan is the most accurate</strong>. USD packages are mapped to their official yuan package values based on observed price ranges, not exchange rates.',cumulativePolicy:'📌 Cumulative policy: all top-ups add together, and rewards unlock when the specified yuan threshold is reached.',cnyMode:'¥ Enter Yuan Directly',usdMode:'$ Approx. USD Packages',paidAmount:'Total amount already topped up',plannedAmount:'Amount you plan to top up',usdHelp:'Choose how many times each package was purchased. The USD price is <strong>approximate</strong> and may change daily; the calculator uses the package’s fixed yuan value.',packApprox:'Approx. Package',acceptedValue:'Yuan Value',purchased:'Purchased',willBuy:'Will Buy',usdExample:'Example: the ≈ <b>$97</b> package always counts as <b>¥648</b>, even if its actual price is $96.29 or $97.30 on a given day.',shareResult:'📤 Share Result',saveImage:'🖼️ Save as Image',reset:'🗑️ Reset',resultTitle:'📊 Result',totalCnyLabel:'Total top-up amount in yuan',totalUsdLabel:'Approx. total top-up in USD',reachedLevels:'Levels reached',totalBonusStars:'Total cumulative bonus Frost Stars',currentLevelLabel:'Current level',futureLevelLabel:'Level you will reach after top-up',nextAfterNewTotal:'➡️ Next level after the new total',rewardLevels:'🎁 Reward Levels',levelCny:'Level ¥',stars:'Stars',gift:'Gift',status:'Status',rightsAr:'All Rights Reserved © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Current cumulative top-up amount in Chinese yuan',plannedAria:'Planned top-up amount in Chinese yuan',firstNotReached:'No level reached yet',level:'Level',approx:'approx.',totalAfter:'Total after top-up',reward:'Reward',starUnit:'Frost Stars',enterPlanned:'Enter a planned top-up to compare',nextLevel:'Next level',remainingAfter:'Remaining after top-up',maxLevel:'You reached the highest level in the table',currentPackages:'Current packages total',nextCharge:'Next top-up',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Calculator',copied:'Result copied.',imageError:'Could not create the image. Please try again.',imageShareTitle:'Frost Star Calculator Result',imageShareText:'Frost Star calculation result',imageReady:'The image is open. Press and hold it, then choose Save Image or Download.',preparing:'Preparing image...',calcCnySubtitle:'Cumulative calculation in Chinese yuan (CNY)',currentCharge:'Current top-up total',plannedCharge:'Planned top-up',futureLevel:'Level you will reach',lastLevel:'Last level reached',lastReward:'Last reward',additionalGift:'Additional gift',remaining:'Remaining',cumulativeUsdNotice:'🔄 USD packages were calculated using each package’s fixed yuan value'},
+ 'zh-CN':{portalSubtitle:'Whiteout Survival 所需内容，一站式获取',mainServices:'主要服务',calcTitle:'霜星累计充值计算器',calcDesc:'计算累计充值、当前等级和下一档奖励。',downloadGame:'下载游戏',downloadDesc:'打开 Whiteout Survival 下载页面。',youtubeChannel:'YouTube 频道',youtubeDesc:'CRYPTO 游戏攻略与内容。',support:'客服支持',whatsappDesc:'游戏咨询与充值问题支持。',homeBack:'← 返回首页',heroTitle:'❄️ 霜星累计充值计算器',heroDesc:'输入以人民币（CNY）计算的累计充值金额，系统会自动判断当前等级和下一档奖励。',heroBadge:'以人民币 CNY 为基础计算 — 多次充值可累计',entryTitle:'💳 您累计充值了多少人民币？',inputHelp:'请选择输入方式。<strong>人民币最准确</strong>；美元礼包会根据已观察到的价格区间映射为官方人民币礼包金额，而不是按汇率换算。',cumulativePolicy:'📌 累计规则：所有充值金额可以累计，达到指定人民币门槛后解锁奖励。',cnyMode:'¥ 直接输入人民币',usdMode:'$ 美元礼包（估算）',paidAmount:'已充值总额',plannedAmount:'计划充值金额',usdHelp:'选择每个礼包的购买次数。美元价格为<strong>估算值</strong>且可能每日变化；计算器按礼包对应的固定人民币金额计算。',packApprox:'估算礼包',acceptedValue:'人民币金额',purchased:'已购买',willBuy:'计划购买',usdExample:'示例：约 <b>$97</b> 的礼包始终按 <b>¥648</b> 计算，即使当天实际显示为 $96.29 或 $97.30。',shareResult:'📤 分享结果',saveImage:'🖼️ 保存图片',reset:'🗑️ 重置',resultTitle:'📊 计算结果',totalCnyLabel:'人民币累计充值总额',totalUsdLabel:'美元累计充值估算总额',reachedLevels:'已达成等级数',totalBonusStars:'累计赠送霜星总数',currentLevelLabel:'当前等级',futureLevelLabel:'充值后将达到的等级',nextAfterNewTotal:'➡️ 新总额后的下一等级',rewardLevels:'🎁 奖励等级',levelCny:'等级 ¥',stars:'霜星',gift:'额外奖励',status:'状态',rightsAr:'版权所有 © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'当前人民币累计充值金额',plannedAria:'计划充值的人民币金额',firstNotReached:'尚未达到第一档',level:'等级',approx:'约',totalAfter:'充值后总额',reward:'奖励',starUnit:'霜星',enterPlanned:'输入计划充值金额进行对比',nextLevel:'下一等级',remainingAfter:'充值后还差',maxLevel:'已达到表格中的最高等级',currentPackages:'当前礼包合计',nextCharge:'下一次充值',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'霜星累计充值计算器',copied:'结果已复制。',imageError:'无法生成图片，请重试。',imageShareTitle:'霜星计算结果',imageShareText:'霜星累计充值计算结果',imageReady:'图片已打开。长按图片后选择保存或下载。',preparing:'正在生成图片...',calcCnySubtitle:'按人民币 CNY 计算累计充值',currentCharge:'当前累计充值',plannedCharge:'计划充值',futureLevel:'充值后等级',lastLevel:'最近达到的等级',lastReward:'最近奖励',additionalGift:'额外奖励',remaining:'还差',cumulativeUsdNotice:'🔄 美元礼包按每个礼包固定的人民币金额计算'},
+ pt:{portalSubtitle:'Tudo o que você precisa para Whiteout Survival em um só lugar',mainServices:'Serviços principais',calcTitle:'Calculadora de Frost Stars',calcDesc:'Calcule recarga acumulada, nível e próxima recompensa.',downloadGame:'Baixar o jogo',downloadDesc:'Abrir a página de download do Whiteout Survival.',youtubeChannel:'Canal do YouTube',youtubeDesc:'Guias e conteúdo CRYPTO sobre o jogo.',support:'Suporte',whatsappDesc:'Dúvidas sobre o jogo e problemas de recarga.',homeBack:'← Início',heroTitle:'❄️ Calculadora de Frost Stars',heroDesc:'Informe o valor acumulado de recarga em yuan chinês (CNY) e a calculadora identifica automaticamente seu nível e a próxima recompensa.',heroBadge:'Cálculo base em yuan chinês CNY — as recargas podem ser acumuladas',entryTitle:'💳 Qual é o total recarregado em yuan?',inputHelp:'Escolha o método de entrada. <strong>O yuan é o mais preciso</strong>. Os pacotes em dólar são associados ao valor oficial em yuan conforme faixas de preço observadas, e não pela taxa de câmbio.',cumulativePolicy:'📌 Regra acumulativa: todas as recargas são somadas e a recompensa é liberada ao atingir o limite em yuan.',cnyMode:'¥ Inserir Yuan Diretamente',usdMode:'$ Pacotes USD aproximados',paidAmount:'Total já recarregado',plannedAmount:'Valor que pretende recarregar',usdHelp:'Escolha quantas vezes cada pacote foi comprado. O preço em dólar é <strong>aproximado</strong> e pode variar diariamente; o cálculo usa o valor fixo em yuan do pacote.',packApprox:'Pacote aproximado',acceptedValue:'Valor em Yuan',purchased:'Comprado',willBuy:'Vou comprar',usdExample:'Exemplo: o pacote de ≈ <b>$97</b> sempre conta como <b>¥648</b>, mesmo que apareça por $96.29 ou $97.30 em outro dia.',shareResult:'📤 Compartilhar resultado',saveImage:'🖼️ Salvar como imagem',reset:'🗑️ Zerar',resultTitle:'📊 Resultado',totalCnyLabel:'Total de recarga em yuan',totalUsdLabel:'Total aproximado de recarga em USD',reachedLevels:'Níveis alcançados',totalBonusStars:'Total de Frost Stars bônus acumuladas',currentLevelLabel:'Nível atual',futureLevelLabel:'Nível após a próxima recarga',nextAfterNewTotal:'➡️ Próximo nível após o novo total',rewardLevels:'🎁 Níveis de recompensa',levelCny:'Nível ¥',stars:'Estrelas',gift:'Presente',status:'Status',rightsAr:'Todos os direitos reservados © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Valor acumulado atual em yuan chinês',plannedAria:'Valor planejado de recarga em yuan chinês',firstNotReached:'Ainda não atingiu o primeiro nível',level:'Nível',approx:'aprox.',totalAfter:'Total após recarga',reward:'Recompensa',starUnit:'Frost Stars',enterPlanned:'Informe uma recarga planejada para comparar',nextLevel:'Próximo nível',remainingAfter:'Falta após a recarga',maxLevel:'Você atingiu o nível máximo da tabela',currentPackages:'Total dos pacotes atuais',nextCharge:'Próxima recarga',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Calculadora de Frost Stars',copied:'Resultado copiado.',imageError:'Não foi possível criar a imagem. Tente novamente.',imageShareTitle:'Resultado da Calculadora de Frost Stars',imageShareText:'Resultado do cálculo de Frost Stars',imageReady:'A imagem foi aberta. Pressione e segure e escolha Salvar imagem ou Baixar.',preparing:'Preparando imagem...',calcCnySubtitle:'Cálculo acumulado em yuan chinês CNY',currentCharge:'Recarga atual',plannedCharge:'Próxima recarga',futureLevel:'Nível que será alcançado',lastLevel:'Último nível alcançado',lastReward:'Última recompensa',additionalGift:'Presente adicional',remaining:'Falta',cumulativeUsdNotice:'🔄 Os pacotes em USD foram calculados pelo valor fixo em yuan de cada pacote'},
+ tr:{portalSubtitle:'Whiteout Survival için ihtiyacınız olan her şey tek yerde',mainServices:'Ana hizmetler',calcTitle:'Frost Star Hesaplayıcı',calcDesc:'Kümülatif yüklemeyi, seviyenizi ve sonraki ödülü hesaplayın.',downloadGame:'Oyunu İndir',downloadDesc:'Whiteout Survival indirme sayfasını aç.',youtubeChannel:'YouTube Kanalı',youtubeDesc:'CRYPTO oyun rehberleri ve içerikleri.',support:'Destek',whatsappDesc:'Oyun soruları ve yükleme sorunları için destek.',homeBack:'← Ana Sayfa',heroTitle:'❄️ Frost Star Hesaplayıcı',heroDesc:'Kümülatif yükleme tutarınızı Çin yuanı (CNY) olarak girin; hesaplayıcı seviyenizi ve sonraki ödülü otomatik belirler.',heroBadge:'Temel hesaplama Çin yuanı CNY ile yapılır — yüklemeler biriktirilebilir',entryTitle:'💳 Toplam kaç yuan yüklediniz?',inputHelp:'Giriş yöntemini seçin. <strong>Yuan en doğru yöntemdir</strong>. USD paketleri döviz kuruna göre değil, gözlemlenen fiyat aralıklarına göre resmi yuan paket değerine eşleştirilir.',cumulativePolicy:'📌 Kümülatif kural: tüm yüklemeler toplanır ve belirlenen yuan eşiğine ulaşıldığında ödül açılır.',cnyMode:'¥ Yuanı Doğrudan Gir',usdMode:'$ Yaklaşık USD Paketleri',paidAmount:'Şimdiye kadar yüklenen toplam',plannedAmount:'Yüklemeyi planladığınız tutar',usdHelp:'Her paketin kaç kez satın alındığını seçin. USD fiyatı <strong>yaklaşıktır</strong> ve günlük değişebilir; hesaplayıcı paketin sabit yuan değerini kullanır.',packApprox:'Yaklaşık Paket',acceptedValue:'Yuan Değeri',purchased:'Satın Alındı',willBuy:'Alacağım',usdExample:'Örnek: ≈ <b>$97</b> paket her zaman <b>¥648</b> sayılır; gerçek fiyat bir gün $96.29 veya $97.30 görünse bile.',shareResult:'📤 Sonucu Paylaş',saveImage:'🖼️ Görsel Olarak Kaydet',reset:'🗑️ Sıfırla',resultTitle:'📊 Sonuç',totalCnyLabel:'Yuan cinsinden toplam yükleme',totalUsdLabel:'USD cinsinden yaklaşık toplam yükleme',reachedLevels:'Ulaşılan seviye sayısı',totalBonusStars:'Toplam kümülatif bonus Frost Star',currentLevelLabel:'Mevcut seviye',futureLevelLabel:'Yükleme sonrası ulaşılacak seviye',nextAfterNewTotal:'➡️ Yeni toplamdan sonraki seviye',rewardLevels:'🎁 Ödül Seviyeleri',levelCny:'Seviye ¥',stars:'Yıldız',gift:'Hediye',status:'Durum',rightsAr:'Tüm hakları saklıdır © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Çin yuanı cinsinden mevcut kümülatif yükleme',plannedAria:'Çin yuanı cinsinden planlanan yükleme',firstNotReached:'Henüz ilk seviyeye ulaşılmadı',level:'Seviye',approx:'yaklaşık',totalAfter:'Yükleme sonrası toplam',reward:'Ödül',starUnit:'Frost Star',enterPlanned:'Karşılaştırmak için planlanan yüklemeyi girin',nextLevel:'Sonraki seviye',remainingAfter:'Yükleme sonrası kalan',maxLevel:'Tablodaki en yüksek seviyeye ulaştınız',currentPackages:'Mevcut paket toplamı',nextCharge:'Sonraki yükleme',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Hesaplayıcı',copied:'Sonuç kopyalandı.',imageError:'Görsel oluşturulamadı. Tekrar deneyin.',imageShareTitle:'Frost Star Hesaplama Sonucu',imageShareText:'Frost Star hesaplama sonucu',imageReady:'Görsel açıldı. Uzun basıp Görseli Kaydet veya İndir seçeneğini kullanın.',preparing:'Görsel hazırlanıyor...',calcCnySubtitle:'Çin yuanı CNY ile kümülatif hesaplama',currentCharge:'Mevcut yükleme toplamı',plannedCharge:'Planlanan yükleme',futureLevel:'Ulaşılacak seviye',lastLevel:'Ulaşılan son seviye',lastReward:'Son ödül',additionalGift:'Ek hediye',remaining:'Kalan',cumulativeUsdNotice:'🔄 USD paketleri, her paketin sabit yuan değeriyle hesaplandı'}
+};
+function t(key){var d=I18N[currentLang]||I18N.ar;return d[key]!==undefined?d[key]:(I18N.ar[key]!==undefined?I18N.ar[key]:key)}
+function extraText(extra){if(!extra)return t('noGift');return extra==='battle'?t('battle'):extra==='dragon'?t('dragon'):extra}
+function applyLanguage(lang){currentLang=I18N[lang]?lang:'ar';localStorage.setItem('crypto_lang',currentLang);document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==='ar'?'rtl':'ltr';var sel=id('languageSelect');if(sel)sel.value=currentLang;document.querySelectorAll('[data-i18n]').forEach(function(el){el.textContent=t(el.getAttribute('data-i18n'))});document.querySelectorAll('[data-i18n-html]').forEach(function(el){el.innerHTML=t(el.getAttribute('data-i18n-html'))});document.querySelectorAll('[data-i18n-aria]').forEach(function(el){el.setAttribute('aria-label',t(el.getAttribute('data-i18n-aria')))});document.title=t('calcTitle');renderUsdPackages();calculate()}
+
 function id(x){return document.getElementById(x)}
 function fmt(n){return String(Math.round(Number(n)||0)).replace(/\B(?=(\d{3})+(?!\d))/g,",")}
 function money(n){var v=Number(n)||0;return Math.abs(v-Math.round(v))<0.0001?fmt(v):v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
@@ -154,29 +176,29 @@ function usd(n){return '$'+money(n)}
 function cnyToUsdApprox(n){return Number(n||0)/6.8}
 function displayMoney(n){return inputMode==='usd'?usd(cnyToUsdApprox(n)):cny(n)}
 function eventState(amount){var bonus=0,last=null,next=null,reached=0;for(var i=0;i<LEVELS.length;i++){if(amount+.0001>=LEVELS[i].cny){bonus+=LEVELS[i].bonus;last=LEVELS[i];reached++}else{next=LEVELS[i];break}}return{bonus:bonus,last:last,next:next,reached:reached}}
-function levelLabel(ev,displayMode){var m=displayMode||inputMode;return ev.last?'المستوى '+ev.reached+' — '+(m==='usd'?usd(cnyToUsdApprox(ev.last.cny))+' تقريبًا':cny(ev.last.cny)):'لم تصل لأول مستوى'}
-function renderUsdPackages(){var body=id('usdPackagesBody');if(!body)return;var h='';for(var i=0;i<USD_PACKAGES.length;i++){var p=USD_PACKAGES[i];h+='<tr><td>'+p.label+'</td><td>¥'+fmt(p.cny)+'</td><td><input class="pack-count usd-paid-count" data-index="'+i+'" type="number" inputmode="numeric" min="0" step="1" value="0" aria-label="عدد مرات شراء '+p.label+'"></td><td><input class="pack-count usd-planned-count" data-index="'+i+'" type="number" inputmode="numeric" min="0" step="1" value="0" aria-label="عدد مرات الشراء القادمة '+p.label+'"></td></tr>'}body.innerHTML=h;body.querySelectorAll('.pack-count').forEach(function(el){el.addEventListener('input',calculate)})}
+function levelLabel(ev,displayMode){var m=displayMode||inputMode;return ev.last?t('level')+' '+ev.reached+' — '+(m==='usd'?usd(cnyToUsdApprox(ev.last.cny))+' '+t('approx'):cny(ev.last.cny)):t('firstNotReached')}
+function renderUsdPackages(){var body=id('usdPackagesBody');if(!body)return;var prevPaid=readPackCounts('.usd-paid-count'),prevPlan=readPackCounts('.usd-planned-count'),h='';for(var i=0;i<USD_PACKAGES.length;i++){var p=USD_PACKAGES[i];h+='<tr><td>'+p.label+'</td><td>¥'+fmt(p.cny)+'</td><td><input class="pack-count usd-paid-count" data-index="'+i+'" type="number" inputmode="numeric" min="0" step="1" value="'+(prevPaid[i]||0)+'" aria-label="'+t('purchased')+' '+p.label+'"></td><td><input class="pack-count usd-planned-count" data-index="'+i+'" type="number" inputmode="numeric" min="0" step="1" value="'+(prevPlan[i]||0)+'" aria-label="'+t('willBuy')+' '+p.label+'"></td></tr>'}body.innerHTML=h;body.querySelectorAll('.pack-count').forEach(function(el){el.addEventListener('input',calculate)})}
 function readPackCounts(selector){var arr=[];document.querySelectorAll(selector).forEach(function(el){var n=parseInt(el.value,10);arr[parseInt(el.dataset.index,10)]=isFinite(n)&&n>0?n:0});return arr}
 function countToCny(counts){var total=0;for(var i=0;i<USD_PACKAGES.length;i++)total+=(counts[i]||0)*USD_PACKAGES[i].cny;return total}
 function countToUsdApprox(counts){var total=0;for(var i=0;i<USD_PACKAGES.length;i++)total+=(counts[i]||0)*USD_PACKAGES[i].usd;return total}
 function setInputMode(mode){inputMode=mode==='usd'?'usd':'cny';id('cnyModeBtn').classList.toggle('active',inputMode==='cny');id('usdModeBtn').classList.toggle('active',inputMode==='usd');id('cnyInputs').classList.toggle('hidden',inputMode==='usd');id('usdInputs').classList.toggle('active',inputMode==='usd');calculate()}
-function calculate(){var paid=0,planned=0,usdCounts=[],usdPlannedCounts=[];if(inputMode==='usd'){usdCounts=readPackCounts('.usd-paid-count');usdPlannedCounts=readPackCounts('.usd-planned-count');paid=countToCny(usdCounts);planned=countToCny(usdPlannedCounts);var approxPaid=countToUsdApprox(usdCounts),approxPlanned=countToUsdApprox(usdPlannedCounts);id('usdPackSummary').innerHTML='إجمالي الباقات الحالية: <strong>'+cny(paid)+'</strong> <span style="color:var(--muted)">(≈ $'+money(approxPaid)+')</span> — الشحنة القادمة: <strong>'+cny(planned)+'</strong> <span style="color:var(--muted)">(≈ $'+money(approxPlanned)+')</span>'}else{paid=parseFloat(id('paidAmount').value);planned=parseFloat(id('plannedAmount').value);if(!isFinite(paid)||paid<0)paid=0;if(!isFinite(planned)||planned<0)planned=0}var totalAfter=paid+planned,current=eventState(paid),future=eventState(totalAfter);var approxPaidUsd=inputMode==='usd'?countToUsdApprox(usdCounts):0,approxPlannedUsd=inputMode==='usd'?countToUsdApprox(usdPlannedCounts):0,approxTotalUsd=approxPaidUsd+approxPlannedUsd;state={paid:paid,planned:planned,totalAfter:totalAfter,bonus:future.bonus,next:future.next,reached:future.reached,current:current,future:future,mode:inputMode,usdCounts:usdCounts,usdPlannedCounts:usdPlannedCounts,approxPaidUsd:approxPaidUsd,approxPlannedUsd:approxPlannedUsd,approxTotalUsd:approxTotalUsd};id('totalCny').previousElementSibling.textContent=inputMode==='usd'?'إجمالي مبلغ الشحن التقريبي بالدولار':'إجمالي مبلغ الشحن باليوان';id('totalCny').textContent=inputMode==='usd'?usd(approxTotalUsd):cny(totalAfter);id('reachedCount').textContent=future.reached;id('bonusStars').textContent=fmt(future.bonus);id('currentLevel').textContent=levelLabel(current,inputMode);id('futureLevel').innerHTML=levelLabel(future,inputMode)+(planned>0?'<br><small>الإجمالي بعد الشحن: '+(inputMode==='usd'?usd(approxTotalUsd):cny(totalAfter))+'</small>'+(future.last?'<br><small>الجائزة: '+fmt(future.last.bonus)+' نجمة'+(future.last.extra!=='—'?' + '+future.last.extra:'')+'</small>':''):'<br><small>أدخل مبلغ الشحنة المتوقعة للمقارنة</small>');id('nextLevel').innerHTML=future.next?'المستوى القادم: <b>'+(inputMode==='usd'?usd(cnyToUsdApprox(future.next.cny))+' تقريبًا':cny(future.next.cny))+'</b><br>المتبقي بعد الشحن: <b>'+(inputMode==='usd'?usd(cnyToUsdApprox(Math.max(0,future.next.cny-totalAfter)))+' تقريبًا':cny(Math.max(0,future.next.cny-totalAfter)))+'</b><br>الجائزة: '+fmt(future.next.bonus)+' نجمة'+(future.next.extra!=='—'?' + '+future.next.extra:''):'وصلت إلى أعلى مستوى في الجدول';renderLevels(totalAfter,future.next)}
-function renderLevels(amount,next){var h='';for(var i=0;i<LEVELS.length;i++){var l=LEVELS[i],reached=amount+.0001>=l.cny,isNext=next&&Math.abs(next.cny-l.cny)<.001;h+='<tr class="'+(reached?'reached':isNext?'nextrow':'')+'"><td>'+cny(l.cny)+'</td><td>'+fmt(l.bonus)+'</td><td>'+l.extra+'</td><td class="status">'+(reached?'✅':isNext?'➡️':'🔒')+'</td></tr>'}id('levelsBody').innerHTML=h}
-function resultText(){return '❄️ حاسبة نجوم الصقيع\n\n'+(state.mode==='usd'?'🔄 تم احتساب باقات الدولار حسب قيمة اليوان الثابتة لكل باقة\n':'')+'💰 إجمالي الشحن الحالي: '+cny(state.paid)+'\n➕ مبلغ الشحنة القادمة: '+cny(state.planned)+'\n🧾 الإجمالي بعد الشحن: '+cny(state.totalAfter)+'\n📍 المستوى الحالي: '+levelLabel(state.current)+'\n🎯 المستوى الذي ستصل إليه: '+levelLabel(state.future)+'\n🏆 عدد المستويات المحققة: '+state.reached+'\n🎁 إجمالي النجوم المجانية التراكمية: '+fmt(state.bonus)+(state.next?'\n\n➡️ المستوى القادم: '+cny(state.next.cny)+'\n💵 المتبقي بعد الشحن: '+cny(Math.max(0,state.next.cny-state.totalAfter))+'\n🎁 الجائزة: '+fmt(state.next.bonus)+' نجمة'+(state.next.extra!=='—'?' + '+state.next.extra:''):'')}
-function shareResult(){var text=resultText();if(navigator.share)navigator.share({title:'حاسبة نجوم الصقيع',text:text}).catch(function(){});else{navigator.clipboard&&navigator.clipboard.writeText(text);alert('تم نسخ النتيجة.')}}
+function calculate(){var paid=0,planned=0,usdCounts=[],usdPlannedCounts=[];if(inputMode==='usd'){usdCounts=readPackCounts('.usd-paid-count');usdPlannedCounts=readPackCounts('.usd-planned-count');paid=countToCny(usdCounts);planned=countToCny(usdPlannedCounts);var approxPaid=countToUsdApprox(usdCounts),approxPlanned=countToUsdApprox(usdPlannedCounts);id('usdPackSummary').innerHTML=t('currentPackages')+': <strong>'+cny(paid)+'</strong> <span style="color:var(--muted)">(≈ $'+money(approxPaid)+')</span> — '+t('nextCharge')+': <strong>'+cny(planned)+'</strong> <span style="color:var(--muted)">(≈ $'+money(approxPlanned)+')</span>'}else{paid=parseFloat(id('paidAmount').value);planned=parseFloat(id('plannedAmount').value);if(!isFinite(paid)||paid<0)paid=0;if(!isFinite(planned)||planned<0)planned=0}var totalAfter=paid+planned,current=eventState(paid),future=eventState(totalAfter);var approxPaidUsd=inputMode==='usd'?countToUsdApprox(usdCounts):0,approxPlannedUsd=inputMode==='usd'?countToUsdApprox(usdPlannedCounts):0,approxTotalUsd=approxPaidUsd+approxPlannedUsd;state={paid:paid,planned:planned,totalAfter:totalAfter,bonus:future.bonus,next:future.next,reached:future.reached,current:current,future:future,mode:inputMode,usdCounts:usdCounts,usdPlannedCounts:usdPlannedCounts,approxPaidUsd:approxPaidUsd,approxPlannedUsd:approxPlannedUsd,approxTotalUsd:approxTotalUsd};id('totalLabel').textContent=inputMode==='usd'?t('totalUsdLabel'):t('totalCnyLabel');id('totalCny').textContent=inputMode==='usd'?usd(approxTotalUsd):cny(totalAfter);id('reachedCount').textContent=future.reached;id('bonusStars').textContent=fmt(future.bonus);id('currentLevel').textContent=levelLabel(current,inputMode);id('futureLevel').innerHTML=levelLabel(future,inputMode)+(planned>0?'<br><small>'+t('totalAfter')+': '+(inputMode==='usd'?usd(approxTotalUsd):cny(totalAfter))+'</small>'+(future.last?'<br><small>'+t('reward')+': '+fmt(future.last.bonus)+' '+t('starUnit')+(future.last.extra?' + '+extraText(future.last.extra):'')+'</small>':''):'<br><small>'+t('enterPlanned')+'</small>');id('nextLevel').innerHTML=future.next?t('nextLevel')+': <b>'+(inputMode==='usd'?usd(cnyToUsdApprox(future.next.cny))+' '+t('approx'):cny(future.next.cny))+'</b><br>'+t('remainingAfter')+': <b>'+(inputMode==='usd'?usd(cnyToUsdApprox(Math.max(0,future.next.cny-totalAfter)))+' '+t('approx'):cny(Math.max(0,future.next.cny-totalAfter)))+'</b><br>'+t('reward')+': '+fmt(future.next.bonus)+' '+t('starUnit')+(future.next.extra?' + '+extraText(future.next.extra):''):t('maxLevel');renderLevels(totalAfter,future.next)}
+function renderLevels(amount,next){var h='';for(var i=0;i<LEVELS.length;i++){var l=LEVELS[i],reached=amount+.0001>=l.cny,isNext=next&&Math.abs(next.cny-l.cny)<.001;h+='<tr class="'+(reached?'reached':isNext?'nextrow':'')+'"><td>'+cny(l.cny)+'</td><td>'+fmt(l.bonus)+'</td><td>'+extraText(l.extra)+'</td><td class="status">'+(reached?'✅':isNext?'➡️':'🔒')+'</td></tr>'}id('levelsBody').innerHTML=h}
+function resultText(){return '❄️ '+t('calcTitle')+'\n\n'+(state.mode==='usd'?t('cumulativeUsdNotice')+'\n':'')+'💰 '+t('currentCharge')+': '+cny(state.paid)+'\n➕ '+t('plannedCharge')+': '+cny(state.planned)+'\n🧾 '+t('totalAfter')+': '+cny(state.totalAfter)+'\n📍 '+t('currentLevelLabel')+': '+levelLabel(state.current)+'\n🎯 '+t('futureLevel')+': '+levelLabel(state.future)+'\n🏆 '+t('reachedLevels')+': '+state.reached+'\n🎁 '+t('totalBonusStars')+': '+fmt(state.bonus)+(state.next?'\n\n➡️ '+t('nextLevel')+': '+cny(state.next.cny)+'\n💵 '+t('remainingAfter')+': '+cny(Math.max(0,state.next.cny-state.totalAfter))+'\n🎁 '+t('reward')+': '+fmt(state.next.bonus)+' '+t('starUnit')+(state.next.extra?' + '+extraText(state.next.extra):''):'')}
+function shareResult(){var text=resultText();if(navigator.share)navigator.share({title:t('shareTitle'),text:text}).catch(function(){});else{navigator.clipboard&&navigator.clipboard.writeText(text);alert(t('copied'))}}
 function isMobileDevice(){return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)}
 function saveCanvasImage(canvas,previewWindow){
   canvas.toBlob(async function(blob){
     if(!blob){
       if(previewWindow)previewWindow.close();
-      alert('تعذر إنشاء الصورة. حاول مرة أخرى.');
+      alert(t('imageError'));
       return;
     }
     var file=new File([blob],'frost-stars-result.png',{type:'image/png'});
     try{
       if(isMobileDevice()&&navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
         if(previewWindow)previewWindow.close();
-        await navigator.share({title:'نتيجة حاسبة نجوم الصقيع',text:'نتيجة حساب نجوم الصقيع',files:[file]});
+        await navigator.share({title:t('imageShareTitle'),text:t('imageShareText'),files:[file]});
         return;
       }
     }catch(err){
@@ -190,7 +212,7 @@ function saveCanvasImage(canvas,previewWindow){
         var opened=window.open(url,'_blank');
         if(!opened)window.location.href=url;
       }
-      setTimeout(function(){alert('تم فتح الصورة. اضغط عليها مطولًا ثم اختر حفظ الصورة أو تنزيلها.');},350);
+      setTimeout(function(){alert(t('imageReady'));},350);
       setTimeout(function(){URL.revokeObjectURL(url)},60000);
     }else{
       if(previewWindow)previewWindow.close();
@@ -204,7 +226,7 @@ function downloadImage(){
   var previewWindow=null;
   if(isMobileDevice()&&!(navigator.share&&navigator.canShare)){
     previewWindow=window.open('','_blank');
-    if(previewWindow){previewWindow.document.write('<!doctype html><html lang="ar" dir="rtl"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;background:#06111f;color:white;font-family:Arial;text-align:center;padding:30px">جارٍ تجهيز الصورة...</body></html>');}
+    if(previewWindow){previewWindow.document.write('<!doctype html><html lang="'+currentLang+'" dir="'+(currentLang==='ar'?'rtl':'ltr')+'"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;background:#06111f;color:white;font-family:Arial;text-align:center;padding:30px">'+t('preparing')+'</body></html>');}
   }
   var c=document.createElement('canvas');
   c.width=1080;c.height=1500;
@@ -218,7 +240,7 @@ function downloadImage(){
     roundedRect(x,px,py,pw,ph,24);x.fillStyle=fill;x.fill();x.strokeStyle=stroke||'rgba(123,202,255,.26)';x.lineWidth=2;x.stroke();
   }
   function text(t,px,py,size,color,weight,align){
-    x.direction='rtl';x.textAlign=align||'center';x.textBaseline='middle';x.fillStyle=color;x.font=(weight||'normal')+' '+size+'px Tahoma, Arial, sans-serif';x.fillText(t,px,py);
+    x.direction=currentLang==='ar'?'rtl':'ltr';x.textAlign=align||'center';x.textBaseline='middle';x.fillStyle=color;x.font=(weight||'normal')+' '+size+'px Tahoma, Arial, sans-serif';x.fillText(t,px,py);
   }
   function build(img){
     var g=x.createLinearGradient(0,0,1080,1500);g.addColorStop(0,'#06111f');g.addColorStop(.55,'#0b2c49');g.addColorStop(1,'#071827');x.fillStyle=g;x.fillRect(0,0,1080,1500);
@@ -228,14 +250,14 @@ function downloadImage(){
       x.save();roundedRect(x,36,34,1008,targetH,28);x.clip();x.drawImage(img,(1080-dw)/2,34+(targetH-dh)/2,dw,dh);var ov=x.createLinearGradient(0,34,0,324);ov.addColorStop(0,'rgba(4,14,25,.05)');ov.addColorStop(1,'rgba(4,14,25,.78)');x.fillStyle=ov;x.fillRect(36,34,1008,targetH);x.restore();
     }
 
-    text('❄ حاسبة نجوم الصقيع',540,270,52,'#ffffff','bold');
-    text('الحساب التراكمي باليوان الصيني CNY',540,326,25,'#b8d9ef','normal');
+    text('❄ '+t('calcTitle'),540,270,52,'#ffffff','bold');
+    text(t('calcCnySubtitle'),540,326,25,'#b8d9ef','normal');
 
     var cards=[
-      {label:'إجمالي الشحن الحالي',value:cny(state.paid),color:'#7af0c2'},
-      {label:'مبلغ الشحنة القادمة',value:cny(state.planned),color:'#66d9ff'},
-      {label:'الإجمالي بعد الشحن',value:cny(state.totalAfter),color:'#d2a8ff'},
-      {label:'المستوى الذي ستصل إليه',value:(state.future&&state.future.last?'المستوى '+state.future.reached:'—'),color:'#ffd36a'}
+      {label:t('currentCharge'),value:cny(state.paid),color:'#7af0c2'},
+      {label:t('plannedCharge'),value:cny(state.planned),color:'#66d9ff'},
+      {label:t('totalAfter'),value:cny(state.totalAfter),color:'#d2a8ff'},
+      {label:t('futureLevel'),value:(state.future&&state.future.last?t('level')+' '+state.future.reached:'—'),color:'#ffd36a'}
     ];
     var cw=474,ch=164,gap=24,startX=54,startY=375;
     for(var i=0;i<cards.length;i++){
@@ -247,22 +269,22 @@ function downloadImage(){
 
     var ev=eventState(state.totalAfter),last=ev.last,next=ev.next;
     panel(54,735,972,230,'rgba(14,39,66,.97)','rgba(122,240,194,.32)');
-    text('آخر مستوى وصلت إليه',540,782,29,'#7af0c2','bold');
+    text(t('lastLevel'),540,782,29,'#7af0c2','bold');
     if(last){
       text(cny(last.cny),540,845,48,'#ffffff','bold');
-      text('آخر مكافأة: '+fmt(last.bonus)+' نجمة',540,908,28,'#cfeaff','bold');
+      text(t('lastReward')+': '+fmt(last.bonus)+' '+t('starUnit'),540,908,28,'#cfeaff','bold');
     }else{
-      text('لم تصل لأول مستوى',540,860,38,'#ffffff','bold');
+      text(t('firstNotReached'),540,860,38,'#ffffff','bold');
     }
 
     panel(54,993,972,332,'rgba(14,39,66,.97)','rgba(255,211,106,.34)');
-    text('➡ المستوى القادم',540,1043,30,'#ffd36a','bold');
+    text('➡ '+t('nextLevel'),540,1043,30,'#ffd36a','bold');
     if(next){
       var remain=cny(Math.max(0,next.cny-state.totalAfter));
       var cols=[
-        {label:'المستوى القادم',value:cny(next.cny)},
-        {label:'المتبقي',value:remain},
-        {label:'الجائزة',value:fmt(next.bonus)+' نجمة'}
+        {label:t('nextLevel'),value:cny(next.cny)},
+        {label:t('remaining'),value:remain},
+        {label:t('reward'),value:fmt(next.bonus)+' '+t('starUnit')}
       ];
       for(var j=0;j<3;j++){
         var px=78+j*316;
@@ -270,14 +292,14 @@ function downloadImage(){
         text(cols[j].label,px+140,1118,22,'#a9c9df','bold');
         text(cols[j].value,px+140,1190,34,'#ffffff','bold');
       }
-      if(next.extra!=='—')text('هدية إضافية: '+next.extra,540,1277,23,'#7af0c2','bold');
+      if(next.extra)text(t('additionalGift')+': '+extraText(next.extra),540,1277,23,'#7af0c2','bold');
     }else{
-      text('وصلت إلى أعلى مستوى في الجدول',540,1160,38,'#ffffff','bold');
+      text(t('maxLevel'),540,1160,38,'#ffffff','bold');
     }
 
     panel(54,1353,972,94,'rgba(5,22,38,.94)','rgba(106,184,235,.22)');
     text('CRYPTO',150,1400,22,'#b8d9ef','bold','left');
-    text('جميع الحقوق محفوظة ©',930,1400,21,'#8fb2ca','normal','right');
+    text(t('rightsAr').replace(' CRYPTO',''),930,1400,21,'#8fb2ca','normal','right');
 
     saveCanvasImage(c,previewWindow);
   }
@@ -287,8 +309,8 @@ function downloadImage(){
 function resetAll(){id('paidAmount').value='';id('plannedAmount').value='';document.querySelectorAll('.pack-count').forEach(function(el){el.value='0'});calculate()}
 function showCalculator(){id('homePage').classList.add('hidden-page');id('calculatorPage').classList.remove('hidden-page');window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'','#calculator')}
 function showHome(){id('calculatorPage').classList.add('hidden-page');id('homePage').classList.remove('hidden-page');window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,' ',location.pathname+location.search)}
-window.addEventListener('DOMContentLoaded',function(){renderUsdPackages();id('paidAmount').addEventListener('input',calculate);id('plannedAmount').addEventListener('input',calculate);id('cnyModeBtn').addEventListener('click',function(){setInputMode('cny')});id('usdModeBtn').addEventListener('click',function(){setInputMode('usd')});id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;id('openCalculatorBtn').onclick=showCalculator;id('backHomeBtn').onclick=showHome;if(location.hash==='#calculator')showCalculator();calculate()});
+window.addEventListener('DOMContentLoaded',function(){id('languageSelect').addEventListener('change',function(){applyLanguage(this.value)});id('paidAmount').addEventListener('input',calculate);id('plannedAmount').addEventListener('input',calculate);id('cnyModeBtn').addEventListener('click',function(){setInputMode('cny')});id('usdModeBtn').addEventListener('click',function(){setInputMode('usd')});id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;id('openCalculatorBtn').onclick=showCalculator;id('backHomeBtn').onclick=showHome;if(location.hash==='#calculator')showCalculator();applyLanguage(currentLang)});
 </script>
-<div class="footer"><span class="app-version" id="appVersion">v2.1.2</span><strong>جميع الحقوق محفوظة © CRYPTO</strong><br><span>© All Rights Reserved | CRYPTO</span></div>
+<div class="footer"><span class="app-version" id="appVersion">v2.2.0</span><strong data-i18n="rightsAr">جميع الحقوق محفوظة © CRYPTO</strong><br><span data-i18n="rightsEn">© All Rights Reserved | CRYPTO</span></div>
 
 </body></html>
