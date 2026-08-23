@@ -31,7 +31,7 @@
 /* CRYPTO brand & quick links */
 .brand-tools{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;margin:14px 0}.crypto-brand{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(16,43,72,.98),rgba(5,18,32,.98));border:1px solid var(--line);border-radius:20px;padding:12px;min-height:150px}.crypto-brand img{width:100%;max-width:145px;aspect-ratio:1/1;object-fit:cover;border-radius:18px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}.quick-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick-link{display:flex;align-items:center;justify-content:center;gap:9px;min-height:68px;border-radius:16px;text-decoration:none;font-weight:900;font-size:15px;border:1px solid var(--line);transition:.2s transform,.2s border-color}.quick-link:hover{transform:translateY(-2px)}.quick-link.youtube{background:linear-gradient(135deg,rgba(255,59,59,.18),rgba(92,13,19,.25));color:#fff;border-color:rgba(255,95,109,.45)}.quick-link.game{background:linear-gradient(135deg,rgba(102,217,255,.14),rgba(21,76,116,.28));color:#dff7ff;border-color:rgba(102,217,255,.42)}.quick-link .ico{font-size:24px}.quick-links-note{grid-column:1/-1;color:var(--muted);font-size:12px;text-align:center;line-height:1.7}@media(max-width:560px){.brand-tools{grid-template-columns:1fr}.crypto-brand{min-height:auto}.crypto-brand img{max-width:120px}.quick-links{grid-template-columns:1fr 1fr}.quick-link{font-size:13px;min-height:60px}}
 
-/* v2.2.5 — الصفحة الرئيسية وبوابة الخدمات */
+/* v2.2.6 — الصفحة الرئيسية وبوابة الخدمات */
 .portal-page{max-width:980px;margin:0 auto;padding:28px 16px 44px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 .portal-shell{background:linear-gradient(145deg,rgba(10,31,53,.98),rgba(5,18,32,.98));border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.32);overflow:hidden;position:relative}
 .portal-shell:before{content:"";position:absolute;inset:-120px auto auto -120px;width:340px;height:340px;background:radial-gradient(circle,rgba(102,217,255,.14),transparent 65%);pointer-events:none}
@@ -41,7 +41,7 @@
 @media(max-width:650px){.portal-page{padding:16px 12px 28px;justify-content:flex-start}.portal-shell{padding:20px 14px;border-radius:22px}.portal-logo{width:118px;height:118px;border-radius:22px}.portal-grid{grid-template-columns:1fr}.portal-item{min-height:112px;padding:16px;flex-direction:row;align-items:center;justify-content:flex-start}.portal-item .portal-icon{flex:0 0 50px}.portal-item .portal-copy{flex:1}.calc-topbar{padding-top:4px}}
 
 
-/* v2.2.5 — توحيد بطاقات الصفحة الرئيسية والشعارات */
+/* v2.2.6 — توحيد بطاقات الصفحة الرئيسية والشعارات */
 .portal-item{font-family:Tahoma,Arial,sans-serif;direction:rtl;text-align:right}
 .portal-item .portal-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;width:100%;min-width:0;direction:rtl;text-align:right;line-height:1.4}
 .portal-item .portal-title{display:block;width:100%;font-family:Tahoma,Arial,sans-serif;font-size:19px;font-weight:900;line-height:1.45;color:var(--text);white-space:normal}
@@ -54,7 +54,7 @@
 @media(max-width:650px){.portal-item .portal-copy{align-items:flex-start}.portal-item .portal-title{font-size:18px}.portal-item .portal-desc{font-size:13px}}
 
 
-/* v2.2.5 — تعدد اللغات */
+/* v2.2.6 — تعدد اللغات */
 .language-switcher{position:fixed;top:14px;right:16px;z-index:12000;display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid rgba(102,217,255,.28);background:rgba(5,18,32,.88);backdrop-filter:blur(12px);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.24)}
 .language-switcher .lang-icon{font-size:18px;line-height:1}.language-switcher select{appearance:none;-webkit-appearance:none;border:0;outline:0;background:#0b2945;color:var(--text);border-radius:9px;padding:8px 28px 8px 10px;font:700 13px Tahoma,Arial,sans-serif;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,#9fc0d8 50%),linear-gradient(135deg,#9fc0d8 50%,transparent 50%);background-position:calc(100% - 13px) 50%,calc(100% - 8px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 html[dir="ltr"] body{text-align:left}html[dir="ltr"] .portal-item,html[dir="ltr"] .portal-item .portal-copy{direction:ltr;text-align:left;align-items:flex-start}html[dir="ltr"] th,html[dir="ltr"] td{text-align:left}html[dir="ltr"] .amount-entry>span{text-align:left}html[dir="ltr"] .notice-danger,html[dir="ltr"] .amount-help,html[dir="ltr"] .mode-note{text-align:left}html[dir="ltr"] .back-home{direction:ltr}html[dir="ltr"] .wa-support{direction:ltr}html[dir="ltr"] .wa-note{text-align:left}
@@ -65,7 +65,7 @@ html[lang="zh-CN"] body{font-family:"Microsoft YaHei","PingFang SC",Arial,sans-s
 </style>
 
 <style id="discord-white-fix">
-/* v2.2.5: force Discord logo glyph white */
+/* v2.2.6: force Discord logo glyph white */
 .discord-icon svg,
 .discord-icon svg *,
 .discord-card svg,
@@ -90,14 +90,14 @@ a[href*="discord"] svg * {
       <img class="portal-logo" src="https://files.catbox.moe/8ar014.png" alt="CRYPTO Gaming Logo">
       <h1>CRYPTO Gaming</h1>
       <p data-i18n="portalSubtitle">كل ما تحتاجه لـ Whiteout Survival في مكان واحد</p>
-      <span class="portal-version">v2.2.5</span>
+      <span class="portal-version">v2.2.6</span>
     </div>
     <div class="portal-grid" data-i18n-aria="mainServices" aria-label="الخدمات الرئيسية">
       <button type="button" class="portal-item calc" id="openCalculatorBtn">
         <span class="portal-icon">❄️</span>
         <span class="portal-copy"><span class="portal-title" data-i18n="calcTitle">حاسبة نجوم الصقيع</span><span class="portal-desc" data-i18n="calcDesc">احسب الشحن التراكمي والمستوى والمكافأة القادمة.</span></span>
       </button>
-      <a class="portal-item game" href="https://landing.cqxxzx3.com/?invite=94332H6s9MdnPGtgeL7" target="_blank" rel="noopener noreferrer">
+      <a class="portal-item game" href="https://h5-res.yingzeyib.com/?invite=94332H6s9MdnPGtgeL7" target="_blank" rel="noopener noreferrer">
         <span class="portal-icon">🎮</span>
         <span class="portal-copy"><span class="portal-title" data-i18n="downloadGame">تحميل اللعبة</span><span class="portal-desc" data-i18n="downloadDesc">فتح صفحة تحميل Whiteout Survival.</span></span>
       </a>
@@ -329,6 +329,6 @@ function showCalculator(){id('homePage').classList.add('hidden-page');id('calcul
 function showHome(){id('calculatorPage').classList.add('hidden-page');id('homePage').classList.remove('hidden-page');window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,' ',location.pathname+location.search)}
 window.addEventListener('DOMContentLoaded',function(){id('languageSelect').addEventListener('change',function(){applyLanguage(this.value)});id('paidAmount').addEventListener('input',calculate);id('plannedAmount').addEventListener('input',calculate);id('cnyModeBtn').addEventListener('click',function(){setInputMode('cny')});id('usdModeBtn').addEventListener('click',function(){setInputMode('usd')});id('shareBtn').onclick=shareResult;id('imageBtn').onclick=downloadImage;id('resetBtn').onclick=resetAll;id('openCalculatorBtn').onclick=showCalculator;id('backHomeBtn').onclick=showHome;if(location.hash==='#calculator')showCalculator();applyLanguage(currentLang)});
 </script>
-<div class="footer"><span class="app-version" id="appVersion">v2.2.5</span><strong data-i18n="rightsAr">جميع الحقوق محفوظة © CRYPTO</strong><br><span data-i18n="rightsEn">© All Rights Reserved | CRYPTO</span></div>
+<div class="footer"><span class="app-version" id="appVersion">v2.2.6</span><strong data-i18n="rightsAr">جميع الحقوق محفوظة © CRYPTO</strong><br><span data-i18n="rightsEn">© All Rights Reserved | CRYPTO</span></div>
 
 </body></html>
