@@ -204,6 +204,14 @@ html[lang="ar"] #expertsPage .expert-heading-kicker{letter-spacing:0;direction:r
 #expertsPage .expert-research-fact strong{font-size:17px;color:#e9d5a4;font-weight:800;margin-inline:4px;font-variant-numeric:tabular-nums}
 #expertsPage .expert-research-fact-hint{display:block;font-size:11px;color:#9ab4c5;margin-top:2px}
 </style>
+<style id="rally-integration-style">
+.portal-item.rally{border-color:rgba(215,182,111,.37)}
+.portal-item.rally .portal-icon{background:rgba(215,182,111,.13);border-color:rgba(215,182,111,.31)}
+.rally-center-page{max-width:1320px;margin:0 auto;padding:14px 15px 30px;min-height:100vh}
+.rally-center-page .rally-nav{padding-top:52px;margin-bottom:12px}
+.rally-embedded-frame{display:block;width:100%;height:calc(100dvh - 125px);min-height:720px;border:1px solid #263454;border-radius:17px;background:#090e1b}
+@media(max-width:650px){.rally-center-page{padding:10px 8px 20px}.rally-center-page .rally-nav{padding-top:52px}.rally-embedded-frame{height:calc(100dvh - 125px);min-height:640px;border-radius:12px}}
+</style>
 </head>
 <body>
 <div aria-label="Language" class="language-switcher"><span class="lang-icon">🌐</span><select aria-label="Language" id="languageSelect"><option value="ar">العربية</option><option value="en">English</option><option value="zh-CN">中文</option><option value="pt">Português</option><option value="tr">Türkçe</option></select></div>
@@ -225,6 +233,7 @@ html[lang="ar"] #expertsPage .expert-heading-kicker{letter-spacing:0;direction:r
 <span class="portal-icon">🎮</span>
 <span class="portal-copy"><span class="portal-title" data-i18n="downloadGame">تحميل اللعبة</span><span class="portal-desc" data-i18n="downloadDesc">فتح صفحة تحميل Whiteout Survival.</span></span>
 </a>
+<button class="portal-item rally" id="openRallyCenterBtn" type="button"><span class="portal-icon">⏱️</span><span class="portal-copy"><span class="portal-title" data-i18n="rallyCenterTitle">مركز قيادة الحشود</span><span class="portal-desc" data-i18n="rallyCenterDesc">حشود الكتائب والحصون والعد الصوتي.</span></span></button>
 <a class="portal-item youtube" href="https://www.youtube.com/@imbadwi288" rel="noopener noreferrer" target="_blank">
 <span aria-hidden="true" class="portal-icon"><img class="portal-brand-logo" alt="" width="32" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABmJLR0QA/wD/AP+gvaeTAAAJz0lEQVR4nO3dW2wc1RnA8f9snKsxjhMoEEIICQQBRSqXh1bqQ4ugErT0qReVS4VUCaSq4tK+oEpF6lPVpwIvFKlIhVaoPPSlSrmISqhVq4KqAhItUSFQEsilkMR2bMdxjDN9OLPe9Xp9WXt3zs7s/yeNZnd2Zv05OZ/PZWbOgCRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkqQYktgBFFUK64D+hs2bgPVNdl9o+2KmgFPL3D6ewHSL3y8KngBpKIDnENabgY3ZMpStNwADQF+2Lcn2q64BBoFK3f5k+5IdN1D3I6vHdrMUGKl7fxKYyV4PZ+vTwCRwFhjNto3UHXs2W38KjNXtP5ytJ7PPJwjJN9Gh36XjuuI/Mw0F7kLg/LplS8OymVBYB+teV2LEq3lmCIk2Qkio0ez1ibrlOPAJcCxbH0nmJmoUHU+ANBTSS4ErgF3ATmBHtlxMKPgbFjpepXYaOAIcAj4EDmTLe8B+4IMk1Eod0/YESEPB/jLwBeB64BpCG1hq1QTwNvBP4FXglQQOtvMHtCUBUtgK3APcBXyuHd8pLeAN4DfA00loWq3KqhIghYuAHwPfI3QipbycAn4F/CyBoyv9khUlQBpGR34I/IQwCiPFMgb8FHg0qY12LVvLCZDCbuB3wI2tHit10GvAHQm838pBLSVACrcCz1IbQ5e6yTDw7QReXu4Byx5HT0MH9w9Y+NW9hoA/pvCd5R6wrBoghTuBp4E1KwxMytMMcGcCzy2145IJkMJNwIvA2jYEJuXlDHBLAn9ZbKdFEyCF7cDrhEsTpKL5H3BdEs42N7VgHyANyfEMFn4V1wXAr9NF/tAv1gm+h3BJg1RkXwHuXujDppmRhpNb+wkZJBXdEeDypMn9FQvVAD/Awq/yuAj4frMP5tUAaRjtOZAdJJXFIWBnEm7ymdWsBvg6Fn6Vz8XA1xo3NkuAZZ9FkwpmXtme0wTKrvIcxis8VU4ngS31V4021gBXYuFXeZ0LXF6/oTEBrs0vFimKOWW8MQE+m2MgUgyLJsA1OQYixXB1/ZvGBLgaqdzmlPHZUaBsqr8JwkiQVFZngP7qCbH6GuByLPwqv3XAZdU39QlwZf6xSFHsqb5orAGkXmACqKfNlvX6BNgdIRAphtmyXp8AuyIEIsUwWwMkMHsPwCkcBVJvOANsSmCmWgNcgoVfvWMdsA1qTaCd0UKR4tgJtQTYES8OKYpLoJYA2yMGIsWwA2oJcEnEQIplzx64915Y4zSpBbcdagmwLWIgxTIwAE8+CW+9BbfeGjsardycTrAJ0KqrroLnn4eXX4arvYq8gOYkgNOgrNTNN8Obb8Jjj8HgYOxotHwXAVSy5/g6Ae5qrF0L998P770HDzxg/6AYLkghqRCequFJsHbYuhUefdT+QTGsB4YqhCe1q53sHxTF+RXgvNhRlJb9g253XoXwlHd1iv2DbrbVBMiL/YNutLXaCVZe7B90kyETIBb7B91gSwUffB2P/YPYBiuAf35is38Qy0AFGIgdhTL2D/J2rgnQjewf5GWgAvTHjkJN2D/IQ38F2Bg7Ci3C/kEnmQCFYf+gEzaaAEVj/6Cd1lcIl4WqSOwftMtGE6DI7B+s1roKYVpEFZn9g5VaWwGsP8vC/kGrTIDSsX/QijWNT4lUWdg/WI6KCVB29g8WZQL0CvsHTZkAvcT+wTwmgHqaE2L1kulpeOIJeOQRGB2NHU1XMAF6xd698OCDofmjWTaBym7fvjAMevvtFv4mTICyOn48/MW/9lp48cXY0XSrs33ADJ4NLg/b+a2YMQHKxHZ+q6YrhIcGq8hs56+UCVBotvNXa6oPmIodhVpkO79dTvcBk7GjUAts57fTVAUToBhs53fCpAnQ7Wznd9JEHzAeOwo1YTs/D+MmQDeynZ+X8QowFjsKZWzn5+1kBbB+jc12fiwn+4CR2FH0LNv5sZ3sA4ZjR9GTbOd3gxMV4ETsKHqK7fxuYgLkxnZ+NzrRBxyLHUWp2c7vZsf6gE9iR1Fae/fCQw/B/v2xI1FzxyrAx7GjKJ19++C220I738LfzY5VCKNAn8aOpBTq2/kvvBA7Gi1uChiuJHAWa4HVmZ6Gxx+H3bvD1IMzM7Ej0tKOJpBW5wU6AmyLGU1h2c4vqqNQmxblSMRAisl2ftEdhtrMcB9FDKRYxsbgvvvgqads6hTbR1BLgEMRAymWd94Ji4ruMNSaQB9GDESK4SDUEuBgxECkGA5ALQE+iBeHFMUBgAQgDX2BSZwuXb3hDLApgZkKQBLOBNsPUK84mIQ5cedMj/5+pGCkvM3eiFGfAJ7NUa9omgDenqReMfvH3hpAvWj2TGZ9AvwnQiBSDLMJkFRfpLAOmMChUJXbGaA/G/ms1QBJ+MCRIJXdu0ndDWCNT4n8d87BSHl7u/6NCaBes2gC/CvHQKQY5pTxxgR4K8dApBjmlPGk/k12UdwJYCDPiKScnAS2VK8DgoYaIOsdv5R3VFJOXqgv/DC/CQTwbE7BSHmbV7aTxg0prCXcIOM0KSqTD4FdScMkcPNqgASmgcfyikrKyS8aCz80qQEAUugnXBx3YaejknJwCLgiafJI4GZ9AJJwTdDDnY5KysnDzQo/LFADAKThs5eAWzoVlZSD5xP46kIfLpgAAClcDLwOfKbdUUk5OApcl2TzgDbTtAlUlYS207cIV4pKRTIFfGOxwg9LJABAAn8GvkvDCQSpi80Adybwt6V2XDIBABJ4DribMEQqdbMzwB0J/H45Oy/aB2iUws2EZNiygsCkTjsOfDOBV5Z7wLJqgKoE/gTcALzaYmBSp/0VuKGVwg8tJgBAEi6T+CLwI8LVdVJMo8CDwJeSbL7PVrTUBGqUhuHRh4F7CWePpbyMA78Efp6s4lnXq0qAqhSGCCNFdwE3tuM7pQX8A/gt8EwCI6v9srYkQL0UtgM3AZ8HrgeuAc5p989RTxgn3ML4BvB34JWkzY/zansCNJPCDmAPsAu4jJAklxIuud4GbMwjDnWdScKjig4T2u8fAf8lTNP5bpLDg1tySYClpDBIuPL0/Gw5L1tvITSvhoDN2TKYvR/ASby6xafAGOGh6yOEjukI4fba4Wz5mDBM+Um2HEm6YBClKxJgpdJQc5xDSIZBYBNh22ZgPaFj3k+Y9W6QMOo1lB1eXVe3b6BWE1W3kX1X9d/pXGBNZ36btqkWRggPQR/NXs9QK3CnCJcKVD9PCQW2uq7uO5XtOwGczvadzLaNZj9nfKErLYug0AkQWzo3USAkWrPRsD5an2hgjCY3cBAKY/21WWeTWiGXJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSpEL4P3FFWrt3OF+oAAAAAElFTkSuQmCC" /></span>
 <span class="portal-copy"><span class="portal-title"><span data-i18n="youtubeChannel">قناة</span> <span class="latin-brand">YouTube</span></span><span class="portal-desc" data-i18n="youtubeDesc">شروحات ومحتوى CRYPTO للعبة.</span></span>
@@ -299,6 +308,13 @@ html[lang="ar"] #expertsPage .expert-heading-kicker{letter-spacing:0;direction:r
 </div>
 </div>
 </div>
+<div id="ralliesPage" class="hidden-page rally-center-page">
+  <div class="calc-topbar rally-nav">
+    <button id="ralliesBackBtn" type="button" class="back-home"><span data-i18n="homeBack">← الصفحة الرئيسية</span></button>
+    <span class="mini-brand"><img alt="CRYPTO" src="https://files.catbox.moe/8ar014.png"/><b>CRYPTO</b></span>
+  </div>
+  <iframe id="ralliesFrame" title="مركز قيادة الحشود" class="rally-embedded-frame" loading="lazy"></iframe>
+</div>
 <div class="app hidden-page" id="calculatorPage">
 <div class="calc-topbar">
 <button class="back-home" id="backHomeBtn" type="button"><span data-i18n="homeBack">← الصفحة الرئيسية</span></button>
@@ -363,11 +379,11 @@ var inputMode='cny';
 var state={paid:0,planned:0,totalAfter:0,bonus:0,next:null,reached:0,current:null,future:null,mode:'cny',usdCounts:[],usdPlannedCounts:[],approxPaidUsd:0,approxPlannedUsd:0,approxTotalUsd:0};
 var currentLang=cryptoStorage.getItem('crypto_lang')||'ar';
 var I18N={
- ar:{portalSubtitle:'كل ما تحتاجه لـ Whiteout Survival في مكان واحد',mainServices:'الخدمات الرئيسية',calcTitle:'حاسبة نجوم الصقيع',calcDesc:'احسب الشحن التراكمي والمستوى والمكافأة القادمة.',downloadGame:'تحميل اللعبة',downloadDesc:'فتح صفحة تحميل Whiteout Survival.',youtubeChannel:'قناة',youtubeDesc:'شروحات ومحتوى CRYPTO للعبة.',tiktokChannel:'حساب',tiktokDesc:'تابع حساب CRYPTO على TikTok.',support:'دعم',whatsappDesc:'استفسارات اللعبة ومشاكل الشحن.',discordDesc:'انضم إلى سيرفر Discord للدعم والاستفسارات.',homeBack:'← الصفحة الرئيسية',heroTitle:'❄️ حاسبة نجوم الصقيع',heroDesc:'أدخل إجمالي مبلغ الشحن التراكمي باليوان الصيني (CNY)، والحاسبة تحدد مستواك والمكافأة القادمة تلقائيًا.',heroBadge:'الحساب الأساسي باليوان الصيني CNY — ويمكن تجميع الشحنات',entryTitle:'💳 كم إجمالي المبلغ الذي شحنته باليوان؟',inputHelp:'اختر طريقة الإدخال. <strong>اليوان هو الأدق</strong>، أما الدولار فيتم تحويله إلى قيمة الباقة الرسمية باليوان حسب نطاقات الأسعار المرصودة، وليس حسب سعر الصرف.',cumulativePolicy:'📌 سياسة التراكمي: تجمع جميع الشحنات، والمكافأة تُفتح عند بلوغ عتبة اليوان المحددة.',cnyMode:'¥ إدخال اليوان مباشرة',usdMode:'$ باقات الدولار التقريبية',paidAmount:'إجمالي المبلغ الذي شحنته',plannedAmount:'المبلغ الذي ستقوم بشحنه',usdHelp:'اختر عدد مرات شراء كل باقة. السعر بالدولار <strong>تقريبي</strong> وقد يتغير يوميًا، بينما الحاسبة تعتمد قيمة اليوان الثابتة المقابلة للباقة.',packApprox:'الباقة التقريبية',acceptedValue:'القيمة المعتمدة',purchased:'اشتريتها',willBuy:'سأشتري',usdExample:'مثال: باقة ≈ <b>$97</b> تُحسب دائمًا <b>¥648</b>، حتى لو ظهر سعرها الفعلي يومًا $96.29 أو $97.30.',shareResult:'📤 مشاركة النتيجة',saveImage:'🖼️ حفظ كصورة',reset:'🗑️ تصفير',resultTitle:'📊 النتيجة',totalCnyLabel:'إجمالي مبلغ الشحن باليوان',totalUsdLabel:'إجمالي مبلغ الشحن التقريبي بالدولار',reachedLevels:'عدد المستويات المحققة',totalBonusStars:'إجمالي النجوم المجانية التراكمية',currentLevelLabel:'المستوى الحالي',futureLevelLabel:'المستوى الذي ستصل إليه بعد الشحن',nextAfterNewTotal:'➡️ المستوى القادم بعد إجمالي الشحن الجديد',rewardLevels:'🎁 مستويات المكافآت',levelCny:'المستوى ¥',stars:'نجوم',gift:'الهدية',status:'الحالة',rightsAr:'جميع الحقوق محفوظة © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'إجمالي مبلغ الشحن الحالي باليوان الصيني',plannedAria:'المبلغ الذي ستقوم بشحنه باليوان الصيني',firstNotReached:'لم تصل لأول مستوى',level:'المستوى',approx:'تقريبًا',totalAfter:'الإجمالي بعد الشحن',reward:'الجائزة',starUnit:'نجمة',enterPlanned:'أدخل مبلغ الشحنة المتوقعة للمقارنة',nextLevel:'المستوى القادم',remainingAfter:'المتبقي بعد الشحن',maxLevel:'وصلت إلى أعلى مستوى في الجدول',currentPackages:'إجمالي الباقات الحالية',nextCharge:'الشحنة القادمة',battle:'طاغية المعركة (Battle Tyrant) ×1',dragon:"عرين التنين السري (Dragon's Slumber Realm) ×1",noGift:'—',shareTitle:'حاسبة نجوم الصقيع',copied:'تم نسخ النتيجة.',imageError:'تعذر إنشاء الصورة. حاول مرة أخرى.',imageShareTitle:'نتيجة حاسبة نجوم الصقيع',imageShareText:'نتيجة حساب نجوم الصقيع',imageReady:'تم فتح الصورة. اضغط عليها مطولًا ثم اختر حفظ الصورة أو تنزيلها.',preparing:'جارٍ تجهيز الصورة...',calcCnySubtitle:'الحساب التراكمي باليوان الصيني CNY',currentCharge:'إجمالي الشحن الحالي',plannedCharge:'مبلغ الشحنة القادمة',futureLevel:'المستوى الذي ستصل إليه',lastLevel:'آخر مستوى وصلت إليه',lastReward:'آخر مكافأة',additionalGift:'هدية إضافية',remaining:'المتبقي',cumulativeUsdNotice:'🔄 تم احتساب باقات الدولار حسب قيمة اليوان الثابتة لكل باقة'},
- en:{portalSubtitle:'Everything you need for Whiteout Survival in one place',mainServices:'Main services',calcTitle:'Frost Star Calculator',calcDesc:'Calculate cumulative top-up, your level, and the next reward.',downloadGame:'Download Game',downloadDesc:'Open the Whiteout Survival download page.',youtubeChannel:'YouTube Channel',youtubeDesc:'CRYPTO guides and game content.',tiktokChannel:'TikTok Account',tiktokDesc:'Follow CRYPTO on TikTok.',support:'Support',whatsappDesc:'Game questions and top-up support.',discordDesc:'Join the Discord server for support and inquiries.',homeBack:'← Home',heroTitle:'❄️ Frost Star Calculator',heroDesc:'Enter your cumulative top-up amount in Chinese yuan (CNY), and the calculator will automatically determine your level and next reward.',heroBadge:'Base calculation in Chinese yuan CNY — top-ups can be accumulated',entryTitle:'💳 What is your total top-up amount in yuan?',inputHelp:'Choose an input method. <strong>Yuan is the most accurate</strong>. USD packages are mapped to their official yuan package values based on observed price ranges, not exchange rates.',cumulativePolicy:'📌 Cumulative policy: all top-ups add together, and rewards unlock when the specified yuan threshold is reached.',cnyMode:'¥ Enter Yuan Directly',usdMode:'$ Approx. USD Packages',paidAmount:'Total amount already topped up',plannedAmount:'Amount you plan to top up',usdHelp:'Choose how many times each package was purchased. The USD price is <strong>approximate</strong> and may change daily; the calculator uses the package’s fixed yuan value.',packApprox:'Approx. Package',acceptedValue:'Yuan Value',purchased:'Purchased',willBuy:'Will Buy',usdExample:'Example: the ≈ <b>$97</b> package always counts as <b>¥648</b>, even if its actual price is $96.29 or $97.30 on a given day.',shareResult:'📤 Share Result',saveImage:'🖼️ Save as Image',reset:'🗑️ Reset',resultTitle:'📊 Result',totalCnyLabel:'Total top-up amount in yuan',totalUsdLabel:'Approx. total top-up in USD',reachedLevels:'Levels reached',totalBonusStars:'Total cumulative bonus Frost Stars',currentLevelLabel:'Current level',futureLevelLabel:'Level you will reach after top-up',nextAfterNewTotal:'➡️ Next level after the new total',rewardLevels:'🎁 Reward Levels',levelCny:'Level ¥',stars:'Stars',gift:'Gift',status:'Status',rightsAr:'All Rights Reserved © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Current cumulative top-up amount in Chinese yuan',plannedAria:'Planned top-up amount in Chinese yuan',firstNotReached:'No level reached yet',level:'Level',approx:'approx.',totalAfter:'Total after top-up',reward:'Reward',starUnit:'Frost Stars',enterPlanned:'Enter a planned top-up to compare',nextLevel:'Next level',remainingAfter:'Remaining after top-up',maxLevel:'You reached the highest level in the table',currentPackages:'Current packages total',nextCharge:'Next top-up',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Calculator',copied:'Result copied.',imageError:'Could not create the image. Please try again.',imageShareTitle:'Frost Star Calculator Result',imageShareText:'Frost Star calculation result',imageReady:'The image is open. Press and hold it, then choose Save Image or Download.',preparing:'Preparing image...',calcCnySubtitle:'Cumulative calculation in Chinese yuan (CNY)',currentCharge:'Current top-up total',plannedCharge:'Planned top-up',futureLevel:'Level you will reach',lastLevel:'Last level reached',lastReward:'Last reward',additionalGift:'Additional gift',remaining:'Remaining',cumulativeUsdNotice:'🔄 USD packages were calculated using each package’s fixed yuan value'},
- 'zh-CN':{portalSubtitle:'Whiteout Survival 所需内容，一站式获取',mainServices:'主要服务',calcTitle:'霜星累计充值计算器',calcDesc:'计算累计充值、当前等级和下一档奖励。',downloadGame:'下载游戏',downloadDesc:'打开 Whiteout Survival 下载页面。',youtubeChannel:'YouTube 频道',youtubeDesc:'CRYPTO 游戏攻略与内容。',tiktokChannel:'TikTok 账号',tiktokDesc:'在 TikTok 上关注 CRYPTO。',support:'客服支持',whatsappDesc:'游戏咨询与充值问题支持。',discordDesc:'加入 Discord 服务器获取支持和咨询。',homeBack:'← 返回首页',heroTitle:'❄️ 霜星累计充值计算器',heroDesc:'输入以人民币（CNY）计算的累计充值金额，系统会自动判断当前等级和下一档奖励。',heroBadge:'以人民币 CNY 为基础计算 — 多次充值可累计',entryTitle:'💳 您累计充值了多少人民币？',inputHelp:'请选择输入方式。<strong>人民币最准确</strong>；美元礼包会根据已观察到的价格区间映射为官方人民币礼包金额，而不是按汇率换算。',cumulativePolicy:'📌 累计规则：所有充值金额可以累计，达到指定人民币门槛后解锁奖励。',cnyMode:'¥ 直接输入人民币',usdMode:'$ 美元礼包（估算）',paidAmount:'已充值总额',plannedAmount:'计划充值金额',usdHelp:'选择每个礼包的购买次数。美元价格为<strong>估算值</strong>且可能每日变化；计算器按礼包对应的固定人民币金额计算。',packApprox:'估算礼包',acceptedValue:'人民币金额',purchased:'已购买',willBuy:'计划购买',usdExample:'示例：约 <b>$97</b> 的礼包始终按 <b>¥648</b> 计算，即使当天实际显示为 $96.29 或 $97.30。',shareResult:'📤 分享结果',saveImage:'🖼️ 保存图片',reset:'🗑️ 重置',resultTitle:'📊 计算结果',totalCnyLabel:'人民币累计充值总额',totalUsdLabel:'美元累计充值估算总额',reachedLevels:'已达成等级数',totalBonusStars:'累计赠送霜星总数',currentLevelLabel:'当前等级',futureLevelLabel:'充值后将达到的等级',nextAfterNewTotal:'➡️ 新总额后的下一等级',rewardLevels:'🎁 奖励等级',levelCny:'等级 ¥',stars:'霜星',gift:'额外奖励',status:'状态',rightsAr:'版权所有 © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'当前人民币累计充值金额',plannedAria:'计划充值的人民币金额',firstNotReached:'尚未达到第一档',level:'等级',approx:'约',totalAfter:'充值后总额',reward:'奖励',starUnit:'霜星',enterPlanned:'输入计划充值金额进行对比',nextLevel:'下一等级',remainingAfter:'充值后还差',maxLevel:'已达到表格中的最高等级',currentPackages:'当前礼包合计',nextCharge:'下一次充值',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'霜星累计充值计算器',copied:'结果已复制。',imageError:'无法生成图片，请重试。',imageShareTitle:'霜星计算结果',imageShareText:'霜星累计充值计算结果',imageReady:'图片已打开。长按图片后选择保存或下载。',preparing:'正在生成图片...',calcCnySubtitle:'按人民币 CNY 计算累计充值',currentCharge:'当前累计充值',plannedCharge:'计划充值',futureLevel:'充值后等级',lastLevel:'最近达到的等级',lastReward:'最近奖励',additionalGift:'额外奖励',remaining:'还差',cumulativeUsdNotice:'🔄 美元礼包按每个礼包固定的人民币金额计算'},
- pt:{portalSubtitle:'Tudo o que você precisa para Whiteout Survival em um só lugar',mainServices:'Serviços principais',calcTitle:'Calculadora de Frost Stars',calcDesc:'Calcule recarga acumulada, nível e próxima recompensa.',downloadGame:'Baixar o jogo',downloadDesc:'Abrir a página de download do Whiteout Survival.',youtubeChannel:'Canal do YouTube',youtubeDesc:'Guias e conteúdo CRYPTO sobre o jogo.',support:'Suporte',whatsappDesc:'Dúvidas sobre o jogo e problemas de recarga.',discordDesc:'Entre no servidor do Discord para suporte e dúvidas.',homeBack:'← Início',heroTitle:'❄️ Calculadora de Frost Stars',heroDesc:'Informe o valor acumulado de recarga em yuan chinês (CNY) e a calculadora identifica automaticamente seu nível e a próxima recompensa.',heroBadge:'Cálculo base em yuan chinês CNY — as recargas podem ser acumuladas',entryTitle:'💳 Qual é o total recarregado em yuan?',inputHelp:'Escolha o método de entrada. <strong>O yuan é o mais preciso</strong>. Os pacotes em dólar são associados ao valor oficial em yuan conforme faixas de preço observadas, e não pela taxa de câmbio.',cumulativePolicy:'📌 Regra acumulativa: todas as recargas são somadas e a recompensa é liberada ao atingir o limite em yuan.',cnyMode:'¥ Inserir Yuan Diretamente',usdMode:'$ Pacotes USD aproximados',paidAmount:'Total já recarregado',plannedAmount:'Valor que pretende recarregar',usdHelp:'Escolha quantas vezes cada pacote foi comprado. O preço em dólar é <strong>aproximado</strong> e pode variar diariamente; o cálculo usa o valor fixo em yuan do pacote.',packApprox:'Pacote aproximado',acceptedValue:'Valor em Yuan',purchased:'Comprado',willBuy:'Vou comprar',usdExample:'Exemplo: o pacote de ≈ <b>$97</b> sempre conta como <b>¥648</b>, mesmo que apareça por $96.29 ou $97.30 em outro dia.',shareResult:'📤 Compartilhar resultado',saveImage:'🖼️ Salvar como imagem',reset:'🗑️ Zerar',resultTitle:'📊 Resultado',totalCnyLabel:'Total de recarga em yuan',totalUsdLabel:'Total aproximado de recarga em USD',reachedLevels:'Níveis alcançados',totalBonusStars:'Total de Frost Stars bônus acumuladas',currentLevelLabel:'Nível atual',futureLevelLabel:'Nível após a próxima recarga',nextAfterNewTotal:'➡️ Próximo nível após o novo total',rewardLevels:'🎁 Níveis de recompensa',levelCny:'Nível ¥',stars:'Estrelas',gift:'Presente',status:'Status',rightsAr:'Todos os direitos reservados © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Valor acumulado atual em yuan chinês',plannedAria:'Valor planejado de recarga em yuan chinês',firstNotReached:'Ainda não atingiu o primeiro nível',level:'Nível',approx:'aprox.',totalAfter:'Total após recarga',reward:'Recompensa',starUnit:'Frost Stars',enterPlanned:'Informe uma recarga planejada para comparar',nextLevel:'Próximo nível',remainingAfter:'Falta após a recarga',maxLevel:'Você atingiu o nível máximo da tabela',currentPackages:'Total dos pacotes atuais',nextCharge:'Próxima recarga',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Calculadora de Frost Stars',copied:'Resultado copiado.',imageError:'Não foi possível criar a imagem. Tente novamente.',imageShareTitle:'Resultado da Calculadora de Frost Stars',imageShareText:'Resultado do cálculo de Frost Stars',imageReady:'A imagem foi aberta. Pressione e segure e escolha Salvar imagem ou Baixar.',preparing:'Preparando imagem...',calcCnySubtitle:'Cálculo acumulado em yuan chinês CNY',currentCharge:'Recarga atual',plannedCharge:'Próxima recarga',futureLevel:'Nível que será alcançado',lastLevel:'Último nível alcançado',lastReward:'Última recompensa',additionalGift:'Presente adicional',remaining:'Falta',cumulativeUsdNotice:'🔄 Os pacotes em USD foram calculados pelo valor fixo em yuan de cada pacote'},
- tr:{portalSubtitle:'Whiteout Survival için ihtiyacınız olan her şey tek yerde',mainServices:'Ana hizmetler',calcTitle:'Frost Star Hesaplayıcı',calcDesc:'Kümülatif yüklemeyi, seviyenizi ve sonraki ödülü hesaplayın.',downloadGame:'Oyunu İndir',downloadDesc:'Whiteout Survival indirme sayfasını aç.',youtubeChannel:'YouTube Kanalı',youtubeDesc:'CRYPTO oyun rehberleri ve içerikleri.',tiktokChannel:'TikTok Hesabı',tiktokDesc:'CRYPTO\'yu TikTok\'ta takip edin.',support:'Destek',whatsappDesc:'Oyun soruları ve yükleme sorunları için destek.',discordDesc:'Destek ve sorular için Discord sunucusuna katılın.',homeBack:'← Ana Sayfa',heroTitle:'❄️ Frost Star Hesaplayıcı',heroDesc:'Kümülatif yükleme tutarınızı Çin yuanı (CNY) olarak girin; hesaplayıcı seviyenizi ve sonraki ödülü otomatik belirler.',heroBadge:'Temel hesaplama Çin yuanı CNY ile yapılır — yüklemeler biriktirilebilir',entryTitle:'💳 Toplam kaç yuan yüklediniz?',inputHelp:'Giriş yöntemini seçin. <strong>Yuan en doğru yöntemdir</strong>. USD paketleri döviz kuruna göre değil, gözlemlenen fiyat aralıklarına göre resmi yuan paket değerine eşleştirilir.',cumulativePolicy:'📌 Kümülatif kural: tüm yüklemeler toplanır ve belirlenen yuan eşiğine ulaşıldığında ödül açılır.',cnyMode:'¥ Yuanı Doğrudan Gir',usdMode:'$ Yaklaşık USD Paketleri',paidAmount:'Şimdiye kadar yüklenen toplam',plannedAmount:'Yüklemeyi planladığınız tutar',usdHelp:'Her paketin kaç kez satın alındığını seçin. USD fiyatı <strong>yaklaşıktır</strong> ve günlük değişebilir; hesaplayıcı paketin sabit yuan değerini kullanır.',packApprox:'Yaklaşık Paket',acceptedValue:'Yuan Değeri',purchased:'Satın Alındı',willBuy:'Alacağım',usdExample:'Örnek: ≈ <b>$97</b> paket her zaman <b>¥648</b> sayılır; gerçek fiyat bir gün $96.29 veya $97.30 görünse bile.',shareResult:'📤 Sonucu Paylaş',saveImage:'🖼️ Görsel Olarak Kaydet',reset:'🗑️ Sıfırla',resultTitle:'📊 Sonuç',totalCnyLabel:'Yuan cinsinden toplam yükleme',totalUsdLabel:'USD cinsinden yaklaşık toplam yükleme',reachedLevels:'Ulaşılan seviye sayısı',totalBonusStars:'Toplam kümülatif bonus Frost Star',currentLevelLabel:'Mevcut seviye',futureLevelLabel:'Yükleme sonrası ulaşılacak seviye',nextAfterNewTotal:'➡️ Yeni toplamdan sonraki seviye',rewardLevels:'🎁 Ödül Seviyeleri',levelCny:'Seviye ¥',stars:'Yıldız',gift:'Hediye',status:'Durum',rightsAr:'Tüm hakları saklıdır © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Çin yuanı cinsinden mevcut kümülatif yükleme',plannedAria:'Çin yuanı cinsinden planlanan yükleme',firstNotReached:'Henüz ilk seviyeye ulaşılmadı',level:'Seviye',approx:'yaklaşık',totalAfter:'Yükleme sonrası toplam',reward:'Ödül',starUnit:'Frost Star',enterPlanned:'Karşılaştırmak için planlanan yüklemeyi girin',nextLevel:'Sonraki seviye',remainingAfter:'Yükleme sonrası kalan',maxLevel:'Tablodaki en yüksek seviyeye ulaştınız',currentPackages:'Mevcut paket toplamı',nextCharge:'Sonraki yükleme',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Hesaplayıcı',copied:'Sonuç kopyalandı.',imageError:'Görsel oluşturulamadı. Tekrar deneyin.',imageShareTitle:'Frost Star Hesaplama Sonucu',imageShareText:'Frost Star hesaplama sonucu',imageReady:'Görsel açıldı. Uzun basıp Görseli Kaydet veya İndir seçeneğini kullanın.',preparing:'Görsel hazırlanıyor...',calcCnySubtitle:'Çin yuanı CNY ile kümülatif hesaplama',currentCharge:'Mevcut yükleme toplamı',plannedCharge:'Planlanan yükleme',futureLevel:'Ulaşılacak seviye',lastLevel:'Ulaşılan son seviye',lastReward:'Son ödül',additionalGift:'Ek hediye',remaining:'Kalan',cumulativeUsdNotice:'🔄 USD paketleri, her paketin sabit yuan değeriyle hesaplandı'}
+ ar:{rallyCenterTitle:'مركز قيادة الحشود',rallyCenterDesc:'حشود الكتائب والحصون والعد الصوتي.',portalSubtitle:'كل ما تحتاجه لـ Whiteout Survival في مكان واحد',mainServices:'الخدمات الرئيسية',calcTitle:'حاسبة نجوم الصقيع',calcDesc:'احسب الشحن التراكمي والمستوى والمكافأة القادمة.',downloadGame:'تحميل اللعبة',downloadDesc:'فتح صفحة تحميل Whiteout Survival.',youtubeChannel:'قناة',youtubeDesc:'شروحات ومحتوى CRYPTO للعبة.',tiktokChannel:'حساب',tiktokDesc:'تابع حساب CRYPTO على TikTok.',support:'دعم',whatsappDesc:'استفسارات اللعبة ومشاكل الشحن.',discordDesc:'انضم إلى سيرفر Discord للدعم والاستفسارات.',homeBack:'← الصفحة الرئيسية',heroTitle:'❄️ حاسبة نجوم الصقيع',heroDesc:'أدخل إجمالي مبلغ الشحن التراكمي باليوان الصيني (CNY)، والحاسبة تحدد مستواك والمكافأة القادمة تلقائيًا.',heroBadge:'الحساب الأساسي باليوان الصيني CNY — ويمكن تجميع الشحنات',entryTitle:'💳 كم إجمالي المبلغ الذي شحنته باليوان؟',inputHelp:'اختر طريقة الإدخال. <strong>اليوان هو الأدق</strong>، أما الدولار فيتم تحويله إلى قيمة الباقة الرسمية باليوان حسب نطاقات الأسعار المرصودة، وليس حسب سعر الصرف.',cumulativePolicy:'📌 سياسة التراكمي: تجمع جميع الشحنات، والمكافأة تُفتح عند بلوغ عتبة اليوان المحددة.',cnyMode:'¥ إدخال اليوان مباشرة',usdMode:'$ باقات الدولار التقريبية',paidAmount:'إجمالي المبلغ الذي شحنته',plannedAmount:'المبلغ الذي ستقوم بشحنه',usdHelp:'اختر عدد مرات شراء كل باقة. السعر بالدولار <strong>تقريبي</strong> وقد يتغير يوميًا، بينما الحاسبة تعتمد قيمة اليوان الثابتة المقابلة للباقة.',packApprox:'الباقة التقريبية',acceptedValue:'القيمة المعتمدة',purchased:'اشتريتها',willBuy:'سأشتري',usdExample:'مثال: باقة ≈ <b>$97</b> تُحسب دائمًا <b>¥648</b>، حتى لو ظهر سعرها الفعلي يومًا $96.29 أو $97.30.',shareResult:'📤 مشاركة النتيجة',saveImage:'🖼️ حفظ كصورة',reset:'🗑️ تصفير',resultTitle:'📊 النتيجة',totalCnyLabel:'إجمالي مبلغ الشحن باليوان',totalUsdLabel:'إجمالي مبلغ الشحن التقريبي بالدولار',reachedLevels:'عدد المستويات المحققة',totalBonusStars:'إجمالي النجوم المجانية التراكمية',currentLevelLabel:'المستوى الحالي',futureLevelLabel:'المستوى الذي ستصل إليه بعد الشحن',nextAfterNewTotal:'➡️ المستوى القادم بعد إجمالي الشحن الجديد',rewardLevels:'🎁 مستويات المكافآت',levelCny:'المستوى ¥',stars:'نجوم',gift:'الهدية',status:'الحالة',rightsAr:'جميع الحقوق محفوظة © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'إجمالي مبلغ الشحن الحالي باليوان الصيني',plannedAria:'المبلغ الذي ستقوم بشحنه باليوان الصيني',firstNotReached:'لم تصل لأول مستوى',level:'المستوى',approx:'تقريبًا',totalAfter:'الإجمالي بعد الشحن',reward:'الجائزة',starUnit:'نجمة',enterPlanned:'أدخل مبلغ الشحنة المتوقعة للمقارنة',nextLevel:'المستوى القادم',remainingAfter:'المتبقي بعد الشحن',maxLevel:'وصلت إلى أعلى مستوى في الجدول',currentPackages:'إجمالي الباقات الحالية',nextCharge:'الشحنة القادمة',battle:'طاغية المعركة (Battle Tyrant) ×1',dragon:"عرين التنين السري (Dragon's Slumber Realm) ×1",noGift:'—',shareTitle:'حاسبة نجوم الصقيع',copied:'تم نسخ النتيجة.',imageError:'تعذر إنشاء الصورة. حاول مرة أخرى.',imageShareTitle:'نتيجة حاسبة نجوم الصقيع',imageShareText:'نتيجة حساب نجوم الصقيع',imageReady:'تم فتح الصورة. اضغط عليها مطولًا ثم اختر حفظ الصورة أو تنزيلها.',preparing:'جارٍ تجهيز الصورة...',calcCnySubtitle:'الحساب التراكمي باليوان الصيني CNY',currentCharge:'إجمالي الشحن الحالي',plannedCharge:'مبلغ الشحنة القادمة',futureLevel:'المستوى الذي ستصل إليه',lastLevel:'آخر مستوى وصلت إليه',lastReward:'آخر مكافأة',additionalGift:'هدية إضافية',remaining:'المتبقي',cumulativeUsdNotice:'🔄 تم احتساب باقات الدولار حسب قيمة اليوان الثابتة لكل باقة'},
+ en:{rallyCenterTitle:'Rally Command Center',rallyCenterDesc:'Team and fortress rallies with voice countdowns.',portalSubtitle:'Everything you need for Whiteout Survival in one place',mainServices:'Main services',calcTitle:'Frost Star Calculator',calcDesc:'Calculate cumulative top-up, your level, and the next reward.',downloadGame:'Download Game',downloadDesc:'Open the Whiteout Survival download page.',youtubeChannel:'YouTube Channel',youtubeDesc:'CRYPTO guides and game content.',tiktokChannel:'TikTok Account',tiktokDesc:'Follow CRYPTO on TikTok.',support:'Support',whatsappDesc:'Game questions and top-up support.',discordDesc:'Join the Discord server for support and inquiries.',homeBack:'← Home',heroTitle:'❄️ Frost Star Calculator',heroDesc:'Enter your cumulative top-up amount in Chinese yuan (CNY), and the calculator will automatically determine your level and next reward.',heroBadge:'Base calculation in Chinese yuan CNY — top-ups can be accumulated',entryTitle:'💳 What is your total top-up amount in yuan?',inputHelp:'Choose an input method. <strong>Yuan is the most accurate</strong>. USD packages are mapped to their official yuan package values based on observed price ranges, not exchange rates.',cumulativePolicy:'📌 Cumulative policy: all top-ups add together, and rewards unlock when the specified yuan threshold is reached.',cnyMode:'¥ Enter Yuan Directly',usdMode:'$ Approx. USD Packages',paidAmount:'Total amount already topped up',plannedAmount:'Amount you plan to top up',usdHelp:'Choose how many times each package was purchased. The USD price is <strong>approximate</strong> and may change daily; the calculator uses the package’s fixed yuan value.',packApprox:'Approx. Package',acceptedValue:'Yuan Value',purchased:'Purchased',willBuy:'Will Buy',usdExample:'Example: the ≈ <b>$97</b> package always counts as <b>¥648</b>, even if its actual price is $96.29 or $97.30 on a given day.',shareResult:'📤 Share Result',saveImage:'🖼️ Save as Image',reset:'🗑️ Reset',resultTitle:'📊 Result',totalCnyLabel:'Total top-up amount in yuan',totalUsdLabel:'Approx. total top-up in USD',reachedLevels:'Levels reached',totalBonusStars:'Total cumulative bonus Frost Stars',currentLevelLabel:'Current level',futureLevelLabel:'Level you will reach after top-up',nextAfterNewTotal:'➡️ Next level after the new total',rewardLevels:'🎁 Reward Levels',levelCny:'Level ¥',stars:'Stars',gift:'Gift',status:'Status',rightsAr:'All Rights Reserved © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Current cumulative top-up amount in Chinese yuan',plannedAria:'Planned top-up amount in Chinese yuan',firstNotReached:'No level reached yet',level:'Level',approx:'approx.',totalAfter:'Total after top-up',reward:'Reward',starUnit:'Frost Stars',enterPlanned:'Enter a planned top-up to compare',nextLevel:'Next level',remainingAfter:'Remaining after top-up',maxLevel:'You reached the highest level in the table',currentPackages:'Current packages total',nextCharge:'Next top-up',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Calculator',copied:'Result copied.',imageError:'Could not create the image. Please try again.',imageShareTitle:'Frost Star Calculator Result',imageShareText:'Frost Star calculation result',imageReady:'The image is open. Press and hold it, then choose Save Image or Download.',preparing:'Preparing image...',calcCnySubtitle:'Cumulative calculation in Chinese yuan (CNY)',currentCharge:'Current top-up total',plannedCharge:'Planned top-up',futureLevel:'Level you will reach',lastLevel:'Last level reached',lastReward:'Last reward',additionalGift:'Additional gift',remaining:'Remaining',cumulativeUsdNotice:'🔄 USD packages were calculated using each package’s fixed yuan value'},
+ 'zh-CN':{rallyCenterTitle:'集结指挥中心',rallyCenterDesc:'管理队伍与要塞集结和语音倒计时。',portalSubtitle:'Whiteout Survival 所需内容，一站式获取',mainServices:'主要服务',calcTitle:'霜星累计充值计算器',calcDesc:'计算累计充值、当前等级和下一档奖励。',downloadGame:'下载游戏',downloadDesc:'打开 Whiteout Survival 下载页面。',youtubeChannel:'YouTube 频道',youtubeDesc:'CRYPTO 游戏攻略与内容。',tiktokChannel:'TikTok 账号',tiktokDesc:'在 TikTok 上关注 CRYPTO。',support:'客服支持',whatsappDesc:'游戏咨询与充值问题支持。',discordDesc:'加入 Discord 服务器获取支持和咨询。',homeBack:'← 返回首页',heroTitle:'❄️ 霜星累计充值计算器',heroDesc:'输入以人民币（CNY）计算的累计充值金额，系统会自动判断当前等级和下一档奖励。',heroBadge:'以人民币 CNY 为基础计算 — 多次充值可累计',entryTitle:'💳 您累计充值了多少人民币？',inputHelp:'请选择输入方式。<strong>人民币最准确</strong>；美元礼包会根据已观察到的价格区间映射为官方人民币礼包金额，而不是按汇率换算。',cumulativePolicy:'📌 累计规则：所有充值金额可以累计，达到指定人民币门槛后解锁奖励。',cnyMode:'¥ 直接输入人民币',usdMode:'$ 美元礼包（估算）',paidAmount:'已充值总额',plannedAmount:'计划充值金额',usdHelp:'选择每个礼包的购买次数。美元价格为<strong>估算值</strong>且可能每日变化；计算器按礼包对应的固定人民币金额计算。',packApprox:'估算礼包',acceptedValue:'人民币金额',purchased:'已购买',willBuy:'计划购买',usdExample:'示例：约 <b>$97</b> 的礼包始终按 <b>¥648</b> 计算，即使当天实际显示为 $96.29 或 $97.30。',shareResult:'📤 分享结果',saveImage:'🖼️ 保存图片',reset:'🗑️ 重置',resultTitle:'📊 计算结果',totalCnyLabel:'人民币累计充值总额',totalUsdLabel:'美元累计充值估算总额',reachedLevels:'已达成等级数',totalBonusStars:'累计赠送霜星总数',currentLevelLabel:'当前等级',futureLevelLabel:'充值后将达到的等级',nextAfterNewTotal:'➡️ 新总额后的下一等级',rewardLevels:'🎁 奖励等级',levelCny:'等级 ¥',stars:'霜星',gift:'额外奖励',status:'状态',rightsAr:'版权所有 © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'当前人民币累计充值金额',plannedAria:'计划充值的人民币金额',firstNotReached:'尚未达到第一档',level:'等级',approx:'约',totalAfter:'充值后总额',reward:'奖励',starUnit:'霜星',enterPlanned:'输入计划充值金额进行对比',nextLevel:'下一等级',remainingAfter:'充值后还差',maxLevel:'已达到表格中的最高等级',currentPackages:'当前礼包合计',nextCharge:'下一次充值',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'霜星累计充值计算器',copied:'结果已复制。',imageError:'无法生成图片，请重试。',imageShareTitle:'霜星计算结果',imageShareText:'霜星累计充值计算结果',imageReady:'图片已打开。长按图片后选择保存或下载。',preparing:'正在生成图片...',calcCnySubtitle:'按人民币 CNY 计算累计充值',currentCharge:'当前累计充值',plannedCharge:'计划充值',futureLevel:'充值后等级',lastLevel:'最近达到的等级',lastReward:'最近奖励',additionalGift:'额外奖励',remaining:'还差',cumulativeUsdNotice:'🔄 美元礼包按每个礼包固定的人民币金额计算'},
+ pt:{rallyCenterTitle:'Centro de Comando de Rallys',rallyCenterDesc:'Rallys de equipes e fortalezas com contagem por voz.',portalSubtitle:'Tudo o que você precisa para Whiteout Survival em um só lugar',mainServices:'Serviços principais',calcTitle:'Calculadora de Frost Stars',calcDesc:'Calcule recarga acumulada, nível e próxima recompensa.',downloadGame:'Baixar o jogo',downloadDesc:'Abrir a página de download do Whiteout Survival.',youtubeChannel:'Canal do YouTube',youtubeDesc:'Guias e conteúdo CRYPTO sobre o jogo.',support:'Suporte',whatsappDesc:'Dúvidas sobre o jogo e problemas de recarga.',discordDesc:'Entre no servidor do Discord para suporte e dúvidas.',homeBack:'← Início',heroTitle:'❄️ Calculadora de Frost Stars',heroDesc:'Informe o valor acumulado de recarga em yuan chinês (CNY) e a calculadora identifica automaticamente seu nível e a próxima recompensa.',heroBadge:'Cálculo base em yuan chinês CNY — as recargas podem ser acumuladas',entryTitle:'💳 Qual é o total recarregado em yuan?',inputHelp:'Escolha o método de entrada. <strong>O yuan é o mais preciso</strong>. Os pacotes em dólar são associados ao valor oficial em yuan conforme faixas de preço observadas, e não pela taxa de câmbio.',cumulativePolicy:'📌 Regra acumulativa: todas as recargas são somadas e a recompensa é liberada ao atingir o limite em yuan.',cnyMode:'¥ Inserir Yuan Diretamente',usdMode:'$ Pacotes USD aproximados',paidAmount:'Total já recarregado',plannedAmount:'Valor que pretende recarregar',usdHelp:'Escolha quantas vezes cada pacote foi comprado. O preço em dólar é <strong>aproximado</strong> e pode variar diariamente; o cálculo usa o valor fixo em yuan do pacote.',packApprox:'Pacote aproximado',acceptedValue:'Valor em Yuan',purchased:'Comprado',willBuy:'Vou comprar',usdExample:'Exemplo: o pacote de ≈ <b>$97</b> sempre conta como <b>¥648</b>, mesmo que apareça por $96.29 ou $97.30 em outro dia.',shareResult:'📤 Compartilhar resultado',saveImage:'🖼️ Salvar como imagem',reset:'🗑️ Zerar',resultTitle:'📊 Resultado',totalCnyLabel:'Total de recarga em yuan',totalUsdLabel:'Total aproximado de recarga em USD',reachedLevels:'Níveis alcançados',totalBonusStars:'Total de Frost Stars bônus acumuladas',currentLevelLabel:'Nível atual',futureLevelLabel:'Nível após a próxima recarga',nextAfterNewTotal:'➡️ Próximo nível após o novo total',rewardLevels:'🎁 Níveis de recompensa',levelCny:'Nível ¥',stars:'Estrelas',gift:'Presente',status:'Status',rightsAr:'Todos os direitos reservados © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Valor acumulado atual em yuan chinês',plannedAria:'Valor planejado de recarga em yuan chinês',firstNotReached:'Ainda não atingiu o primeiro nível',level:'Nível',approx:'aprox.',totalAfter:'Total após recarga',reward:'Recompensa',starUnit:'Frost Stars',enterPlanned:'Informe uma recarga planejada para comparar',nextLevel:'Próximo nível',remainingAfter:'Falta após a recarga',maxLevel:'Você atingiu o nível máximo da tabela',currentPackages:'Total dos pacotes atuais',nextCharge:'Próxima recarga',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Calculadora de Frost Stars',copied:'Resultado copiado.',imageError:'Não foi possível criar a imagem. Tente novamente.',imageShareTitle:'Resultado da Calculadora de Frost Stars',imageShareText:'Resultado do cálculo de Frost Stars',imageReady:'A imagem foi aberta. Pressione e segure e escolha Salvar imagem ou Baixar.',preparing:'Preparando imagem...',calcCnySubtitle:'Cálculo acumulado em yuan chinês CNY',currentCharge:'Recarga atual',plannedCharge:'Próxima recarga',futureLevel:'Nível que será alcançado',lastLevel:'Último nível alcançado',lastReward:'Última recompensa',additionalGift:'Presente adicional',remaining:'Falta',cumulativeUsdNotice:'🔄 Os pacotes em USD foram calculados pelo valor fixo em yuan de cada pacote'},
+ tr:{rallyCenterTitle:'Toplanma Komuta Merkezi',rallyCenterDesc:'Takım ve kale toplanmaları ve sesli geri sayım.',portalSubtitle:'Whiteout Survival için ihtiyacınız olan her şey tek yerde',mainServices:'Ana hizmetler',calcTitle:'Frost Star Hesaplayıcı',calcDesc:'Kümülatif yüklemeyi, seviyenizi ve sonraki ödülü hesaplayın.',downloadGame:'Oyunu İndir',downloadDesc:'Whiteout Survival indirme sayfasını aç.',youtubeChannel:'YouTube Kanalı',youtubeDesc:'CRYPTO oyun rehberleri ve içerikleri.',tiktokChannel:'TikTok Hesabı',tiktokDesc:'CRYPTO\'yu TikTok\'ta takip edin.',support:'Destek',whatsappDesc:'Oyun soruları ve yükleme sorunları için destek.',discordDesc:'Destek ve sorular için Discord sunucusuna katılın.',homeBack:'← Ana Sayfa',heroTitle:'❄️ Frost Star Hesaplayıcı',heroDesc:'Kümülatif yükleme tutarınızı Çin yuanı (CNY) olarak girin; hesaplayıcı seviyenizi ve sonraki ödülü otomatik belirler.',heroBadge:'Temel hesaplama Çin yuanı CNY ile yapılır — yüklemeler biriktirilebilir',entryTitle:'💳 Toplam kaç yuan yüklediniz?',inputHelp:'Giriş yöntemini seçin. <strong>Yuan en doğru yöntemdir</strong>. USD paketleri döviz kuruna göre değil, gözlemlenen fiyat aralıklarına göre resmi yuan paket değerine eşleştirilir.',cumulativePolicy:'📌 Kümülatif kural: tüm yüklemeler toplanır ve belirlenen yuan eşiğine ulaşıldığında ödül açılır.',cnyMode:'¥ Yuanı Doğrudan Gir',usdMode:'$ Yaklaşık USD Paketleri',paidAmount:'Şimdiye kadar yüklenen toplam',plannedAmount:'Yüklemeyi planladığınız tutar',usdHelp:'Her paketin kaç kez satın alındığını seçin. USD fiyatı <strong>yaklaşıktır</strong> ve günlük değişebilir; hesaplayıcı paketin sabit yuan değerini kullanır.',packApprox:'Yaklaşık Paket',acceptedValue:'Yuan Değeri',purchased:'Satın Alındı',willBuy:'Alacağım',usdExample:'Örnek: ≈ <b>$97</b> paket her zaman <b>¥648</b> sayılır; gerçek fiyat bir gün $96.29 veya $97.30 görünse bile.',shareResult:'📤 Sonucu Paylaş',saveImage:'🖼️ Görsel Olarak Kaydet',reset:'🗑️ Sıfırla',resultTitle:'📊 Sonuç',totalCnyLabel:'Yuan cinsinden toplam yükleme',totalUsdLabel:'USD cinsinden yaklaşık toplam yükleme',reachedLevels:'Ulaşılan seviye sayısı',totalBonusStars:'Toplam kümülatif bonus Frost Star',currentLevelLabel:'Mevcut seviye',futureLevelLabel:'Yükleme sonrası ulaşılacak seviye',nextAfterNewTotal:'➡️ Yeni toplamdan sonraki seviye',rewardLevels:'🎁 Ödül Seviyeleri',levelCny:'Seviye ¥',stars:'Yıldız',gift:'Hediye',status:'Durum',rightsAr:'Tüm hakları saklıdır © CRYPTO',rightsEn:'© All Rights Reserved | CRYPTO',paidAria:'Çin yuanı cinsinden mevcut kümülatif yükleme',plannedAria:'Çin yuanı cinsinden planlanan yükleme',firstNotReached:'Henüz ilk seviyeye ulaşılmadı',level:'Seviye',approx:'yaklaşık',totalAfter:'Yükleme sonrası toplam',reward:'Ödül',starUnit:'Frost Star',enterPlanned:'Karşılaştırmak için planlanan yüklemeyi girin',nextLevel:'Sonraki seviye',remainingAfter:'Yükleme sonrası kalan',maxLevel:'Tablodaki en yüksek seviyeye ulaştınız',currentPackages:'Mevcut paket toplamı',nextCharge:'Sonraki yükleme',battle:'Battle Tyrant ×1',dragon:"Dragon's Slumber Realm ×1",noGift:'—',shareTitle:'Frost Star Hesaplayıcı',copied:'Sonuç kopyalandı.',imageError:'Görsel oluşturulamadı. Tekrar deneyin.',imageShareTitle:'Frost Star Hesaplama Sonucu',imageShareText:'Frost Star hesaplama sonucu',imageReady:'Görsel açıldı. Uzun basıp Görseli Kaydet veya İndir seçeneğini kullanın.',preparing:'Görsel hazırlanıyor...',calcCnySubtitle:'Çin yuanı CNY ile kümülatif hesaplama',currentCharge:'Mevcut yükleme toplamı',plannedCharge:'Planlanan yükleme',futureLevel:'Ulaşılacak seviye',lastLevel:'Ulaşılan son seviye',lastReward:'Son ödül',additionalGift:'Ek hediye',remaining:'Kalan',cumulativeUsdNotice:'🔄 USD paketleri, her paketin sabit yuan değeriyle hesaplandı'}
 };
 function t(key){var d=I18N[currentLang]||I18N.ar;return d[key]!==undefined?d[key]:(I18N.ar[key]!==undefined?I18N.ar[key]:key)}
 function extraText(extra){if(!extra)return t('noGift');return extra==='battle'?t('battle'):extra==='dragon'?t('dragon'):extra}
@@ -664,5 +680,2678 @@ function researchSchedule(e){return EXPERT_RESEARCH_SCHEDULE[e.name]||{max:600,b
 function researchTotal(sch,level){let total=0;for(const band of sch.bands){total+=Math.max(0,Math.min(level,band.to)-band.from+1)*band.cost}return total}
 function expertTranslate(){Object.keys(EXP_TEXT.ar).forEach(k=>document.querySelectorAll('[data-i18n="'+k+'"]').forEach(el=>el.textContent=et(k)));expertPopulateSelect();expertRender()}
 window.addEventListener('DOMContentLoaded',function(){expertPopulateSelect();id('openExpertsBtn').onclick=expertOpen;id('expertsBackBtn').onclick=expertHome;id('expertAffFrom').addEventListener('change',expertAffinityCalculate);id('expertAffTo').addEventListener('change',expertAffinityCalculate);id('expertResetBtn').onclick=function(){if(activeExpertIndex===null)return;let e=EXPERTS_DATA[activeExpertIndex],saved=expertSkillLevels[e.name]||(expertSkillLevels[e.name]={});expertTrainableSkills(e).forEach((s,j)=>{saved[j]={from:1,to:s.levels[s.levels.length-1].level}});expertRender()};id('languageSelect').addEventListener('change',expertTranslate);expertTranslate();if(location.hash==='#experts')expertOpen()});
+</script>
+<template id="rallySourceTemplate">&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+
+&lt;head&gt;
+
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+&lt;title&gt;مركز قيادة الحشود&lt;/title&gt;
+
+&lt;style&gt;
+
+  :root{
+
+    --bg:#0b1020;--panel:#121a2e;--panel2:#17213a;--line:#263454;
+
+    --text:#f5f7fb;--muted:#9eabc2;--accent:#d7b66f;--good:#35c984;
+
+    --warn:#f0b34b;--danger:#ef6464;--blue:#5b8def;
+
+  }
+
+  *{box-sizing:border-box}
+
+  body{margin:0;background:linear-gradient(180deg,#090e1b,#0d1425);color:var(--text);
+
+       font-family:&quot;Segoe UI&quot;,Tahoma,Arial,sans-serif;min-height:100vh}
+
+  button,input,select{font:inherit}
+
+  .app{max-width:1280px;margin:auto;padding:18px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+
+          padding:16px 18px;background:rgba(18,26,46,.96);border:1px solid var(--line);
+
+          border-radius:18px;position:sticky;top:8px;z-index:10}
+
+  .brand h1{margin:0;font-size:22px}.brand p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+  .top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+  .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 13px;
+
+       border-radius:12px;cursor:pointer;min-height:42px}
+
+  .btn:hover{filter:brightness(1.08)} .btn.primary{background:var(--accent);color:#15100a;border-color:transparent;font-weight:800}
+
+  .btn.good{background:var(--good);color:#07130d;border-color:transparent;font-weight:800}
+
+  .btn.danger{background:#3a1d27;color:#ffc9c9;border-color:#6a2c3c}
+
+  .btn.ghost{background:transparent}.btn.active{outline:2px solid var(--accent)}
+
+  .grid{display:grid;grid-template-columns:360px 1fr;gap:16px;margin-top:16px}
+
+  .panel{background:rgba(18,26,46,.96);border:1px solid var(--line);border-radius:18px;padding:16px}
+
+  .panel h2{margin:0 0 14px;font-size:17px}.muted{color:var(--muted)}
+
+  .countdown{text-align:center;padding:22px 12px;background:linear-gradient(145deg,#17213a,#10182a);
+
+             border:1px solid var(--line);border-radius:18px}
+
+  .timer{font-size:64px;font-weight:900;letter-spacing:2px;font-variant-numeric:tabular-nums;direction:ltr}
+
+  .timer.urgent{color:#ffdb7c}.timer.go{color:#65e7a7}
+
+  .timer.player-hit{color:#ff4d4d !important;text-shadow:0 0 18px rgba(255,77,77,.35)}
+
+  .status{font-size:15px;color:var(--muted);margin-top:6px;min-height:22px}
+
+  .player-due{min-height:34px;margin-top:8px;font-size:22px;font-weight:900;color:#ff6b6b}
+
+  .player-due small{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:3px}
+
+  .controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+
+  .field{margin:10px 0}.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+
+  input,select{width:100%;background:#0d1425;color:var(--text);border:1px solid var(--line);
+
+               border-radius:11px;padding:11px 12px;min-height:44px}
+
+  .sound-box{margin-top:14px;padding:12px;background:#0e1629;border:1px solid var(--line);border-radius:14px}
+
+  .sound-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+  .sound-row select{width:auto;min-width:130px;flex:1}
+
+  .switch{display:flex;align-items:center;gap:8px;font-size:14px}
+
+  .switch input{width:18px;height:18px;min-height:0}
+
+  .rotation{margin-top:14px;padding:12px;border-radius:14px;border:1px solid var(--line);background:#0e1629}
+
+  .rotation-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+  .rotation-info{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+
+  .metric{background:#121d33;border:1px solid var(--line);border-radius:11px;padding:9px;text-align:center}
+
+  .metric b{display:block;font-size:15px;margin-top:3px}
+
+  .teams-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+
+  .teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+
+  .team{border:1px solid var(--line);border-radius:16px;background:#0e1629;overflow:hidden}
+
+  .team.current{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+
+  .team-head{padding:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#131e34}
+
+  .team-title{display:flex;align-items:center;gap:8px;font-weight:800}
+
+  .badge{font-size:11px;padding:4px 7px;border-radius:999px;background:#22314f;color:#cdd7e8}
+
+  .badge.captain{background:#3b311d;color:#ffe4a0}
+
+  .team-actions{display:flex;gap:5px}.icon-btn{border:1px solid var(--line);background:#101a2e;color:#fff;border-radius:9px;
+
+                width:34px;height:34px;cursor:pointer}
+
+  .players{padding:8px}.player{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;
+
+           padding:9px;border-bottom:1px solid #1d2944}.player:last-child{border-bottom:none}
+
+  .player-name{min-width:0}.player-name b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  .player-name small{color:var(--muted)}.ptime{font-variant-numeric:tabular-nums;color:#c9d5e8}
+
+  .empty{padding:22px;text-align:center;color:var(--muted)}
+
+  .form-row{display:grid;grid-template-columns:1.3fr .7fr 1fr auto;gap:8px;margin:10px 0 14px}
+
+  .form-row .btn{align-self:end}
+
+  .toast{position:fixed;left:18px;bottom:18px;background:#17213a;border:1px solid var(--line);
+
+         padding:12px 15px;border-radius:12px;display:none;z-index:20;max-width:320px}
+
+  .small{font-size:12px}
+
+  @media(max-width:900px){.grid{grid-template-columns:1fr}.topbar{position:static}.teams{grid-template-columns:1fr 1fr}}
+
+  @media(max-width:620px){.app{padding:10px}.teams{grid-template-columns:1fr}.timer{font-size:54px}
+
+    .form-row{grid-template-columns:1fr 1fr}.form-row .wide{grid-column:1/-1}.top-actions{width:100%}.top-actions .btn{flex:1}
+
+    .rotation-info{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}}
+
+
+
+  .player{grid-template-columns:minmax(0,1fr) 105px auto!important}
+
+  .player-edit-name input,.player-edit-time input,.team-add-player input{
+
+    width:100%;height:38px;border:1px solid #2b3a59;background:#0b1323;color:#fff;
+
+    border-radius:9px;padding:7px 9px;font:inherit;outline:none
+
+  }
+
+  .player-edit-name input:focus,.player-edit-time input:focus,.team-add-player input:focus{border-color:var(--accent)}
+
+  .player-edit-time{min-width:0}
+
+  .player-edit-time input{text-align:center;font-variant-numeric:tabular-nums}
+
+  .save-player-btn{border-color:#315b48;background:#123326}
+
+  .save-player-btn.dirty{border-color:#d3a62b;background:#49380d}
+
+  .team-add-player{display:grid;grid-template-columns:minmax(0,1fr) 105px auto;gap:8px;align-items:center;
+
+    padding:10px 9px;border-top:1px dashed #2b3a59}
+
+  .team-add-player button{min-width:44px;height:38px}
+
+  @media(max-width:620px){
+
+    .player,.team-add-player{grid-template-columns:minmax(0,1fr) 88px auto!important}
+
+  }
+
+
+
+  .team-collapse-btn{
+
+    width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+
+    border:1px solid #2b3a59;background:#0b1323;color:#fff;border-radius:9px;
+
+    cursor:pointer;font-size:20px;line-height:1;font-weight:700
+
+  }
+
+  .team-collapse-btn:hover{border-color:var(--accent)}
+
+  .team.collapsed .team-body{display:none!important}
+
+
+
+  .team-gap-info{
+
+    margin:8px 9px 10px;padding:9px 10px;border:1px solid #263653;border-radius:10px;
+
+    background:#0a1220;font-size:13px;line-height:1.7
+
+  }
+
+  .team-gap-info .gap-title{font-weight:800;margin-bottom:3px}
+
+  .team-gap-info .gap-row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+
+  .team-gap-info .gap-row span:last-child{font-variant-numeric:tabular-nums;font-weight:800}
+
+
+
+  .page-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+
+  .page-nav .active{outline:2px solid #5ca8ff}
+
+  .fort-page{display:none}
+
+  .fort-page.active{display:block}
+
+  .main-page.hidden{display:none}
+
+  .fort-grid{display:grid;grid-template-columns:minmax(300px,430px) 1fr;gap:14px}
+
+  .fort-card{background:#101a2b;border:1px solid #263653;border-radius:16px;padding:16px}
+
+  .fort-card h2,.fort-card h3{margin-top:0}
+
+  .fort-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  .fort-fields .full{grid-column:1/-1}
+
+  .fort-fields input,.fort-fields select{width:100%;box-sizing:border-box}
+
+  .fort-big{
+
+    text-align:center;font-variant-numeric:tabular-nums;font-weight:900;
+
+    font-size:clamp(34px,7vw,72px);letter-spacing:1px;margin:12px 0
+
+  }
+
+  .fort-phase{text-align:center;font-size:18px;font-weight:800;margin-bottom:8px}
+
+  .fort-result{display:grid;gap:8px;margin-top:12px}
+
+  .fort-row{display:flex;justify-content:space-between;gap:14px;align-items:center;
+
+    padding:10px 12px;border:1px solid #263653;border-radius:11px;background:#0a1220}
+
+  .fort-row b{font-variant-numeric:tabular-nums;direction:ltr}
+
+  .fort-highlight{border-color:#4c8dd9!important}
+
+  .fort-note{font-size:13px;line-height:1.7;opacity:.78;margin-top:10px}
+
+  .fort-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+  @media(max-width:820px){.fort-grid{grid-template-columns:1fr}.fort-fields{grid-template-columns:1fr}}
+
+
+
+
+
+  .fort-big.open-now{
+
+    color:#ff3b3b!important;
+
+    text-shadow:0 0 18px rgba(255,59,59,.45);
+
+    animation:fortPulse .65s ease-in-out infinite alternate;
+
+  }
+
+  .fort-phase.open-now{color:#ff3b3b!important}
+
+  @keyframes fortPulse{from{opacity:1}to{opacity:.55}}
+
+  .fort-rallies{display:grid;gap:10px;margin-top:12px}
+
+  .fort-rally-card{border:1px solid #263653;border-radius:13px;padding:12px;background:#0a1220}
+
+  .fort-rally-card.open-now{border-color:#ff3b3b;box-shadow:0 0 0 1px rgba(255,59,59,.25)}
+
+  .fort-rally-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}
+
+  .fort-rally-title{font-weight:900}
+
+  .fort-mini-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+  .fort-mini-grid label{font-size:12px;opacity:.8}
+
+  .fort-mini-grid input,.fort-mini-grid select{width:100%;box-sizing:border-box}
+
+  .fort-rally-times{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:9px;font-size:12px}
+
+  .fort-rally-times div{padding:7px;border:1px solid #263653;border-radius:8px;text-align:center}
+
+  .fort-rally-times b{display:block;margin-top:3px;direction:ltr;font-size:14px}
+
+  .fort-rally-count{font-size:26px;font-weight:900;text-align:center;margin-top:8px;font-variant-numeric:tabular-nums}
+
+  .fort-rally-count.open-now{color:#ff3b3b}
+
+  @media(max-width:620px){.fort-mini-grid,.fort-rally-times{grid-template-columns:1fr}}
+
+
+
+
+
+  .utc-clock-box{
+
+    border:1px solid #263653;border-radius:14px;padding:12px 16px;margin-bottom:12px;
+
+    background:#0a1220;text-align:center
+
+  }
+
+  .utc-clock-label{font-size:13px;opacity:.72;margin-bottom:3px}
+
+  .utc-clock{font-size:clamp(28px,6vw,48px);font-weight:900;direction:ltr;
+
+    font-variant-numeric:tabular-nums;letter-spacing:1px}
+
+
+
+
+
+  .fortress-list{display:grid;gap:14px;margin-top:14px}
+
+  .fortress-card{background:#101a2b;border:1px solid #263653;border-radius:16px;padding:14px}
+
+  .fortress-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+
+  .fortress-name{font-size:20px;font-weight:900}
+
+  .fortress-time{font-size:20px;font-weight:900;direction:ltr}
+
+  .fixed-rallies{display:grid;gap:8px}
+
+  .fixed-rally{display:grid;grid-template-columns:1.25fr .8fr .8fr 1fr;gap:8px;align-items:end;
+
+    border:1px solid #263653;border-radius:11px;padding:9px;background:#0a1220}
+
+  .fixed-rally label{font-size:11px;opacity:.75;display:block;margin-bottom:3px}
+
+  .fixed-rally input,.fixed-rally select{width:100%;box-sizing:border-box}
+
+  .fixed-rally .calc{font-size:12px;line-height:1.5;text-align:center}
+
+  .fixed-rally .calc b{display:block;font-size:15px;direction:ltr}
+
+  .fixed-rally.open-now{border-color:#ff3b3b;box-shadow:0 0 0 1px rgba(255,59,59,.3)}
+
+  .fixed-rally.open-now .calc{color:#ff3b3b;font-weight:900}
+
+  @media(max-width:760px){.fixed-rally{grid-template-columns:1fr 1fr}.fixed-rally .calc{grid-column:1/-1}}
+
+
+
+
+
+  .game-sync-box{display:flex;gap:10px;align-items:end;justify-content:center;flex-wrap:wrap;margin-top:10px}
+
+  .game-sync-box .field{min-width:210px;max-width:280px}
+
+  .game-clock-label{font-size:13px;opacity:.72;margin-top:8px}
+
+  .game-clock{font-size:clamp(24px,5vw,40px);font-weight:900;direction:ltr;font-variant-numeric:tabular-nums}
+
+
+
+
+
+  .fortress-edit{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-bottom:10px}
+
+  .fortress-edit .field{flex:1;min-width:140px}
+
+  .fortress-edit input{width:100%;box-sizing:border-box}
+
+  .rr-count{display:block;margin-top:5px;font-size:22px;font-weight:900;
+
+    font-variant-numeric:tabular-nums;direction:ltr}
+
+  .rr-count.send-now{color:#ff3b3b!important;text-shadow:0 0 14px rgba(255,59,59,.45)}
+
+
+
+
+
+  .fortress-toggle{
+
+    min-width:44px;height:44px;border-radius:10px;font-size:24px;font-weight:900;
+
+    display:inline-flex;align-items:center;justify-content:center
+
+  }
+
+  .fortress-card.collapsed{padding:10px 14px}
+
+  .fortress-card.collapsed .fortress-edit,
+
+  .fortress-card.collapsed .fixed-rallies{display:none!important}
+
+  .fortress-card.collapsed .fortress-head{margin-bottom:0}
+
+
+
+
+
+.rr-lights{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-top:8px;direction:ltr}
+
+.rr-light{height:10px;border-radius:999px;background:#263653;transition:background .08s,box-shadow .08s,opacity .08s}
+
+.rr-lights.green .rr-light{background:#28b463;box-shadow:0 0 5px rgba(40,180,99,.25)}
+
+.rr-lights.yellow .rr-light{background:#f1c40f;box-shadow:0 0 6px rgba(241,196,15,.3)}
+
+.rr-lights.red .rr-light{background:#3b2020;opacity:.55}
+
+.rr-lights.red .rr-light.on{background:#ff3030;opacity:1;box-shadow:0 0 10px rgba(255,48,48,.85)}
+
+
+
+
+
+.rr-march-parts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+
+.rr-march-parts label{font-size:11px;opacity:.78;margin-bottom:3px}
+
+.rr-march-parts input{width:100%}
+
+&lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div class=&quot;app&quot;&gt;
+
+  &lt;div class=&quot;page-nav&quot;&gt;
+
+    &lt;button class=&quot;btn active&quot; id=&quot;mainPageBtn&quot;&gt;حشود الكتائب&lt;/button&gt;
+
+    &lt;button class=&quot;btn&quot; id=&quot;fortPageBtn&quot;&gt;حشود الحصون والمنشآت&lt;/button&gt;
+
+  &lt;/div&gt;
+
+  &lt;div id=&quot;mainPage&quot; class=&quot;main-page&quot;&gt;
+
+
+
+  &lt;header class=&quot;topbar&quot;&gt;
+
+    &lt;div class=&quot;brand&quot;&gt;
+
+      &lt;h1 id=&quot;title&quot;&gt;مركز قيادة الحشود&lt;/h1&gt;
+
+      &lt;p id=&quot;subtitle&quot;&gt;إدارة الكتائب والتدوير والعد الصوتي&lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class=&quot;top-actions&quot;&gt;
+
+      &lt;button class=&quot;btn&quot; id=&quot;uiLangBtn&quot;&gt;English&lt;/button&gt;
+
+      &lt;button class=&quot;btn&quot; id=&quot;soundBtn&quot;&gt;🔊 الصوت يعمل&lt;/button&gt;
+
+      &lt;button class=&quot;btn danger&quot; id=&quot;resetBtn&quot;&gt;إعادة ضبط&lt;/button&gt;
+
+    &lt;/div&gt;
+
+  &lt;/header&gt;
+
+
+
+  &lt;div class=&quot;grid&quot;&gt;
+
+    &lt;aside&gt;
+
+      &lt;section class=&quot;panel&quot;&gt;
+
+        &lt;h2 id=&quot;rallyHeading&quot;&gt;عداد الحشد&lt;/h2&gt;
+
+        &lt;div class=&quot;countdown&quot;&gt;
+
+          &lt;div id=&quot;timer&quot; class=&quot;timer&quot;&gt;00:30&lt;/div&gt;
+
+          &lt;div id=&quot;timerStatus&quot; class=&quot;status&quot;&gt;جاهز للبدء&lt;/div&gt;
+
+          &lt;div id=&quot;playerDue&quot; class=&quot;player-due&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;field&quot;&gt;
+
+          &lt;label id=&quot;rallyTeamLabel&quot; for=&quot;rallyTeam&quot;&gt;اختر الكتيبة&lt;/label&gt;
+
+          &lt;select id=&quot;rallyTeam&quot;&gt;&lt;/select&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;field&quot;&gt;
+
+          &lt;label id=&quot;durationLabel&quot; for=&quot;duration&quot;&gt;مدة العد بالثواني&lt;/label&gt;
+
+          &lt;input id=&quot;duration&quot; type=&quot;number&quot; min=&quot;5&quot; max=&quot;3600&quot; value=&quot;30&quot;&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;controls&quot;&gt;
+
+          &lt;button class=&quot;btn good&quot; id=&quot;startBtn&quot;&gt;بدء&lt;/button&gt;
+
+          &lt;button class=&quot;btn&quot; id=&quot;pauseBtn&quot;&gt;إيقاف مؤقت&lt;/button&gt;
+
+          &lt;button class=&quot;btn&quot; id=&quot;resumeBtn&quot;&gt;استئناف&lt;/button&gt;
+
+          &lt;button class=&quot;btn danger&quot; id=&quot;stopBtn&quot;&gt;إيقاف&lt;/button&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;sound-box&quot;&gt;
+
+          &lt;div class=&quot;sound-row&quot;&gt;
+
+            &lt;label class=&quot;switch&quot;&gt;
+
+              &lt;input type=&quot;checkbox&quot; id=&quot;voiceEnabled&quot; checked&gt;
+
+              &lt;span id=&quot;voiceEnabledLabel&quot;&gt;العد الصوتي&lt;/span&gt;
+
+            &lt;/label&gt;
+
+            &lt;select id=&quot;voiceLang&quot;&gt;
+
+              &lt;option value=&quot;ar-SA&quot;&gt;العربية&lt;/option&gt;
+
+              &lt;option value=&quot;en-US&quot;&gt;English&lt;/option&gt;
+
+            &lt;/select&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;field&quot;&gt;
+
+            &lt;label id=&quot;deviceVoiceLabel&quot; for=&quot;deviceVoice&quot;&gt;الصوت المستخدم&lt;/label&gt;
+
+            &lt;select id=&quot;deviceVoice&quot;&gt;
+
+              &lt;option value=&quot;&quot;&gt;تلقائي - أفضل صوت متاح&lt;/option&gt;
+
+            &lt;/select&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;sound-row&quot;&gt;
+
+            &lt;button class=&quot;btn ghost&quot; id=&quot;testVoiceBtn&quot;&gt;اختبار الصوت&lt;/button&gt;
+
+            &lt;span class=&quot;muted small&quot; id=&quot;voiceHint&quot;&gt;يستخدم الأصوات المتوفرة في جهازك&lt;/span&gt;
+
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;rotation&quot; style=&quot;display:none!important&quot; aria-hidden=&quot;true&quot;&gt;
+
+          &lt;h2 id=&quot;rotationHeading&quot;&gt;التدوير التلقائي&lt;/h2&gt;
+
+          &lt;div class=&quot;rotation-row&quot;&gt;
+
+            &lt;div class=&quot;field&quot;&gt;
+
+              &lt;label id=&quot;roundDurationLabel&quot;&gt;مدة كل كتيبة&lt;/label&gt;
+
+              &lt;input id=&quot;rotationDuration&quot; type=&quot;number&quot; min=&quot;5&quot; max=&quot;3600&quot; value=&quot;30&quot;&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class=&quot;field&quot;&gt;
+
+              &lt;label id=&quot;rotationModeLabel&quot;&gt;النمط&lt;/label&gt;
+
+              &lt;select id=&quot;rotationMode&quot;&gt;
+
+                &lt;option value=&quot;loop&quot;&gt;مستمر&lt;/option&gt;
+
+                &lt;option value=&quot;once&quot;&gt;مرة واحدة&lt;/option&gt;
+
+              &lt;/select&gt;
+
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;controls&quot;&gt;
+
+            &lt;button class=&quot;btn primary&quot; id=&quot;startRotationBtn&quot;&gt;تشغيل التدوير&lt;/button&gt;
+
+            &lt;button class=&quot;btn danger&quot; id=&quot;stopRotationBtn&quot;&gt;إيقاف التدوير&lt;/button&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;rotation-info&quot;&gt;
+
+            &lt;div class=&quot;metric&quot;&gt;&lt;span id=&quot;currentLabel&quot;&gt;الحالي&lt;/span&gt;&lt;b id=&quot;currentTeam&quot;&gt;—&lt;/b&gt;&lt;/div&gt;
+
+            &lt;div class=&quot;metric&quot;&gt;&lt;span id=&quot;nextLabel&quot;&gt;التالي&lt;/span&gt;&lt;b id=&quot;nextTeam&quot;&gt;—&lt;/b&gt;&lt;/div&gt;
+
+            &lt;div class=&quot;metric&quot;&gt;&lt;span id=&quot;roundLabel&quot;&gt;الجولة&lt;/span&gt;&lt;b id=&quot;roundNo&quot;&gt;0&lt;/b&gt;&lt;/div&gt;
+
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+
+      &lt;/section&gt;
+
+    &lt;/aside&gt;
+
+
+
+    &lt;main&gt;
+
+      &lt;section class=&quot;panel&quot;&gt;
+
+        &lt;div class=&quot;teams-head&quot;&gt;
+
+          &lt;div&gt;
+
+            &lt;h2 id=&quot;teamsHeading&quot;&gt;الكتائب واللاعبون&lt;/h2&gt;
+
+            &lt;div class=&quot;muted small&quot; id=&quot;teamsHint&quot;&gt;رتّب اللاعبين حسب زمن الوصول وحدد قائد كل كتيبة.&lt;/div&gt;
+
+          &lt;/div&gt;
+
+          &lt;button class=&quot;btn primary&quot; id=&quot;addTeamBtn&quot; style=&quot;display:none!important&quot;&gt;+ كتيبة جديدة&lt;/button&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div class=&quot;form-row&quot; style=&quot;display:none!important&quot; aria-hidden=&quot;true&quot;&gt;
+
+          &lt;div class=&quot;field wide&quot;&gt;
+
+            &lt;label id=&quot;playerNameLabel&quot;&gt;اسم اللاعب&lt;/label&gt;
+
+            &lt;input id=&quot;playerName&quot; maxlength=&quot;40&quot; placeholder=&quot;مثال: Damian&quot;&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;field&quot;&gt;
+
+            &lt;label id=&quot;playerTimeLabel&quot;&gt;الوقت&lt;/label&gt;
+
+            &lt;input id=&quot;playerTime&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;999&quot; value=&quot;30&quot;&gt;
+
+          &lt;/div&gt;
+
+          &lt;div class=&quot;field&quot;&gt;
+
+            &lt;label id=&quot;playerTeamLabel&quot;&gt;الكتيبة&lt;/label&gt;
+
+            &lt;select id=&quot;playerTeam&quot;&gt;&lt;/select&gt;
+
+          &lt;/div&gt;
+
+          &lt;button class=&quot;btn good&quot; id=&quot;addPlayerBtn&quot;&gt;إضافة&lt;/button&gt;
+
+        &lt;/div&gt;
+
+
+
+        &lt;div id=&quot;teams&quot; class=&quot;teams&quot;&gt;&lt;/div&gt;
+
+      &lt;/section&gt;
+
+    &lt;/main&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;toast&quot; class=&quot;toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;
+
+  &lt;/div&gt;
+
+
+
+  &lt;section id=&quot;fortPage&quot; class=&quot;fort-page&quot; dir=&quot;rtl&quot;&gt;
+
+    &lt;div class=&quot;utc-clock-box&quot;&gt;
+
+      &lt;div class=&quot;game-clock-label&quot;&gt;توقيت اللعبة&lt;/div&gt;
+
+      &lt;div id=&quot;gameLiveClock&quot; class=&quot;utc-clock&quot;&gt;00:00:00.0&lt;/div&gt;
+
+      &lt;div class=&quot;game-sync-box&quot;&gt;
+
+        &lt;div class=&quot;field&quot;&gt;
+
+          &lt;label for=&quot;gameDelay&quot;&gt;ضبط إضافي لتوقيت اللعبة (ثانية)&lt;/label&gt;
+
+          &lt;input id=&quot;gameDelay&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;5&quot; step=&quot;0.1&quot; value=&quot;0.0&quot;&gt;
+
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;fort-note&quot;&gt;إذا كان التوقيت الظاهر متأخرًا، ارفع القيمة مثل 0.1 أو 0.2 أو 0.4 ثانية حتى يطابق توقيت اللعبة تمامًا. جميع حسابات الحشود تتبع هذا التوقيت.&lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;fort-card&quot;&gt;
+
+      &lt;h2&gt;حشود الحصون والمنشآت&lt;/h2&gt;
+
+      &lt;div class=&quot;fort-note&quot;&gt;
+
+        لكل حصن أو قلعة 4 حشود. اكتب اسم صاحب الحشد ومدة مسيرته، واختر مدة الحشد. الحسبة تستهدف الوصول قبل الإغلاق بـ 0.1 ثانية.
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+
+    &lt;div id=&quot;fortressList&quot; class=&quot;fortress-list&quot;&gt;&lt;/div&gt;
+
+&lt;/section&gt;
+
+
+
+&lt;/div&gt;
+
+
+
+&lt;script&gt;
+
+(() =&gt; {
+
+  const KEY=&#x27;rally_command_center_v3_collapsed_5_6&#x27;;
+
+  const defaultState={
+
+    uiLang:&#x27;ar&#x27;, soundOn:true, voiceEnabled:true, voiceLang:&#x27;ar-SA&#x27;,
+
+    duration:30, rotationDuration:30, rotationMode:&#x27;loop&#x27;, rallyTeamId:1, collapsedTeams:[5,6],
+
+    teams:[
+
+      {id:1,name:&#x27;الكتيبة 1&#x27;,captain:null,players:[
+
+        {id:101,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:102,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:103,name:&#x27;&#x27;,time:&#x27;&#x27;}
+
+      ]},
+
+      {id:2,name:&#x27;الكتيبة 2&#x27;,captain:null,players:[
+
+        {id:201,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:202,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:203,name:&#x27;&#x27;,time:&#x27;&#x27;}
+
+      ]},
+
+      {id:3,name:&#x27;الكتيبة 3&#x27;,captain:null,players:[
+
+        {id:301,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:302,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:303,name:&#x27;&#x27;,time:&#x27;&#x27;}
+
+      ]},
+
+      {id:4,name:&#x27;الكتيبة 4&#x27;,captain:null,players:[
+
+        {id:401,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:402,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:403,name:&#x27;&#x27;,time:&#x27;&#x27;}
+
+      ]},
+
+      {id:5,name:&#x27;الكتيبة 5&#x27;,captain:null,players:[
+
+        {id:501,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:502,name:&#x27;&#x27;,time:&#x27;&#x27;},{id:503,name:&#x27;&#x27;,time:&#x27;&#x27;}
+
+      ]},
+
+      {id:6,name:&#x27;الكتيبة 6&#x27;,captain:null,players:[
+
+        {id:601,name:&#x27;خالد&#x27;,time:47},{id:602,name:&#x27;محمد&#x27;,time:31},{id:603,name:&#x27;Damian&#x27;,time:22}
+
+      ]}
+
+    ]
+
+  };
+
+  let state=load();
+
+  let remaining=state.duration, timerId=null, paused=false, running=false;
+
+  let rotationActive=false, rotationIndex=0, rotationRound=0, spokenSecond=null;
+
+
+
+  const $=id=&gt;document.getElementById(id);
+
+  const teamsEl=$(&#x27;teams&#x27;), timerEl=$(&#x27;timer&#x27;), statusEl=$(&#x27;timerStatus&#x27;), toast=$(&#x27;toast&#x27;);
+
+
+
+  const T={
+
+    ar:{
+
+      title:&#x27;مركز قيادة الحشود&#x27;,subtitle:&#x27;إدارة الكتائب والتدوير والعد الصوتي&#x27;,
+
+      soundOn:&#x27;🔊 الصوت يعمل&#x27;,soundOff:&#x27;🔇 الصوت متوقف&#x27;,reset:&#x27;إعادة ضبط&#x27;,
+
+      rally:&#x27;عداد الحشد&#x27;,rallyTeam:&#x27;اختر الكتيبة&#x27;,ready:&#x27;جاهز للبدء&#x27;,started:&#x27;الحشد بدأ الآن&#x27;,paused:&#x27;متوقف مؤقتًا&#x27;,stopped:&#x27;تم الإيقاف&#x27;,
+
+      duration:&#x27;مدة العد بالثواني&#x27;,start:&#x27;بدء&#x27;,pause:&#x27;إيقاف مؤقت&#x27;,resume:&#x27;استئناف&#x27;,stop:&#x27;إيقاف&#x27;,
+
+      voiceEnabled:&#x27;العد الصوتي&#x27;,test:&#x27;اختبار الصوت&#x27;,
+
+      deviceVoice:&#x27;الصوت المستخدم&#x27;,autoVoice:&#x27;تلقائي - أفضل صوت متاح&#x27;,
+
+      hint:&#x27;لا يتم تجاوز أي رقم؛ إذا تأخر النطق يتم إيقاف الرقم السابق ونطق الرقم الحالي&#x27;,rotation:&#x27;التدوير التلقائي&#x27;,roundDuration:&#x27;مدة كل كتيبة&#x27;,
+
+      mode:&#x27;النمط&#x27;,loop:&#x27;مستمر&#x27;,once:&#x27;مرة واحدة&#x27;,startRotation:&#x27;تشغيل التدوير&#x27;,stopRotation:&#x27;إيقاف التدوير&#x27;,
+
+      current:&#x27;الحالي&#x27;,next:&#x27;التالي&#x27;,round:&#x27;الجولة&#x27;,teams:&#x27;الكتائب واللاعبون&#x27;,
+
+      teamsHint:&#x27;رتّب اللاعبين حسب زمن الوصول وحدد قائد كل كتيبة.&#x27;,newTeam:&#x27;+ كتيبة جديدة&#x27;,
+
+      playerName:&#x27;اسم اللاعب&#x27;,playerTime:&#x27;الوقت&#x27;,playerTeam:&#x27;الكتيبة&#x27;,add:&#x27;إضافة&#x27;,
+
+      captain:&#x27;القائد&#x27;,makeCaptain:&#x27;تعيين قائد&#x27;,noPlayers:&#x27;لا يوجد لاعبون&#x27;,delete:&#x27;حذف&#x27;,team:&#x27;الكتيبة&#x27;,
+
+      seconds:&#x27;ث&#x27;,confirmReset:&#x27;هل تريد حذف جميع البيانات وإعادة البرنامج للوضع الافتراضي؟&#x27;,
+
+      nameRequired:&#x27;اكتب اسم اللاعب أولًا&#x27;,added:&#x27;تمت إضافة اللاعب&#x27;,teamAdded:&#x27;تمت إضافة كتيبة جديدة&#x27;,
+
+      teamDeleteConfirm:&#x27;حذف هذه الكتيبة وجميع لاعبيها؟&#x27;,needTeams:&#x27;أضف كتيبة واحدة على الأقل&#x27;,
+
+      voiceTest:&#x27;اختبار الصوت&#x27;,go:&#x27;الآن&#x27;,rallyFor:&#x27;الحشد للكتيبة&#x27;,rotationDone:&#x27;اكتملت دورة التدوير&#x27;,
+
+      playerNow:&#x27;وقت اللاعب&#x27;,nextPlayer:&#x27;اللاعب القادم&#x27;
+
+    },
+
+    en:{
+
+      title:&#x27;Rally Command Center&#x27;,subtitle:&#x27;Teams, rotation and bilingual voice countdown&#x27;,
+
+      soundOn:&#x27;🔊 Sound On&#x27;,soundOff:&#x27;🔇 Sound Off&#x27;,reset:&#x27;Reset&#x27;,
+
+      rally:&#x27;Rally Countdown&#x27;,rallyTeam:&#x27;Select Team&#x27;,ready:&#x27;Ready&#x27;,started:&#x27;Rally starts now&#x27;,paused:&#x27;Paused&#x27;,stopped:&#x27;Stopped&#x27;,
+
+      duration:&#x27;Countdown duration (seconds)&#x27;,start:&#x27;Start&#x27;,pause:&#x27;Pause&#x27;,resume:&#x27;Resume&#x27;,stop:&#x27;Stop&#x27;,
+
+      voiceEnabled:&#x27;Voice countdown&#x27;,test:&#x27;Test Voice&#x27;,
+
+      deviceVoice:&#x27;Voice&#x27;,autoVoice:&#x27;Automatic - best available voice&#x27;,
+
+      hint:&#x27;Numbers are never skipped; stale speech stops before the current number&#x27;,rotation:&#x27;Automatic Rotation&#x27;,roundDuration:&#x27;Team duration&#x27;,
+
+      mode:&#x27;Mode&#x27;,loop:&#x27;Loop&#x27;,once:&#x27;Once&#x27;,startRotation:&#x27;Start Rotation&#x27;,stopRotation:&#x27;Stop Rotation&#x27;,
+
+      current:&#x27;Current&#x27;,next:&#x27;Next&#x27;,round:&#x27;Round&#x27;,teams:&#x27;Teams &amp; Players&#x27;,
+
+      teamsHint:&#x27;Players are sorted by arrival time. Assign one captain per team.&#x27;,newTeam:&#x27;+ New Team&#x27;,
+
+      playerName:&#x27;Player name&#x27;,playerTime:&#x27;Time&#x27;,playerTeam:&#x27;Team&#x27;,add:&#x27;Add&#x27;,
+
+      captain:&#x27;Captain&#x27;,makeCaptain:&#x27;Make Captain&#x27;,noPlayers:&#x27;No players&#x27;,delete:&#x27;Delete&#x27;,team:&#x27;Team&#x27;,
+
+      seconds:&#x27;s&#x27;,confirmReset:&#x27;Delete all data and restore defaults?&#x27;,
+
+      nameRequired:&#x27;Enter the player name first&#x27;,added:&#x27;Player added&#x27;,teamAdded:&#x27;New team added&#x27;,
+
+      teamDeleteConfirm:&#x27;Delete this team and all its players?&#x27;,needTeams:&#x27;Add at least one team&#x27;,
+
+      voiceTest:&#x27;Voice test&#x27;,go:&#x27;Go&#x27;,rallyFor:&#x27;Rally for&#x27;,rotationDone:&#x27;Rotation completed&#x27;,
+
+      playerNow:&#x27;Player time&#x27;,nextPlayer:&#x27;Next player&#x27;
+
+    }
+
+  };
+
+
+
+  function load(){
+
+    try{
+
+      const v=JSON.parse(localStorage.getItem(KEY));
+
+      const data=v?Object.assign({},defaultState,v):structuredClone(defaultState);
+
+      if(!Array.isArray(data.teams)) data.teams=[];
+
+      while(data.teams.length&lt;6){
+
+        const n=data.teams.length+1;
+
+        data.teams.push({id:Date.now()+n,name:&#x27;الكتيبة &#x27;+n,captain:null,players:[]});
+
+      }
+
+      if(data.teams.length&gt;6) data.teams=data.teams.slice(0,6);
+
+      return data;
+
+    }catch(e){
+
+      const data=structuredClone(defaultState);
+
+      if(!Array.isArray(data.teams)) data.teams=[];
+
+      while(data.teams.length&lt;6){
+
+        const n=data.teams.length+1;
+
+        data.teams.push({id:Date.now()+n,name:&#x27;الكتيبة &#x27;+n,captain:null,players:[]});
+
+      }
+
+      if(data.teams.length&gt;6) data.teams=data.teams.slice(0,6);
+
+      return data;
+
+    }
+
+  }
+
+  function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+
+  function tr(k){return T[state.uiLang][k]||k}
+
+  function showToast(msg){toast.textContent=msg;toast.style.display=&#x27;block&#x27;;clearTimeout(showToast.t);showToast.t=setTimeout(()=&gt;toast.style.display=&#x27;none&#x27;,2200)}
+
+  function fmt(sec){sec=Math.max(0,Math.round(sec));return String(Math.floor(sec/60)).padStart(2,&#x27;0&#x27;)+&#x27;:&#x27;+String(sec%60).padStart(2,&#x27;0&#x27;)}
+
+
+
+  function applyLang(){
+
+    document.documentElement.lang=state.uiLang===&#x27;ar&#x27;?&#x27;ar&#x27;:&#x27;en&#x27;;
+
+    document.documentElement.dir=state.uiLang===&#x27;ar&#x27;?&#x27;rtl&#x27;:&#x27;ltr&#x27;;
+
+    $(&#x27;title&#x27;).textContent=tr(&#x27;title&#x27;); $(&#x27;subtitle&#x27;).textContent=tr(&#x27;subtitle&#x27;);
+
+    $(&#x27;uiLangBtn&#x27;).textContent=state.uiLang===&#x27;ar&#x27;?&#x27;English&#x27;:&#x27;العربية&#x27;;
+
+    $(&#x27;soundBtn&#x27;).textContent=state.soundOn?tr(&#x27;soundOn&#x27;):tr(&#x27;soundOff&#x27;); $(&#x27;resetBtn&#x27;).textContent=tr(&#x27;reset&#x27;);
+
+    $(&#x27;rallyHeading&#x27;).textContent=tr(&#x27;rally&#x27;); $(&#x27;rallyTeamLabel&#x27;).textContent=tr(&#x27;rallyTeam&#x27;); $(&#x27;durationLabel&#x27;).textContent=tr(&#x27;duration&#x27;);
+
+    $(&#x27;startBtn&#x27;).textContent=tr(&#x27;start&#x27;); $(&#x27;pauseBtn&#x27;).textContent=tr(&#x27;pause&#x27;); $(&#x27;resumeBtn&#x27;).textContent=tr(&#x27;resume&#x27;); $(&#x27;stopBtn&#x27;).textContent=tr(&#x27;stop&#x27;);
+
+    $(&#x27;voiceEnabledLabel&#x27;).textContent=tr(&#x27;voiceEnabled&#x27;);
+
+    $(&#x27;testVoiceBtn&#x27;).textContent=tr(&#x27;test&#x27;); $(&#x27;voiceHint&#x27;).textContent=tr(&#x27;hint&#x27;);
+
+    $(&#x27;deviceVoiceLabel&#x27;).textContent=tr(&#x27;deviceVoice&#x27;);
+
+    const autoOpt=$(&#x27;deviceVoice&#x27;).querySelector(&#x27;option[value=&quot;&quot;]&#x27;); if(autoOpt) autoOpt.textContent=tr(&#x27;autoVoice&#x27;);
+
+    $(&#x27;rotationHeading&#x27;).textContent=tr(&#x27;rotation&#x27;);
+
+    $(&#x27;roundDurationLabel&#x27;).textContent=tr(&#x27;roundDuration&#x27;); $(&#x27;rotationModeLabel&#x27;).textContent=tr(&#x27;mode&#x27;);
+
+    $(&#x27;rotationMode&#x27;).options[0].text=tr(&#x27;loop&#x27;); $(&#x27;rotationMode&#x27;).options[1].text=tr(&#x27;once&#x27;);
+
+    $(&#x27;startRotationBtn&#x27;).textContent=tr(&#x27;startRotation&#x27;); $(&#x27;stopRotationBtn&#x27;).textContent=tr(&#x27;stopRotation&#x27;);
+
+    $(&#x27;currentLabel&#x27;).textContent=tr(&#x27;current&#x27;); $(&#x27;nextLabel&#x27;).textContent=tr(&#x27;next&#x27;); $(&#x27;roundLabel&#x27;).textContent=tr(&#x27;round&#x27;);
+
+    $(&#x27;teamsHeading&#x27;).textContent=tr(&#x27;teams&#x27;); $(&#x27;teamsHint&#x27;).textContent=tr(&#x27;teamsHint&#x27;); $(&#x27;addTeamBtn&#x27;).textContent=tr(&#x27;newTeam&#x27;);
+
+    $(&#x27;playerNameLabel&#x27;).textContent=tr(&#x27;playerName&#x27;); $(&#x27;playerTimeLabel&#x27;).textContent=tr(&#x27;playerTime&#x27;); $(&#x27;playerTeamLabel&#x27;).textContent=tr(&#x27;playerTeam&#x27;); $(&#x27;addPlayerBtn&#x27;).textContent=tr(&#x27;add&#x27;);
+
+    if(!running) statusEl.textContent=tr(&#x27;ready&#x27;);
+
+    renderTeams();
+
+    if(typeof populateVoiceList===&#x27;function&#x27;) populateVoiceList();
+
+  }
+
+
+
+  function renderRallyTeamSelect(){
+
+    const s=$(&#x27;rallyTeam&#x27;);
+
+    const previous=String(state.rallyTeamId||&#x27;&#x27;);
+
+    s.innerHTML=&#x27;&#x27;;
+
+    state.teams.forEach((team,i)=&gt;{
+
+      const o=document.createElement(&#x27;option&#x27;);
+
+      o.value=team.id;
+
+      o.textContent=displayTeamName(team,i);
+
+      s.appendChild(o);
+
+    });
+
+    const valid=[...s.options].some(o=&gt;o.value===previous);
+
+    if(valid) s.value=previous;
+
+    else if(s.options.length){
+
+      s.selectedIndex=0;
+
+      state.rallyTeamId=Number(s.value);
+
+      save();
+
+    }
+
+  }
+
+
+
+  function renderTeamSelect(){
+
+    const s=$(&#x27;playerTeam&#x27;); const old=s.value; s.innerHTML=&#x27;&#x27;;
+
+    state.teams.forEach((team,i)=&gt;{
+
+      const o=document.createElement(&#x27;option&#x27;);o.value=team.id;o.textContent=displayTeamName(team,i);s.appendChild(o);
+
+    });
+
+    if([...s.options].some(o=&gt;o.value===old))s.value=old;
+
+  }
+
+  function displayTeamName(team,index){
+
+    const generic=/^(الكتيبة|Team)\s*\d+$/i.test(team.name||&#x27;&#x27;);
+
+    return generic?(state.uiLang===&#x27;ar&#x27;?&#x27;الكتيبة &#x27;:&#x27;Team &#x27;)+(index+1):team.name;
+
+  }
+
+  function renderTeams(){
+
+    renderRallyTeamSelect();
+
+    renderTeamSelect(); teamsEl.innerHTML=&#x27;&#x27;;
+
+    state.teams.forEach((team,index)=&gt;{
+
+      team.players.sort((a,b)=&gt;a.time-b.time);
+
+      const card=document.createElement(&#x27;div&#x27;);card.className=&#x27;team&#x27;+(rotationActive&amp;&amp;index===rotationIndex?&#x27; current&#x27;:&#x27;&#x27;);
+
+      const head=document.createElement(&#x27;div&#x27;);head.className=&#x27;team-head&#x27;;
+
+      const ttl=document.createElement(&#x27;div&#x27;);ttl.className=&#x27;team-title&#x27;;ttl.textContent=displayTeamName(team,index);
+
+      const badge=document.createElement(&#x27;span&#x27;);badge.className=&#x27;badge&#x27;;badge.textContent=team.players.length+&#x27; &#x27;+(state.uiLang===&#x27;ar&#x27;?&#x27;لاعب&#x27;:&#x27;players&#x27;);ttl.appendChild(badge);
+
+      const acts=document.createElement(&#x27;div&#x27;);acts.className=&#x27;team-actions&#x27;;
+
+
+
+      const isCollapsed=Array.isArray(state.collapsedTeams)&amp;&amp;state.collapsedTeams.includes(team.id);
+
+      if(isCollapsed) card.classList.add(&#x27;collapsed&#x27;);
+
+
+
+      const collapseBtn=document.createElement(&#x27;button&#x27;);
+
+      collapseBtn.type=&#x27;button&#x27;;
+
+      collapseBtn.className=&#x27;team-collapse-btn&#x27;;
+
+      collapseBtn.title=isCollapsed
+
+        ? (state.uiLang===&#x27;ar&#x27;?&#x27;إظهار اللاعبين&#x27;:&#x27;Show players&#x27;)
+
+        : (state.uiLang===&#x27;ar&#x27;?&#x27;إخفاء اللاعبين&#x27;:&#x27;Hide players&#x27;);
+
+      collapseBtn.textContent=isCollapsed?&#x27;＋&#x27;:&#x27;−&#x27;;
+
+      collapseBtn.addEventListener(&#x27;click&#x27;,()=&gt;{
+
+        if(!Array.isArray(state.collapsedTeams)) state.collapsedTeams=[];
+
+        const exists=state.collapsedTeams.includes(team.id);
+
+        state.collapsedTeams=exists
+
+          ? state.collapsedTeams.filter(id=&gt;id!==team.id)
+
+          : [...state.collapsedTeams,team.id];
+
+        save();
+
+        renderTeams();
+
+      });
+
+
+
+      acts.appendChild(collapseBtn);
+
+      head.append(ttl,acts);card.appendChild(head);
+
+      const body=document.createElement(&#x27;div&#x27;);body.className=&#x27;players team-body&#x27;;
+
+      if(!team.players.length){const e=document.createElement(&#x27;div&#x27;);e.className=&#x27;empty&#x27;;e.textContent=tr(&#x27;noPlayers&#x27;);body.appendChild(e)}
+
+      team.players.forEach(p=&gt;{
+
+        const row=document.createElement(&#x27;div&#x27;);row.className=&#x27;player&#x27;;
+
+
+
+        const nameWrap=document.createElement(&#x27;div&#x27;);nameWrap.className=&#x27;player-edit-name&#x27;;
+
+        const nameInput=document.createElement(&#x27;input&#x27;);
+
+        nameInput.type=&#x27;text&#x27;;nameInput.maxLength=40;nameInput.value=p.name;
+
+
+
+        const timeWrap=document.createElement(&#x27;div&#x27;);timeWrap.className=&#x27;player-edit-time&#x27;;
+
+        const timeInput=document.createElement(&#x27;input&#x27;);
+
+        timeInput.type=&#x27;number&#x27;;timeInput.min=&#x27;1&#x27;;timeInput.max=&#x27;999&#x27;;timeInput.value=(p.time===&#x27;&#x27;?&#x27;&#x27;:p.time);
+
+        timeWrap.appendChild(timeInput);
+
+
+
+        const actions=document.createElement(&#x27;div&#x27;);actions.className=&#x27;team-actions&#x27;;
+
+
+
+        const saveBtn=document.createElement(&#x27;button&#x27;);
+
+        saveBtn.className=&#x27;icon-btn save-player-btn&#x27;;
+
+        saveBtn.type=&#x27;button&#x27;;
+
+        saveBtn.title=state.uiLang===&#x27;ar&#x27;?&#x27;حفظ&#x27;:&#x27;Save&#x27;;
+
+        saveBtn.textContent=&#x27;💾&#x27;;
+
+
+
+        const markDirty=()=&gt;{
+
+          const nv=nameInput.value.trim();
+
+          const tv=Number(timeInput.value);
+
+          saveBtn.classList.toggle(&#x27;dirty&#x27;,nv!==String(p.name) || tv!==Number(p.time));
+
+        };
+
+        nameInput.addEventListener(&#x27;input&#x27;,markDirty);
+
+        timeInput.addEventListener(&#x27;input&#x27;,markDirty);
+
+
+
+        const commitEdit=()=&gt;{
+
+          const nv=nameInput.value.trim();
+
+          const tv=Math.round(Number(timeInput.value));
+
+          if(!nv){showToast(state.uiLang===&#x27;ar&#x27;?&#x27;اكتب اسم اللاعب&#x27;:&#x27;Enter player name&#x27;);return;}
+
+          if(!Number.isFinite(tv)||tv&lt;1||tv&gt;999){showToast(state.uiLang===&#x27;ar&#x27;?&#x27;أدخل وقتًا صحيحًا&#x27;:&#x27;Enter a valid time&#x27;);return;}
+
+          p.name=nv;p.time=tv;
+
+          team.players.sort((a,b)=&gt;Number(b.time)-Number(a.time));
+
+          save();
+
+          renderTeams();
+
+          renderRallyTeamSelect();
+
+          if(Number(state.rallyTeamId)===Number(team.id) &amp;&amp; !running &amp;&amp; !paused) syncDurationToSelectedTeam();
+
+          updatePlayerCue(remaining);
+
+          showToast(state.uiLang===&#x27;ar&#x27;?&#x27;تم الحفظ&#x27;:&#x27;Saved&#x27;);
+
+        };
+
+        saveBtn.addEventListener(&#x27;click&#x27;,commitEdit);
+
+
+
+        const cap=document.createElement(&#x27;button&#x27;);cap.className=&#x27;icon-btn&#x27;;cap.type=&#x27;button&#x27;;cap.title=tr(&#x27;makeCaptain&#x27;);cap.textContent=team.captain===p.id?&#x27;★&#x27;:&#x27;☆&#x27;;
+
+        cap.addEventListener(&#x27;click&#x27;,()=&gt;{team.captain=p.id;save();renderTeams()});
+
+
+
+        const x=document.createElement(&#x27;button&#x27;);x.className=&#x27;icon-btn&#x27;;x.type=&#x27;button&#x27;;x.title=tr(&#x27;delete&#x27;);x.textContent=&#x27;×&#x27;;
+
+        x.addEventListener(&#x27;click&#x27;,()=&gt;{team.players=team.players.filter(q=&gt;q.id!==p.id);if(team.captain===p.id)team.captain=null;save();renderTeams();renderRallyTeamSelect();});
+
+
+
+        nameWrap.appendChild(nameInput);
+
+        actions.append(saveBtn,cap,x);
+
+        row.append(nameWrap,timeWrap,actions);
+
+        body.appendChild(row);
+
+      });
+
+
+
+      const addRow=document.createElement(&#x27;div&#x27;);addRow.className=&#x27;team-add-player&#x27;;
+
+      const addName=document.createElement(&#x27;input&#x27;);addName.type=&#x27;text&#x27;;addName.maxLength=40;addName.placeholder=state.uiLang===&#x27;ar&#x27;?&#x27;اسم اللاعب الجديد&#x27;:&#x27;New player&#x27;;
+
+      const addTime=document.createElement(&#x27;input&#x27;);addTime.type=&#x27;number&#x27;;addTime.min=&#x27;1&#x27;;addTime.max=&#x27;999&#x27;;addTime.placeholder=state.uiLang===&#x27;ar&#x27;?&#x27;الوقت&#x27;:&#x27;Time&#x27;;
+
+      const addBtn=document.createElement(&#x27;button&#x27;);addBtn.type=&#x27;button&#x27;;addBtn.className=&#x27;btn primary&#x27;;addBtn.textContent=&#x27;+&#x27;;
+
+
+
+      const addPlayerToTeam=()=&gt;{
+
+        const nv=addName.value.trim();
+
+        const tv=Math.round(Number(addTime.value));
+
+        if(!nv){showToast(state.uiLang===&#x27;ar&#x27;?&#x27;اكتب اسم اللاعب&#x27;:&#x27;Enter player name&#x27;);return;}
+
+        if(!Number.isFinite(tv)||tv&lt;1||tv&gt;999){showToast(state.uiLang===&#x27;ar&#x27;?&#x27;أدخل وقتًا صحيحًا&#x27;:&#x27;Enter a valid time&#x27;);return;}
+
+        team.players.push({id:Date.now()+Math.floor(Math.random()*10000),name:nv,time:tv});
+
+        team.players.sort((a,b)=&gt;Number(b.time)-Number(a.time));
+
+        save();
+
+        renderTeams();
+
+        renderRallyTeamSelect();
+
+        if(Number(state.rallyTeamId)===Number(team.id) &amp;&amp; !running &amp;&amp; !paused) syncDurationToSelectedTeam();
+
+        showToast(state.uiLang===&#x27;ar&#x27;?&#x27;تمت إضافة اللاعب&#x27;:&#x27;Player added&#x27;);
+
+      };
+
+      addBtn.addEventListener(&#x27;click&#x27;,addPlayerToTeam);
+
+      addName.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Enter&#x27;)addPlayerToTeam()});
+
+      addTime.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Enter&#x27;)addPlayerToTeam()});
+
+      addRow.append(addName,addTime,addBtn);
+
+      body.appendChild(addRow);
+
+
+
+      // حساب فرق وقت الإرسال حتى يصل جميع لاعبي الكتيبة في نفس اللحظة.
+
+      const gapInfo=document.createElement(&#x27;div&#x27;);
+
+      gapInfo.className=&#x27;team-gap-info&#x27;;
+
+
+
+      const validPlayers=team.players
+
+        .map(p=&gt;({name:String(p.name||&#x27;&#x27;).trim(),time:Number(p.time)}))
+
+        .filter(p=&gt;p.name &amp;&amp; Number.isFinite(p.time) &amp;&amp; p.time&gt;0)
+
+        .sort((a,b)=&gt;b.time-a.time);
+
+
+
+      if(validPlayers.length&gt;=2){
+
+        const title=document.createElement(&#x27;div&#x27;);
+
+        title.className=&#x27;gap-title&#x27;;
+
+        title.textContent=state.uiLang===&#x27;ar&#x27;?&#x27;فرق الإرسال للوصول معًا&#x27;:&#x27;Send gaps to arrive together&#x27;;
+
+        gapInfo.appendChild(title);
+
+
+
+        validPlayers.forEach((p,i)=&gt;{
+
+          const row=document.createElement(&#x27;div&#x27;);
+
+          row.className=&#x27;gap-row&#x27;;
+
+          const who=document.createElement(&#x27;span&#x27;);
+
+          const when=document.createElement(&#x27;span&#x27;);
+
+
+
+          if(i===0){
+
+            who.textContent=p.name;
+
+            when.textContent=state.uiLang===&#x27;ar&#x27;?&#x27;يرسل أولًا&#x27;:&#x27;Send first&#x27;;
+
+          }else{
+
+            const delay=validPlayers[0].time-p.time;
+
+            who.textContent=p.name;
+
+            when.textContent=state.uiLang===&#x27;ar&#x27;
+
+              ? `بعد ${delay} ث`
+
+              : `after ${delay}s`;
+
+          }
+
+          row.append(who,when);
+
+          gapInfo.appendChild(row);
+
+        });
+
+      }else{
+
+        const title=document.createElement(&#x27;div&#x27;);
+
+        title.className=&#x27;gap-title&#x27;;
+
+        title.textContent=state.uiLang===&#x27;ar&#x27;
+
+          ? &#x27;أضف لاعبين أو أكثر لحساب فرق الإرسال&#x27;
+
+          : &#x27;Add 2+ players to calculate send gaps&#x27;;
+
+        gapInfo.appendChild(title);
+
+      }
+
+
+
+      body.appendChild(gapInfo);
+
+      card.appendChild(body);teamsEl.appendChild(card);
+
+    });
+
+    updateRotationInfo();
+
+  }
+
+
+
+  function addTeam(){
+
+    if(state.teams.length&gt;=6){showToast(state.uiLang===&#x27;ar&#x27;?&#x27;عدد الكتائب ثابت: 6&#x27;:&#x27;Maximum 6 teams&#x27;);return;}
+
+    const id=Date.now();state.teams.push({id,name:&#x27;Team &#x27;+(state.teams.length+1),captain:null,players:[]});
+
+    save();renderTeams();showToast(tr(&#x27;teamAdded&#x27;));
+
+  }
+
+  function deleteTeam(id){
+
+    if(!confirm(tr(&#x27;teamDeleteConfirm&#x27;)))return;
+
+    state.teams=state.teams.filter(t=&gt;t.id!==id); if(rotationIndex&gt;=state.teams.length)rotationIndex=0;
+
+    save();renderTeams();
+
+  }
+
+  function addPlayer(){
+
+    const name=$(&#x27;playerName&#x27;).value.trim(); if(!name){showToast(tr(&#x27;nameRequired&#x27;));return}
+
+    const time=Math.min(999,Math.max(1,Number($(&#x27;playerTime&#x27;).value)||30));
+
+    const id=Number($(&#x27;playerTeam&#x27;).value); const team=state.teams.find(t=&gt;t.id===id); if(!team)return;
+
+    team.players.push({id:Date.now(),name,time}); $(&#x27;playerName&#x27;).value=&#x27;&#x27;;save();renderTeams();showToast(tr(&#x27;added&#x27;));
+
+  }
+
+
+
+  let availableVoices=[];
+
+  let selectedVoiceName=state.selectedVoiceName||&#x27;&#x27;;
+
+
+
+  function getVoices(){
+
+    return (&#x27;speechSynthesis&#x27; in window) ? speechSynthesis.getVoices() : [];
+
+  }
+
+
+
+  function scoreVoice(v, lang){
+
+    const vl=(v.lang||&#x27;&#x27;).toLowerCase(), target=lang.toLowerCase();
+
+    let s=0;
+
+    if(vl===target)s+=100;
+
+    if(vl.startsWith(target.slice(0,2)))s+=60;
+
+    if(v.localService)s+=10;
+
+    const name=(v.name||&#x27;&#x27;).toLowerCase();
+
+    if(/natural|enhanced|premium|microsoft|google/.test(name))s+=18;
+
+    return s;
+
+  }
+
+
+
+  function populateVoiceList(){
+
+    if(!(&#x27;speechSynthesis&#x27; in window))return;
+
+    availableVoices=getVoices();
+
+    const sel=$(&#x27;deviceVoice&#x27;), current=selectedVoiceName;
+
+    sel.innerHTML=&#x27;&#x27;;
+
+
+
+    const isArabic=state.voiceLang.startsWith(&#x27;ar&#x27;);
+
+    let allowed=[];
+
+
+
+    if(isArabic){
+
+      // عند اختيار العربية: اعرض الأصوات العربية فقط.
+
+      allowed=availableVoices.filter(v=&gt;(v.lang||&#x27;&#x27;).toLowerCase().startsWith(&#x27;ar&#x27;));
+
+    }else{
+
+      // عند اختيار الإنجليزية: اعرض David و Mark فقط.
+
+      allowed=availableVoices.filter(v=&gt;{
+
+        const name=(v.name||&#x27;&#x27;).toLowerCase();
+
+        return name.includes(&#x27;david&#x27;) || name.includes(&#x27;mark&#x27;);
+
+      });
+
+    }
+
+
+
+    if(!allowed.length){
+
+      const o=document.createElement(&#x27;option&#x27;);
+
+      o.value=&#x27;&#x27;;
+
+      o.textContent=isArabic
+
+        ? (state.uiLang===&#x27;ar&#x27;?&#x27;لا توجد أصوات عربية مثبتة على الجهاز&#x27;:&#x27;No Arabic voices installed&#x27;)
+
+        : (state.uiLang===&#x27;ar&#x27;?&#x27;David و Mark غير متوفرين على الجهاز&#x27;:&#x27;David and Mark are not installed&#x27;);
+
+      sel.appendChild(o);
+
+      selectedVoiceName=&#x27;&#x27;;
+
+      state.selectedVoiceName=&#x27;&#x27;;
+
+      save();
+
+      return;
+
+    }
+
+
+
+    allowed
+
+      .sort((x,y)=&gt;scoreVoice(y,state.voiceLang)-scoreVoice(x,state.voiceLang))
+
+      .forEach(v=&gt;{
+
+        const o=document.createElement(&#x27;option&#x27;);
+
+        o.value=v.name;
+
+        o.textContent=`${v.name} (${v.lang})`;
+
+        sel.appendChild(o);
+
+      });
+
+
+
+    if([...sel.options].some(o=&gt;o.value===current)){
+
+      sel.value=current;
+
+    }else{
+
+      selectedVoiceName=allowed[0].name;
+
+      state.selectedVoiceName=allowed[0].name;
+
+      sel.value=allowed[0].name;
+
+      save();
+
+    }
+
+  }
+
+
+
+  function chooseVoice(lang){
+
+    const voices=availableVoices.length?availableVoices:getVoices();
+
+    const isArabic=String(lang||&#x27;&#x27;).toLowerCase().startsWith(&#x27;ar&#x27;);
+
+
+
+    let allowed=[];
+
+    if(isArabic){
+
+      allowed=voices.filter(v=&gt;(v.lang||&#x27;&#x27;).toLowerCase().startsWith(&#x27;ar&#x27;));
+
+    }else{
+
+      allowed=voices.filter(v=&gt;{
+
+        const name=(v.name||&#x27;&#x27;).toLowerCase();
+
+        return name.includes(&#x27;david&#x27;) || name.includes(&#x27;mark&#x27;);
+
+      });
+
+    }
+
+
+
+    if(selectedVoiceName){
+
+      const v=allowed.find(x=&gt;x.name===selectedVoiceName);
+
+      if(v)return v;
+
+    }
+
+
+
+    return allowed
+
+      .sort((x,y)=&gt;scoreVoice(y,lang)-scoreVoice(x,lang))[0] || null;
+
+  }
+
+
+
+  let speechToken=0;
+
+  function speak(text,lang=state.voiceLang,rate=1.68){
+
+    if(!state.soundOn||!state.voiceEnabled||!(&#x27;speechSynthesis&#x27; in window))return;
+
+
+
+    // لا نتخطى الرقم التالي: الرقم الأحدث يلغي الرقم القديم ويبدأ فورًا.
+
+    const myToken=++speechToken;
+
+    speechSynthesis.cancel();
+
+
+
+    setTimeout(()=&gt;{
+
+      if(myToken!==speechToken || !state.soundOn || !state.voiceEnabled) return;
+
+      const u=new SpeechSynthesisUtterance(String(text));
+
+      u.lang=lang;
+
+      u.rate=rate;
+
+      u.pitch=1.03;
+
+      u.volume=1;
+
+      const v=chooseVoice(lang);
+
+      if(v)u.voice=v;
+
+      speechSynthesis.speak(u);
+
+    },30);
+
+  }
+
+
+
+  function speakSecond(sec){
+
+    if(sec&lt;0)return;
+
+    const ar={0:&#x27;الآن&#x27;,1:&#x27;واحد&#x27;,2:&#x27;اثنين&#x27;,3:&#x27;ثلاثة&#x27;,4:&#x27;أربعة&#x27;,5:&#x27;خمسة&#x27;,6:&#x27;ستة&#x27;,7:&#x27;سبعة&#x27;,8:&#x27;ثمانية&#x27;,9:&#x27;تسعة&#x27;,10:&#x27;عشرة&#x27;,
+
+      11:&#x27;أحد عشر&#x27;,12:&#x27;اثنا عشر&#x27;,13:&#x27;ثلاثة عشر&#x27;,14:&#x27;أربعة عشر&#x27;,15:&#x27;خمسة عشر&#x27;,16:&#x27;ستة عشر&#x27;,17:&#x27;سبعة عشر&#x27;,18:&#x27;ثمانية عشر&#x27;,19:&#x27;تسعة عشر&#x27;,20:&#x27;عشرين&#x27;};
+
+    speak(state.voiceLang.startsWith(&#x27;ar&#x27;)?(ar[sec]||String(sec)):(sec===0?&#x27;Go&#x27;:String(sec)),state.voiceLang,1.72);
+
+  }
+
+
+
+  function getActiveTeam(){
+
+    if(rotationActive &amp;&amp; state.teams[rotationIndex]) return state.teams[rotationIndex];
+
+    const selectedId=Number(state.rallyTeamId || $(&#x27;rallyTeam&#x27;).value);
+
+    return state.teams.find(t=&gt;t.id===selectedId) || state.teams[0] || null;
+
+  }
+
+
+
+  function getAutoStartSecond(){
+
+    const team=getActiveTeam();
+
+    if(!team || !Array.isArray(team.players) || !team.players.length) return null;
+
+
+
+    const times=team.players
+
+      .map(p=&gt;Number(p.time))
+
+      .filter(v=&gt;Number.isFinite(v) &amp;&amp; v&gt;=0);
+
+
+
+    if(!times.length) return null;
+
+
+
+    // أول لاعب هو صاحب أعلى وقت، ويبدأ العداد قبله بـ 7 ثوانٍ.
+
+    return Math.min(3600, Math.max(...times) + 7);
+
+  }
+
+
+
+  function syncDurationToSelectedTeam(){
+
+    const autoStart=getAutoStartSecond();
+
+    if(autoStart===null) return;
+
+    state.duration=autoStart;
+
+    $(&#x27;duration&#x27;).value=autoStart;
+
+    if(!running &amp;&amp; !paused){
+
+      remaining=autoStart;
+
+      timerEl.textContent=fmt(remaining);
+
+      updatePlayerCue(remaining);
+
+    }
+
+    save();
+
+  }
+
+
+
+  function getAutoStopSecond(){
+
+    const team=getActiveTeam();
+
+    if(!team || !Array.isArray(team.players) || !team.players.length) return 0;
+
+
+
+    const times=team.players
+
+      .map(p=&gt;Number(p.time))
+
+      .filter(v=&gt;Number.isFinite(v) &amp;&amp; v&gt;=0);
+
+
+
+    if(!times.length) return 0;
+
+
+
+    // آخر لاعب هو صاحب أقل وقت. يتوقف العداد بعد وقته بثانيتين.
+
+    const lastPlayerTime=Math.min(...times);
+
+    return Math.max(0,lastPlayerTime-2);
+
+  }
+
+
+
+  function updatePlayerCue(sec){
+
+    const box=$(&#x27;playerDue&#x27;);
+
+    const team=getActiveTeam();
+
+
+
+    timerEl.classList.remove(&#x27;player-hit&#x27;);
+
+    box.innerHTML=&#x27;&#x27;;
+
+
+
+    if(!team || !Array.isArray(team.players) || !team.players.length) return;
+
+
+
+    // اللاعب الذي يطابق وقته الرقم الحالي بالضبط
+
+    const hit=team.players.find(p=&gt;Number(p.time)===Number(sec));
+
+    if(hit){
+
+      timerEl.classList.add(&#x27;player-hit&#x27;);
+
+      const teamIndex=state.teams.indexOf(team);
+
+      box.innerHTML=`${tr(&#x27;playerNow&#x27;)}: ${escapeHtml(hit.name)} — ${hit.time} ${tr(&#x27;seconds&#x27;)}
+
+        &lt;small&gt;${displayTeamName(team,teamIndex)}&lt;/small&gt;`;
+
+      return;
+
+    }
+
+
+
+    // عرض أقرب لاعب قادم: زمنه أقل من الرقم الحالي وهو الأكبر بينهم
+
+    const upcoming=team.players
+
+      .filter(p=&gt;Number(p.time)&lt;Number(sec))
+
+      .sort((a,b)=&gt;Number(b.time)-Number(a.time))[0];
+
+
+
+    if(upcoming){
+
+      box.innerHTML=`&lt;span style=&quot;color:var(--text)&quot;&gt;${tr(&#x27;nextPlayer&#x27;)}: ${escapeHtml(upcoming.name)} — ${upcoming.time} ${tr(&#x27;seconds&#x27;)}&lt;/span&gt;`;
+
+    }
+
+  }
+
+
+
+  function escapeHtml(v){
+
+    return String(v).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,c=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[c]));
+
+  }
+
+
+
+  let deadline=0;
+
+
+
+  function tick(){
+
+    if(running &amp;&amp; !paused &amp;&amp; deadline){
+
+      remaining=Math.max(0,Math.ceil((deadline-Date.now())/1000));
+
+    }
+
+    timerEl.textContent=fmt(remaining);
+
+    timerEl.classList.toggle(&#x27;urgent&#x27;,remaining&lt;=10&amp;&amp;remaining&gt;0);
+
+    timerEl.classList.toggle(&#x27;go&#x27;,remaining===0);
+
+    updatePlayerCue(remaining);
+
+
+
+    if(remaining&lt;=state.duration &amp;&amp; remaining&gt;=0 &amp;&amp; spokenSecond!==remaining){
+
+      spokenSecond=remaining;
+
+      speakSecond(remaining);
+
+    }
+
+
+
+    const stopAt=getAutoStopSecond();
+
+    if(remaining&lt;=stopAt){
+
+      remaining=stopAt;
+
+      timerEl.textContent=fmt(remaining);
+
+      clearInterval(timerId);timerId=null;running=false;deadline=0;
+
+
+
+      const team=getActiveTeam();
+
+      const idx=team?state.teams.indexOf(team):-1;
+
+      statusEl.textContent=team
+
+        ? (state.uiLang===&#x27;ar&#x27;
+
+            ? `انتهى عد ${displayTeamName(team,idx)} عند ${remaining} ثانية`
+
+            : `${displayTeamName(team,idx)} countdown ended at ${remaining}s`)
+
+        : tr(&#x27;started&#x27;);
+
+
+
+      // نترك نطق آخر رقم يكتمل، لكن لا يستمر العد بعده.
+
+      if(rotationActive)setTimeout(nextRotation,250);
+
+    }
+
+  }
+
+
+
+  function startTimer(seconds){
+
+    clearInterval(timerId);
+
+    if(&#x27;speechSynthesis&#x27;in window){ speechSynthesis.cancel(); speechToken++; }
+
+
+
+    remaining=Math.max(1,Math.min(3600,Number(seconds)||30));
+
+    running=true;paused=false;spokenSecond=null;
+
+    deadline=Date.now()+(remaining*1000);
+
+
+
+    const activeTeam=getActiveTeam();
+
+    const activeIndex=activeTeam?state.teams.indexOf(activeTeam):-1;
+
+    statusEl.textContent=activeTeam
+
+      ? tr(&#x27;rallyFor&#x27;)+&#x27; &#x27;+displayTeamName(activeTeam,activeIndex)
+
+      : (state.uiLang===&#x27;ar&#x27;?&#x27;بدأ العد&#x27;:&#x27;Countdown started&#x27;);
+
+
+
+    // تحديث فوري لحظة الضغط، ثم تحديث سريع للحفاظ على دقة العداد.
+
+    tick();
+
+    timerId=setInterval(tick,100);
+
+  }
+
+
+
+  function pauseTimer(){
+
+    if(timerId){
+
+      remaining=Math.max(0,Math.ceil((deadline-Date.now())/1000));
+
+      clearInterval(timerId);timerId=null;paused=true;running=false;deadline=0;
+
+      statusEl.textContent=tr(&#x27;paused&#x27;);
+
+    }
+
+  }
+
+
+
+  function resumeTimer(){
+
+    if(paused&amp;&amp;!timerId&amp;&amp;remaining&gt;0){
+
+      paused=false;running=true;spokenSecond=null;
+
+      deadline=Date.now()+(remaining*1000);
+
+      statusEl.textContent=state.uiLang===&#x27;ar&#x27;?&#x27;تم الاستئناف&#x27;:&#x27;Resumed&#x27;;
+
+      tick();
+
+      timerId=setInterval(tick,100);
+
+    }
+
+  }
+
+  function stopTimer(){
+
+    clearInterval(timerId);timerId=null;running=false;paused=false;spokenSecond=null;
+
+    if(&#x27;speechSynthesis&#x27;in window)speechSynthesis.cancel();remaining=state.duration;timerEl.textContent=fmt(remaining);statusEl.textContent=tr(&#x27;stopped&#x27;);
+
+    timerEl.classList.remove(&#x27;urgent&#x27;,&#x27;go&#x27;,&#x27;player-hit&#x27;);
+
+    $(&#x27;playerDue&#x27;).innerHTML=&#x27;&#x27;;
+
+  }
+
+
+
+  function updateRotationInfo(){
+
+    if(!state.teams.length){$(&#x27;currentTeam&#x27;).textContent=&#x27;—&#x27;;$(&#x27;nextTeam&#x27;).textContent=&#x27;—&#x27;;$(&#x27;roundNo&#x27;).textContent=rotationRound;return}
+
+    $(&#x27;currentTeam&#x27;).textContent=rotationActive?displayTeamName(state.teams[rotationIndex],rotationIndex):&#x27;—&#x27;;
+
+    let n=(rotationIndex+1)%state.teams.length;$(&#x27;nextTeam&#x27;).textContent=rotationActive?displayTeamName(state.teams[n],n):&#x27;—&#x27;;
+
+    $(&#x27;roundNo&#x27;).textContent=rotationRound;
+
+  }
+
+  function startRotation(){
+
+    if(!state.teams.length){showToast(tr(&#x27;needTeams&#x27;));return}
+
+    rotationActive=true;rotationIndex=0;rotationRound=1;renderTeams();startTimer(state.rotationDuration);
+
+  }
+
+  function nextRotation(){
+
+    if(!rotationActive||!state.teams.length)return;
+
+    if(rotationIndex&gt;=state.teams.length-1){
+
+      if(state.rotationMode===&#x27;once&#x27;){stopRotation();showToast(tr(&#x27;rotationDone&#x27;));return}
+
+      rotationIndex=0;rotationRound++;
+
+    }else rotationIndex++;
+
+    renderTeams();startTimer(state.rotationDuration);
+
+  }
+
+  function stopRotation(){rotationActive=false;clearInterval(timerId);timerId=null;running=false;paused=false;remaining=state.duration;timerEl.textContent=fmt(remaining);statusEl.textContent=tr(&#x27;stopped&#x27;);renderTeams()}
+
+
+
+  $(&#x27;uiLangBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{state.uiLang=state.uiLang===&#x27;ar&#x27;?&#x27;en&#x27;:&#x27;ar&#x27;;save();applyLang()});
+
+  $(&#x27;soundBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{state.soundOn=!state.soundOn;if(!state.soundOn&amp;&amp;&#x27;speechSynthesis&#x27;in window)speechSynthesis.cancel();save();applyLang()});
+
+  $(&#x27;voiceEnabled&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.voiceEnabled=e.target.checked;save()});
+
+  $(&#x27;voiceLang&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{
+
+    state.voiceLang=e.target.value;
+
+    selectedVoiceName=&#x27;&#x27;; state.selectedVoiceName=&#x27;&#x27;;
+
+    save(); populateVoiceList();
+
+  });
+
+  $(&#x27;deviceVoice&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{
+
+    selectedVoiceName=e.target.value; state.selectedVoiceName=e.target.value; save();
+
+  });
+
+  $(&#x27;testVoiceBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{
+
+    if(&#x27;speechSynthesis&#x27; in window){ speechSynthesis.cancel(); speechToken++; }
+
+    setTimeout(()=&gt;speak(
+
+      state.voiceLang.startsWith(&#x27;ar&#x27;)?&#x27;خمسة، أربعة، ثلاثة، اثنين، واحد، الآن&#x27;:&#x27;Five, four, three, two, one, go&#x27;,
+
+      state.voiceLang,1.22
+
+    ),80);
+
+  });
+
+  $(&#x27;duration&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.duration=Math.max(5,Math.min(3600,Number(e.target.value)||30));e.target.value=state.duration;remaining=state.duration;timerEl.textContent=fmt(remaining);save()});
+
+  $(&#x27;rotationDuration&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.rotationDuration=Math.max(5,Math.min(3600,Number(e.target.value)||30));e.target.value=state.rotationDuration;save()});
+
+  $(&#x27;rotationMode&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.rotationMode=e.target.value;save()});
+
+    $(&#x27;startBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{
+
+    const autoStart=getAutoStartSecond();
+
+    if(autoStart!==null){
+
+      state.duration=autoStart;
+
+      $(&#x27;duration&#x27;).value=autoStart;
+
+    }else{
+
+      state.duration=Number($(&#x27;duration&#x27;).value)||30;
+
+    }
+
+    save();
+
+    startTimer(state.duration);
+
+  });
+
+  $(&#x27;resumeBtn&#x27;).addEventListener(&#x27;click&#x27;,resumeTimer);$(&#x27;stopBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{rotationActive=false;stopTimer();renderTeams()});
+
+  $(&#x27;startRotationBtn&#x27;).addEventListener(&#x27;click&#x27;,startRotation);$(&#x27;stopRotationBtn&#x27;).addEventListener(&#x27;click&#x27;,stopRotation);
+
+  $(&#x27;addTeamBtn&#x27;).addEventListener(&#x27;click&#x27;,addTeam);$(&#x27;addPlayerBtn&#x27;).addEventListener(&#x27;click&#x27;,addPlayer);
+
+  $(&#x27;playerName&#x27;).addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Enter&#x27;)addPlayer()});
+
+  $(&#x27;playerTeam&#x27;).addEventListener(&#x27;change&#x27;,()=&gt;updatePlayerCue(remaining));
+
+  $(&#x27;rallyTeam&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{
+
+    state.rallyTeamId=Number(e.target.value);
+
+    save();
+
+    syncDurationToSelectedTeam();
+
+    updatePlayerCue(remaining);
+
+    const team=getActiveTeam();
+
+    const idx=team?state.teams.indexOf(team):-1;
+
+    if(team &amp;&amp; !running) statusEl.textContent=tr(&#x27;rallyFor&#x27;)+&#x27; &#x27;+displayTeamName(team,idx);
+
+  });
+
+  $(&#x27;resetBtn&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{if(confirm(tr(&#x27;confirmReset&#x27;))){localStorage.removeItem(KEY);location.reload()}});
+
+  if(&#x27;speechSynthesis&#x27;in window){
+
+    populateVoiceList();
+
+    speechSynthesis.onvoiceschanged=populateVoiceList;
+
+    setTimeout(populateVoiceList,250);
+
+  }
+
+
+
+  $(&#x27;voiceEnabled&#x27;).checked=state.voiceEnabled;$(&#x27;voiceLang&#x27;).value=state.voiceLang;
+
+  $(&#x27;duration&#x27;).value=state.duration;$(&#x27;rotationDuration&#x27;).value=state.rotationDuration;$(&#x27;rotationMode&#x27;).value=state.rotationMode;
+
+  remaining=state.duration;timerEl.textContent=fmt(remaining);applyLang();
+
+  renderRallyTeamSelect();
+
+  if($(&#x27;rallyTeam&#x27;).options.length){
+
+    const v=String(state.rallyTeamId||&#x27;&#x27;);
+
+    if([...$(&#x27;rallyTeam&#x27;).options].some(o=&gt;o.value===v)) $(&#x27;rallyTeam&#x27;).value=v;
+
+  }
+
+  syncDurationToSelectedTeam();
+
+})();
+
+
+
+
+
+
+
+  // ===== صفحة الحصون المجدولة - 4 حشود لكل حصن =====
+
+  const mainPage=document.getElementById(&#x27;mainPage&#x27;);
+
+  const fortPage=document.getElementById(&#x27;fortPage&#x27;);
+
+  const mainPageBtn=document.getElementById(&#x27;mainPageBtn&#x27;);
+
+  const fortPageBtn=document.getElementById(&#x27;fortPageBtn&#x27;);
+
+  function showRallyPage(which){
+
+    const fort=which===&#x27;fort&#x27;;
+
+    mainPage.classList.toggle(&#x27;hidden&#x27;,fort);
+
+    fortPage.classList.toggle(&#x27;active&#x27;,fort);
+
+    mainPageBtn.classList.toggle(&#x27;active&#x27;,!fort);
+
+    fortPageBtn.classList.toggle(&#x27;active&#x27;,fort);
+
+  }
+
+  mainPageBtn.addEventListener(&#x27;click&#x27;,()=&gt;showRallyPage(&#x27;main&#x27;));
+
+  fortPageBtn.addEventListener(&#x27;click&#x27;,()=&gt;showRallyPage(&#x27;fort&#x27;));
+
+
+
+  const fc=id=&gt;document.getElementById(id);
+
+  const MAKKAH_OFFSET=3*60*60*1000;
+
+  const FORT_KEY=&#x27;fortress_schedule_4_rallies_close_time_v4&#x27;;
+
+  const GAME_DELAY_KEY=&#x27;fortress_game_clock_delay_v3_ready_03&#x27;;
+
+  const savedGameAdvance=localStorage.getItem(GAME_DELAY_KEY);
+
+  let gameDelaySec=savedGameAdvance===null ? 0.3 : Math.max(0,Number(savedGameAdvance)||0);
+
+
+
+  // Default closing times; each can be edited manually.
+
+  const fortressDefs=[
+
+    {id:&#x27;castle5&#x27;,name:&#x27;القلعة رقم 5&#x27;,open:&#x27;08:00&#x27;},
+
+    {id:&#x27;fort2&#x27;,name:&#x27;الحصن رقم 2&#x27;,open:&#x27;09:00&#x27;},
+
+    {id:&#x27;fort3&#x27;,name:&#x27;الحصن رقم 3&#x27;,open:&#x27;09:00&#x27;},
+
+    {id:&#x27;castle8&#x27;,name:&#x27;القلعة رقم 8&#x27;,open:&#x27;09:00&#x27;},
+
+    {id:&#x27;fort4&#x27;,name:&#x27;الحصن رقم 4&#x27;,open:&#x27;12:00&#x27;},
+
+    {id:&#x27;castle6&#x27;,name:&#x27;القلعة رقم 6&#x27;,open:&#x27;12:00&#x27;}
+
+  ];
+
+
+
+  function fp(n,w=2){return String(n).padStart(w,&#x27;0&#x27;)}
+
+  function makkahClock(ms){
+
+    const d=new Date(ms+MAKKAH_OFFSET);
+
+    return fp(d.getUTCHours())+&#x27;:&#x27;+fp(d.getUTCMinutes())+&#x27;:&#x27;+fp(d.getUTCSeconds())+&#x27;.&#x27;+Math.floor(d.getUTCMilliseconds()/100);
+
+  }
+
+  function makkahTodayAt(hhmm){
+
+    const [h,m]=hhmm.split(&#x27;:&#x27;).map(Number);
+
+    const n=new Date(Date.now()+MAKKAH_OFFSET);
+
+    // Positive calibration advances the program&#x27;s game clock.
+
+    // Therefore a displayed game target occurs earlier in real time by the calibration amount.
+
+    return Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate(),h-3,m,0,0)+1000-(gameDelaySec*1000);
+
+  }
+
+  function loadFortData(){
+
+    try{return JSON.parse(localStorage.getItem(FORT_KEY))||{}}catch(e){return{}}
+
+  }
+
+  let fortData=loadFortData();
+
+  function saveFortData(){localStorage.setItem(FORT_KEY,JSON.stringify(fortData))}
+
+  function ensureData(){
+
+    fortressDefs.forEach(f=&gt;{
+
+      if(!fortData[f.id]) fortData[f.id]={name:f.name,open:f.open,collapsed:true,rallies:Array.from({length:4},()=&gt;({name:&#x27;&#x27;,march:&#x27;&#x27;,duration:&#x27;300&#x27;}))};
+
+      if(!fortData[f.id].name)fortData[f.id].name=f.name;
+
+      if(!fortData[f.id].open)fortData[f.id].open=f.open;
+
+      if(typeof fortData[f.id].collapsed!==&#x27;boolean&#x27;)fortData[f.id].collapsed=true;
+
+      while(fortData[f.id].rallies.length&lt;4)fortData[f.id].rallies.push({name:&#x27;&#x27;,march:&#x27;&#x27;,duration:&#x27;300&#x27;});
+
+      fortData[f.id].rallies=fortData[f.id].rallies.slice(0,4);
+
+    });
+
+    saveFortData();
+
+  }
+
+  ensureData();
+
+
+
+  function buildFortresses(){
+
+    const host=fc(&#x27;fortressList&#x27;);host.innerHTML=&#x27;&#x27;;
+
+    fortressDefs.forEach(f=&gt;{
+
+      const card=document.createElement(&#x27;div&#x27;);card.className=&#x27;fortress-card&#x27;;card.dataset.fort=f.id;
+
+      const meta=fortData[f.id];
+
+      if(meta.collapsed)card.classList.add(&#x27;collapsed&#x27;);
+
+      card.innerHTML=`&lt;div class=&quot;fortress-head&quot;&gt;
+
+        &lt;button type=&quot;button&quot; class=&quot;btn fortress-toggle&quot; aria-label=&quot;فتح أو تصغير&quot;&gt;${meta.collapsed?&#x27;+&#x27;:&#x27;−&#x27;}&lt;/button&gt;
+
+        &lt;div class=&quot;fortress-name fortress-name-display&quot;&gt;${meta.name}&lt;/div&gt;
+
+        &lt;div class=&quot;fortress-time fortress-time-display&quot;&gt;${meta.open}&lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;fortress-edit&quot;&gt;
+
+        &lt;div class=&quot;field&quot;&gt;&lt;label&gt;اسم / رقم القلعة أو الحصن&lt;/label&gt;&lt;input class=&quot;fort-name-edit&quot; value=&quot;${String(meta.name).replace(/&quot;/g,&#x27;&amp;quot;&#x27;)}&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;field&quot;&gt;&lt;label&gt;وقت إغلاق القلعة / الحصن&lt;/label&gt;&lt;input class=&quot;fort-time-edit&quot; type=&quot;time&quot; step=&quot;60&quot; value=&quot;${meta.open}&quot;&gt;&lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;fixed-rallies&quot;&gt;&lt;/div&gt;`;
+
+      const nameEdit=card.querySelector(&#x27;.fort-name-edit&#x27;);
+
+      const timeEdit=card.querySelector(&#x27;.fort-time-edit&#x27;);
+
+      const toggleBtn=card.querySelector(&#x27;.fortress-toggle&#x27;);
+
+      toggleBtn.addEventListener(&#x27;click&#x27;,()=&gt;{
+
+        meta.collapsed=!meta.collapsed;
+
+        card.classList.toggle(&#x27;collapsed&#x27;,meta.collapsed);
+
+        toggleBtn.textContent=meta.collapsed?&#x27;+&#x27;:&#x27;−&#x27;;
+
+        saveFortData();
+
+      });
+
+      const updateMeta=()=&gt;{
+
+        meta.name=nameEdit.value.trim()||f.name;
+
+        meta.open=timeEdit.value||f.open;
+
+        card.querySelector(&#x27;.fortress-name-display&#x27;).textContent=meta.name;
+
+        card.querySelector(&#x27;.fortress-time-display&#x27;).textContent=meta.open;
+
+        saveFortData();updateFortTimes();
+
+      };
+
+      nameEdit.addEventListener(&#x27;input&#x27;,updateMeta);
+
+      timeEdit.addEventListener(&#x27;input&#x27;,updateMeta);
+
+      const list=card.querySelector(&#x27;.fixed-rallies&#x27;);
+
+      fortData[f.id].rallies.forEach((r,i)=&gt;{
+
+        const row=document.createElement(&#x27;div&#x27;);row.className=&#x27;fixed-rally&#x27;;row.dataset.idx=i;
+
+        row.innerHTML=`
+
+          &lt;div&gt;&lt;label&gt;اسم الحشد ${i+1}&lt;/label&gt;&lt;input class=&quot;rr-name&quot; value=&quot;${String(r.name||&#x27;&#x27;).replace(/&quot;/g,&#x27;&amp;quot;&#x27;)}&quot; placeholder=&quot;الاسم&quot;&gt;&lt;/div&gt;
+
+          &lt;div&gt;&lt;label&gt;مدة المسيرة&lt;/label&gt;&lt;div class=&quot;rr-march-parts&quot;&gt;
+
+  &lt;div&gt;&lt;label&gt;دقيقة&lt;/label&gt;&lt;input class=&quot;rr-march-min&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;${r.march!==&#x27;&#x27;?Math.floor(Number(r.march)/60):&#x27;&#x27;}&quot; placeholder=&quot;0&quot;&gt;&lt;/div&gt;
+
+  &lt;div&gt;&lt;label&gt;ثانية&lt;/label&gt;&lt;input class=&quot;rr-march-sec&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;59.9&quot; step=&quot;0.1&quot; value=&quot;${r.march!==&#x27;&#x27;?(Number(r.march)%60).toFixed(1).replace(/\.0$/,&#x27;&#x27;):&#x27;&#x27;}&quot; placeholder=&quot;0&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;&lt;input class=&quot;rr-march&quot; type=&quot;hidden&quot; value=&quot;${r.march||&#x27;&#x27;}&quot;&gt;&lt;/div&gt;
+
+          &lt;div&gt;&lt;label&gt;مدة الحشد&lt;/label&gt;&lt;select class=&quot;rr-duration&quot;&gt;
+
+            &lt;option value=&quot;60&quot; ${r.duration===&#x27;60&#x27;?&#x27;selected&#x27;:&#x27;&#x27;}&gt;1 دقيقة&lt;/option&gt;
+
+            &lt;option value=&quot;300&quot; ${r.duration!==&#x27;60&#x27;?&#x27;selected&#x27;:&#x27;&#x27;}&gt;5 دقائق&lt;/option&gt;
+
+          &lt;/select&gt;&lt;/div&gt;
+
+          &lt;div class=&quot;calc&quot;&gt;وقت فتح الحشد&lt;b class=&quot;rr-open&quot;&gt;--:--:--.-&lt;/b&gt;&lt;span class=&quot;rr-count&quot;&gt;--.-&lt;/span&gt;&lt;span class=&quot;rr-status&quot;&gt;&lt;/span&gt;&lt;div class=&quot;rr-lights green&quot; aria-label=&quot;مؤشر أجزاء الثانية&quot;&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;span class=&quot;rr-light&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;`;
+
+        const update=()=&gt;{
+
+          const obj=fortData[f.id].rallies[i];
+
+          obj.name=row.querySelector(&#x27;.rr-name&#x27;).value;
+
+          const minEl=row.querySelector(&#x27;.rr-march-min&#x27;);
+
+          const secEl=row.querySelector(&#x27;.rr-march-sec&#x27;);
+
+          let mins=Math.max(0,parseInt(minEl.value||&#x27;0&#x27;,10)||0);
+
+          let secs=Math.max(0,parseFloat(secEl.value||&#x27;0&#x27;)||0);
+
+          if(secs&gt;=60){
+
+            mins+=Math.floor(secs/60);
+
+            secs=secs%60;
+
+            minEl.value=mins;
+
+            secEl.value=secs.toFixed(1).replace(/\.0$/,&#x27;&#x27;);
+
+          }
+
+          obj.march=(mins*60+secs).toFixed(1).replace(/\.0$/,&#x27;&#x27;);
+
+          row.querySelector(&#x27;.rr-march&#x27;).value=obj.march;
+
+          obj.duration=row.querySelector(&#x27;.rr-duration&#x27;).value;
+
+          saveFortData(); updateFortTimes();
+
+        };
+
+        row.querySelectorAll(&#x27;input,select&#x27;).forEach(el=&gt;el.addEventListener(&#x27;input&#x27;,update));
+
+        row.querySelector(&#x27;select&#x27;).addEventListener(&#x27;change&#x27;,update);
+
+        list.appendChild(row);
+
+      });
+
+      host.appendChild(card);
+
+    });
+
+    updateFortTimes();
+
+  }
+
+
+
+  function getCloseTime(f){
+
+    // The editable time is the fortress/castle CLOSING time itself.
+
+    const closeTime=(fortData[f.id]&amp;&amp;fortData[f.id].open)||f.open;
+
+    return makkahTodayAt(closeTime);
+
+  }
+
+  function updateFortTimes(){
+
+    const now=Date.now();
+
+    fortressDefs.forEach(f=&gt;{
+
+      const card=document.querySelector(`[data-fort=&quot;${f.id}&quot;]`);
+
+      if(!card)return;
+
+      const close=getCloseTime(f);
+
+      card.querySelectorAll(&#x27;.fixed-rally&#x27;).forEach((row,i)=&gt;{
+
+        const r=fortData[f.id].rallies[i];
+
+        const march=Number(r.march);
+
+        const openNode=row.querySelector(&#x27;.rr-open&#x27;);
+
+        const countNode=row.querySelector(&#x27;.rr-count&#x27;);
+
+        const status=row.querySelector(&#x27;.rr-status&#x27;);
+
+        const lights=row.querySelector(&#x27;.rr-lights&#x27;);
+
+        row.classList.remove(&#x27;open-now&#x27;);countNode.classList.remove(&#x27;send-now&#x27;);
+
+        if(r.march===&#x27;&#x27;||!Number.isFinite(march)||march&lt;0){
+
+          openNode.textContent=&#x27;--:--:--.-&#x27;;countNode.textContent=&#x27;--.-&#x27;;status.textContent=&#x27;&#x27;;return;
+
+        }
+
+        const duration=Number(r.duration)||300;
+
+        const arrival=close-100; // 0.1 sec before fortress closes
+
+        const depart=arrival-march*1000;
+
+        const rallyOpen=depart-duration*1000;
+
+        openNode.textContent=makkahClock(rallyOpen);
+
+        if(lights){
+
+          const bulbs=[...lights.querySelectorAll(&#x27;.rr-light&#x27;)];
+
+          bulbs.forEach(x=&gt;x.classList.remove(&#x27;on&#x27;));
+
+          const until=rallyOpen-now;
+
+          lights.classList.remove(&#x27;green&#x27;,&#x27;yellow&#x27;,&#x27;red&#x27;);
+
+          if(until&gt;5000){
+
+            lights.classList.add(&#x27;green&#x27;);
+
+          }else if(until&gt;1000){
+
+            lights.classList.add(&#x27;yellow&#x27;);
+
+          }else if(until&gt;0){
+
+            lights.classList.add(&#x27;red&#x27;);
+
+            const elapsed=1000-until;
+
+            const lit=Math.min(10,Math.max(1,Math.floor(elapsed/100)+1));
+
+            bulbs.forEach((x,j)=&gt;x.classList.toggle(&#x27;on&#x27;,j&lt;lit));
+
+          }else if(now&lt;depart){
+
+            lights.classList.add(&#x27;red&#x27;);
+
+            bulbs.forEach(x=&gt;x.classList.add(&#x27;on&#x27;));
+
+          }else{
+
+            lights.classList.add(&#x27;green&#x27;);
+
+          }
+
+        }
+
+
+
+        const diff=rallyOpen-now;
+
+        if(diff&gt;0){
+
+          countNode.textContent=(diff/1000).toFixed(1);
+
+          status.textContent=&#x27; ث&#x27;;
+
+        }else if(now&gt;=rallyOpen &amp;&amp; now&lt;rallyOpen+1000){
+
+          // Exact send/open second: countdown number itself becomes red.
+
+          countNode.textContent=&#x27;0.0&#x27;;
+
+          countNode.classList.add(&#x27;send-now&#x27;);
+
+          row.classList.add(&#x27;open-now&#x27;);
+
+          status.textContent=&#x27; — افتح الحشد الآن&#x27;;
+
+        }else if(now&lt;depart){
+
+          countNode.textContent=&#x27;0.0&#x27;;
+
+          countNode.classList.add(&#x27;send-now&#x27;);
+
+          row.classList.add(&#x27;open-now&#x27;);
+
+          status.textContent=&#x27; — افتح الحشد الآن&#x27;;
+
+        }else if(now&lt;arrival){
+
+          countNode.textContent=&#x27;انطلق&#x27;;
+
+          status.textContent=&#x27;&#x27;;
+
+        }else if(now&lt;close){
+
+          countNode.textContent=&#x27;وصل&#x27;;
+
+          status.textContent=&#x27;&#x27;;
+
+        }else{
+
+          countNode.textContent=&#x27;انتهى&#x27;;
+
+          status.textContent=&#x27;&#x27;;
+
+        }
+
+      });
+
+    });
+
+  }
+
+
+
+  function updateMakkahLiveClock(){
+
+    const gd=new Date(Date.now()+MAKKAH_OFFSET-1000+(gameDelaySec*1000));
+
+    const gnode=fc(&#x27;gameLiveClock&#x27;);
+
+    if(gnode)gnode.textContent=fp(gd.getUTCHours())+&#x27;:&#x27;+fp(gd.getUTCMinutes())+&#x27;:&#x27;+fp(gd.getUTCSeconds())+&#x27;.&#x27;+Math.floor(gd.getUTCMilliseconds()/100);
+
+  }
+
+
+
+  const delayInput=fc(&#x27;gameDelay&#x27;);
+
+  if(delayInput){
+
+    delayInput.value=gameDelaySec.toFixed(1);
+
+    delayInput.addEventListener(&#x27;input&#x27;,()=&gt;{
+
+      gameDelaySec=Math.max(0,Number(delayInput.value)||0);
+
+      localStorage.setItem(GAME_DELAY_KEY,String(gameDelaySec));
+
+      updateMakkahLiveClock();
+
+      updateFortTimes();
+
+    });
+
+  }
+
+
+
+  buildFortresses();
+
+  updateMakkahLiveClock();
+
+  setInterval(updateMakkahLiveClock,50);
+
+  setInterval(updateFortTimes,100);
+
+
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</template>
+<script id="rally-integration-script">
+(function(){
+  var frame=document.getElementById('ralliesFrame');
+  function showRallies(){
+    document.getElementById('homePage').classList.add('hidden-page');
+    document.getElementById('calculatorPage').classList.add('hidden-page');
+    document.getElementById('expertsPage').classList.add('hidden-page');
+    document.getElementById('ralliesPage').classList.remove('hidden-page');
+    if(!frame.getAttribute('srcdoc')){
+      frame.srcdoc=document.getElementById('rallySourceTemplate').content.textContent;
+    }
+    cryptoSetHash('#rallies');
+    window.scrollTo(0,0);
+  }
+  function returnHome(){
+    document.getElementById('ralliesPage').classList.add('hidden-page');
+    // Stop countdown intervals and speech while this page is closed. Saved teams remain in localStorage.
+    frame.removeAttribute('srcdoc');
+    frame.src='about:blank';
+    showHome();
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('openRallyCenterBtn').addEventListener('click',showRallies);
+    document.getElementById('ralliesBackBtn').addEventListener('click',returnHome);
+    if(window.location.hash==='#rallies')showRallies();
+  });
+})();
 </script>
 </body></html>
