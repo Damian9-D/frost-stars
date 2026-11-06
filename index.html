@@ -205,6 +205,33 @@ html[lang="ar"] #expertsPage .expert-heading-kicker{letter-spacing:0;direction:r
 #expertsPage .expert-research-fact-hint{display:block;font-size:11px;color:#9ab4c5;margin-top:2px}
 </style>
 <style id="rally-integration-style">
+/* Rally Center: login gate */
+.rally-login-wrap{display:flex;align-items:center;justify-content:center;min-height:calc(100dvh - 140px);padding:24px 10px 50px}
+.rally-login-card{width:min(100%,470px);border:1px solid #2a5075;border-radius:25px;background:linear-gradient(160deg,rgba(17,46,75,.98),rgba(7,23,42,.99));padding:30px 30px 24px;box-shadow:0 25px 65px rgba(0,0,0,.30);text-align:center}
+.rally-login-brand{display:flex;flex-direction:column;align-items:center;gap:10px;padding:4px 0 18px}
+.rally-login-logo-box{width:112px;height:112px;position:relative;border-radius:22px;background:#081b30;border:1px solid rgba(102,217,255,.30);box-shadow:0 10px 26px rgba(0,0,0,.30);overflow:hidden}
+.rally-login-logo-fallback{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;gap:4px;color:#8edfff;background:linear-gradient(150deg,#0b2c49,#061524);font-size:16px;font-weight:1000;letter-spacing:1px}
+.rally-login-logo-fallback:before{content:"✦";font-size:31px;color:#e4c98e;line-height:1}
+.rally-login-brand img{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;object-fit:contain;border-radius:21px;background:#081b30;opacity:0;transition:opacity .2s ease}
+
+.rally-login-brand .rally-login-brand-name{font-weight:900;font-size:15px;letter-spacing:.06em;color:#8edfff;direction:ltr}
+.rally-login-brand h1{margin:0;font-size:25px;color:#f2f8ff;line-height:1.4}
+.rally-login-brand p{margin:0;font-size:13px;color:var(--muted);line-height:1.7}
+.rally-login-form{text-align:right;display:flex;flex-direction:column;gap:13px}
+.rally-login-field label{display:block;color:#bfd5e5;font-size:13px;font-weight:700;margin-bottom:7px}
+.rally-login-field input{display:block;width:100%;border:1px solid #365877;background:#071b30;color:#fff;padding:13px 14px;min-height:48px;border-radius:12px;font-family:inherit;font-size:16px;outline:0;direction:ltr;text-align:left}
+.rally-login-field input:focus{border-color:#7ecfea;box-shadow:0 0 0 3px rgba(102,217,255,.12)}
+.rally-login-submit{width:100%;border:1px solid #e4c98e;border-radius:13px;background:linear-gradient(120deg,#e7cd94,#bb9852);color:#1b2532;font-weight:900;font-family:inherit;font-size:15px;padding:14px;min-height:49px;cursor:pointer;margin-top:5px}
+.rally-login-submit:hover{filter:brightness(1.07)}
+.rally-login-submit:focus-visible{outline:3px solid #9ae5ff;outline-offset:2px}
+.rally-login-error{margin:0;min-height:18px;font-weight:700;font-size:12px;color:#ffacb6;text-align:center;line-height:1.5}
+.rally-login-info{border-top:1px solid #284c69;padding-top:20px;margin-top:16px;text-align:center}
+.rally-login-price{display:block;font-size:15px;color:#e8d4a9;font-weight:900;margin-bottom:12px}
+.rally-login-contact{color:#a9c4d9;font-size:13px;line-height:1.9}
+.rally-login-contact a{display:inline-block;color:#8edfff;text-decoration:none;direction:ltr;font-weight:900;font-size:15px;padding:0 4px}
+.rally-login-contact strong{font-weight:900;color:#f4f7fb;direction:ltr}
+@media(max-width:650px){.rally-login-wrap{padding:8px 3px 30px;min-height:calc(100dvh - 125px);align-items:center}.rally-login-card{padding:22px 18px 20px;border-radius:19px}.rally-login-logo-box{width:96px;height:96px}.rally-login-brand h1{font-size:22px}}
+
 .portal-item.rally{border-color:rgba(215,182,111,.37)}
 .portal-item.rally .portal-icon{background:rgba(215,182,111,.13);border-color:rgba(215,182,111,.31)}
 .rally-center-page{max-width:1320px;margin:0 auto;padding:14px 15px 30px;min-height:100vh}
@@ -313,7 +340,27 @@ html[lang="ar"] #expertsPage .expert-heading-kicker{letter-spacing:0;direction:r
     <button id="ralliesBackBtn" type="button" class="back-home"><span data-i18n="homeBack">← الصفحة الرئيسية</span></button>
     <span class="mini-brand"><img alt="CRYPTO" src="https://files.catbox.moe/8ar014.png"/><b>CRYPTO</b></span>
   </div>
-  <iframe id="ralliesFrame" title="مركز قيادة الحشود" class="rally-embedded-frame" loading="lazy"></iframe>
+  <section class="rally-login-wrap" id="ralliesLogin" aria-labelledby="rallyLoginTitle">
+  <div class="rally-login-card">
+    <div class="rally-login-brand">
+      <div class="rally-login-logo-box"><span class="rally-login-logo-fallback" aria-hidden="true">CRYPTO</span><img src="https://files.catbox.moe/8ar014.png" alt="شعار CRYPTO Gaming" width="112" height="112" onload="this.style.opacity='1'" onerror="this.style.display='none'" /></div>
+      <span class="rally-login-brand-name">CRYPTO Gaming</span>
+      <h1 id="rallyLoginTitle">مركز قيادة الحشود</h1>
+      <p>أدخل بيانات الدخول للوصول إلى مركز قيادة الحشود</p>
+    </div>
+    <form id="ralliesLoginForm" class="rally-login-form" autocomplete="off" novalidate>
+      <div class="rally-login-field"><label for="ralliesUsername">اسم المستخدم</label><input id="ralliesUsername" name="username" type="text" inputmode="numeric" autocomplete="username" placeholder="اسم المستخدم" required /></div>
+      <div class="rally-login-field"><label for="ralliesPassword">كلمة المرور</label><input id="ralliesPassword" name="password" type="password" autocomplete="current-password" placeholder="كلمة المرور" required /></div>
+      <button class="rally-login-submit" type="submit">تسجيل الدخول</button>
+      <p class="rally-login-error" id="ralliesLoginError" role="alert" aria-live="polite"></p>
+    </form>
+    <div class="rally-login-info">
+      <span class="rally-login-price">قيمة الاشتراك: <b dir="ltr">20$</b></span>
+      <div class="rally-login-contact">للطلب والاستفسار التواصل:<br /><a href="tel:+966552032002" dir="ltr">0552032002</a> <strong>Damian</strong></div>
+    </div>
+  </div>
+</section>
+<iframe class="rally-embedded-frame hidden-page" id="ralliesFrame" loading="lazy" title="مركز قيادة الحشود"></iframe>
 </div>
 <div class="app hidden-page" id="calculatorPage">
 <div class="calc-topbar">
@@ -3329,24 +3376,63 @@ window.addEventListener('DOMContentLoaded',function(){expertPopulateSelect();id(
 <script id="rally-integration-script">
 (function(){
   var frame=document.getElementById('ralliesFrame');
+  var gate=document.getElementById('ralliesLogin');
+  var loginForm=document.getElementById('ralliesLoginForm');
+  var loginError=document.getElementById('ralliesLoginError');
+  var username=document.getElementById('ralliesUsername');
+  var password=document.getElementById('ralliesPassword');
+  var authorized=false;
+  function displayGate(){
+    gate.classList.remove('hidden-page');
+    frame.classList.add('hidden-page');
+    loginError.textContent='';
+    password.value='';
+  }
+  function displayCenter(){
+    gate.classList.add('hidden-page');
+    frame.classList.remove('hidden-page');
+    if(!frame.hasAttribute('srcdoc')){
+      frame.removeAttribute('src');
+      frame.srcdoc=document.getElementById('rallySourceTemplate').content.textContent;
+    }
+    window.scrollTo(0,0);
+  }
   function showRallies(){
     document.getElementById('homePage').classList.add('hidden-page');
     document.getElementById('calculatorPage').classList.add('hidden-page');
     document.getElementById('expertsPage').classList.add('hidden-page');
     document.getElementById('ralliesPage').classList.remove('hidden-page');
-    if(!frame.getAttribute('srcdoc')){
-      frame.srcdoc=document.getElementById('rallySourceTemplate').content.textContent;
-    }
+    if(authorized){displayCenter();}else{displayGate();}
     cryptoSetHash('#rallies');
     window.scrollTo(0,0);
   }
   function returnHome(){
     document.getElementById('ralliesPage').classList.add('hidden-page');
-    // Stop countdown intervals and speech while this page is closed. Saved teams remain in localStorage.
+    authorized=false;
+    password.value='';
+    username.value='';
+    loginError.textContent='';
+    gate.classList.remove('hidden-page');
+    frame.classList.add('hidden-page');
+    // End any ongoing countdown and sound when leaving the center.
     frame.removeAttribute('srcdoc');
     frame.src='about:blank';
     showHome();
   }
+  loginForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    if(username.value.trim()==='1111' && password.value==='3533'){
+      authorized=true;
+      password.value='';
+      loginError.textContent='';
+      displayCenter();
+    }else{
+      authorized=false;
+      loginError.textContent='اسم المستخدم أو كلمة المرور غير صحيحة';
+      password.value='';
+      password.focus();
+    }
+  });
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('openRallyCenterBtn').addEventListener('click',showRallies);
     document.getElementById('ralliesBackBtn').addEventListener('click',returnHome);
